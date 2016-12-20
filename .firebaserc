@@ -1,0 +1,6 @@
+{
+  "projects": {
+    "default": "the-unreasonable-challenge",
+    "staging": "the-unreasonable-challenge"
+  }
+}

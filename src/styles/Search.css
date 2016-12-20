@@ -1,0 +1,15 @@
+.search {
+  float: right;
+}
+
+.search-field {
+  font-size: 15px;
+  width: 150px;
+  height: 25px;
+  border: none;
+  color: #444;
+  box-shadow: 1px 1px 1px grey;
+  border: thin solid #888;
+  padding-left: 5px;
+
+}
