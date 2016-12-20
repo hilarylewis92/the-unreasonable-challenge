@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
-import firebase, { reference } from '../firebase'
+import firebase, { extend } from '../firebase'
+import { map } from 'lodash';
 
 import LogOut from './LogOut'
 import LogIn from './LogIn'
@@ -12,13 +13,23 @@ export default class App extends Component {
     super()
     this.state = {
       user: null,
-      challenges: [],
-      challenge: ''
+      challengesList: []
     }
   }
 
   componentDidMount() {
-    firebase.auth().onAuthStateChanged(user => this.setState({ user }));
+    firebase.auth().onAuthStateChanged(user => this.setState({ user },
+      () => {firebase.database().ref(user.uid).on('value',
+        (snapshot) => {
+          const challenges = snapshot.val() || {}
+          let currentChallenge = map(challenges,
+            (val, key) => extend(val, {key}))
+          this.setState({
+            challengesList: currentChallenge
+          })
+        }
+      )}
+    ))
   }
 
   render() {
