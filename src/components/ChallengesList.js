@@ -13,6 +13,7 @@ export default class ChallengesList extends Component {
            {challengesList.map(challenge => {
              return (
                <ChallengeCard
+                 key={challenge.createdAt}
                  challenge = {challenge}
                 />
               )
