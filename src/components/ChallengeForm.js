@@ -11,7 +11,7 @@ const ChallengeForm = React.createClass({
   },
 
   render() {
-    const { onDraftedChallengeTitleChange, onDraftedChallengeBodyChange, onDraftedChallengeImageChange, onChallengeSubmit } = this.props
+    const { onDraftedChallengeTitleChange, onDraftedChallengeBodyChange, handleImageChange, onChallengeSubmit } = this.props
     return (
       <div>
         <button
@@ -30,7 +30,7 @@ const ChallengeForm = React.createClass({
               type='file'
               name='pic'
               accept='image/*'
-              onChange={onDraftedChallengeImageChange}
+              onChange={handleImageChange}
             />
             <input
               className='form-title-field input'

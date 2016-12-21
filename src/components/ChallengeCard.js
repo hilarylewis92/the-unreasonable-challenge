@@ -13,7 +13,7 @@ export default class ChallengeCard extends Component {
           <li>
             <span>{challenge.title}</span>
             <span>{challenge.body}</span>
-            <span>{challenge.image}</span>
+            <img src={challenge.image}/>
           </li>
       </Masonry>
     )
