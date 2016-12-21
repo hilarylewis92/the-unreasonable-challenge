@@ -29,7 +29,6 @@ const ChallengeForm = React.createClass({
             <input
               type='file'
               name='pic'
-              accept='image/*'
               onChange={handleImageChange}
             />
             <input
