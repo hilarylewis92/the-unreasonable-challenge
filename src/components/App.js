@@ -17,7 +17,8 @@ export default class App extends Component {
       user: null,
       challengesList: [],
       draftChallengeTitle: '',
-      draftChallengeBody: ''
+      draftChallengeBody: '',
+      draftChallengeImage: ''
     }
   }
 
@@ -47,18 +48,26 @@ export default class App extends Component {
     })
   }
 
+  updateChallengeImageState(e) {
+    this.setState({
+      draftChallengeImage: e.target.value
+    })
+  }
+
   addNewChallenge() {
-    const { user, draftChallengeTitle, draftChallengeBody } = this.state
+    const { user, draftChallengeTitle, draftChallengeBody, draftChallengeImage } = this.state
     reference.push({
       user: pick(user, 'dispayName', 'uid'),
       title: draftChallengeTitle,
       body: draftChallengeBody,
+      image: draftChallengeImage,
       createdAt: moment().format('MMMM Do, h:mm a')
     })
 
     this.setState({
       draftChallengeTitle: '',
-      draftChallengeBody: ''
+      draftChallengeBody: '',
+      draftChallengeImage: ''
     })
   }
 
@@ -76,6 +85,7 @@ export default class App extends Component {
           <ChallengeForm
             onDraftedChallengeTitleChange={this.updateChallengeTitleState.bind(this)}
             onDraftedChallengeBodyChange={this.updateChallengeBodyState.bind(this)}
+            onDraftedChallengeImageChange={this.updateChallengeImageState.bind(this)}
             onChallengeSubmit={() => this.addNewChallenge()}
           />
 

@@ -1,7 +1,6 @@
 import React from 'react';
 import Modal from 'boron/DropModal';
 
-import { Link } from 'react-router'
 
 const ChallengeForm = React.createClass({
   showModal() {
@@ -12,7 +11,7 @@ const ChallengeForm = React.createClass({
   },
 
   render() {
-    const { onDraftedChallengeTitleChange, onDraftedChallengeBodyChange, onChallengeSubmit } = this.props
+    const { onDraftedChallengeTitleChange, onDraftedChallengeBodyChange, onDraftedChallengeImageChange, onChallengeSubmit } = this.props
     return (
       <div>
         <button
@@ -31,6 +30,7 @@ const ChallengeForm = React.createClass({
               type='file'
               name='pic'
               accept='image/*'
+              onChange={onDraftedChallengeImageChange}
             />
             <input
               className='form-title-field input'
