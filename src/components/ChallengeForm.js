@@ -28,6 +28,11 @@ const ChallengeForm = React.createClass({
               What is your unreasonable challenge?
             </h2>
             <input
+              type='file'
+              name='pic'
+              accept='image/*'
+            />
+            <input
               className='form-title-field input'
               type='text'
               placeholder='title'
