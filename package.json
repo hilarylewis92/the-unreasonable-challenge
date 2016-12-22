@@ -8,13 +8,14 @@
     "react-scripts": "0.8.4"
   },
   "dependencies": {
+    "boron": "^0.2.3",
+    "firebase": "^3.4.0",
+    "firebase-tools": "^3.0.7",
+    "masonry-layout": "^4.1.1",
     "react": "^15.4.1",
     "react-dom": "^15.4.1",
-    "boron": "^0.2.3",
-    "masonry-layout": "^4.1.1",
-    "react-router": "^4.0.0-alpha.6",
-    "firebase": "^3.4.0",
-    "firebase-tools": "^3.0.7"
+    "react-masonry-component": "^4.4.0",
+    "react-router": "^4.0.0-alpha.6"
   },
   "scripts": {
     "start": "react-scripts start",

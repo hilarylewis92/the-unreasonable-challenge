@@ -2,3 +2,8 @@
   margin: 20px auto;
   width: 90vw;
 }
+
+img {
+  length: 50px;
+  width: 50px
+}

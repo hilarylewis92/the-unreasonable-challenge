@@ -17,7 +17,9 @@ export default class App extends Component {
       user: null,
       challengesList: [],
       draftChallengeTitle: '',
-      draftChallengeBody: ''
+      draftChallengeBody: '',
+      file: '',
+      imagePreviewURL: ''
     }
   }
 
@@ -47,18 +49,34 @@ export default class App extends Component {
     })
   }
 
+  updateChallengeImageState(e) {
+
+    let reader = new FileReader()
+    let file = e.target.files[0]
+
+    reader.onloadend = ()=> {
+      this.setState({
+        file: file,
+        imagePreviewURL: reader.result
+      })
+    }
+    reader.readAsDataURL(file)
+  }
+
   addNewChallenge() {
-    const { user, draftChallengeTitle, draftChallengeBody } = this.state
+    const { user, draftChallengeTitle, draftChallengeBody, imagePreviewURL } = this.state
     reference.push({
       user: pick(user, 'dispayName', 'uid'),
       title: draftChallengeTitle,
       body: draftChallengeBody,
+      image: imagePreviewURL,
       createdAt: moment().format('MMMM Do, h:mm a')
     })
 
     this.setState({
       draftChallengeTitle: '',
-      draftChallengeBody: ''
+      draftChallengeBody: '',
+      imagePreviewURL: ''
     })
   }
 
@@ -76,6 +94,7 @@ export default class App extends Component {
           <ChallengeForm
             onDraftedChallengeTitleChange={this.updateChallengeTitleState.bind(this)}
             onDraftedChallengeBodyChange={this.updateChallengeBodyState.bind(this)}
+            handleImageChange={this.updateChallengeImageState.bind(this)}
             onChallengeSubmit={() => this.addNewChallenge()}
           />
 
