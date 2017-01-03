@@ -9,11 +9,17 @@ var masonryOptions = {
 export default class ChallengesList extends Component {
 
    render() {
-     const{ challengesList } = this.props;
+     const{ challengesList, removeChallenge } = this.props;
 
      var childElements = challengesList.map(challenge => {
        return (
-         <li className = 'challenge-elements'>
+         <li className = 'challenge-elements' key={challenge.key}>
+           <button
+             className='remove-challenge-btn'
+             onClick={() => removeChallenge(challenge.key)}>
+             x
+           </button>
+
            <img className='single-challenge-image'
              src={challenge.image}
            />
@@ -33,7 +39,7 @@ export default class ChallengesList extends Component {
      return (
        <div className="ChallengesList">
          <Masonry
-           classname={'my-gallery-class'}
+           className={'my-gallery-class'}
            elementType={'ul'}
            options={masonryOptions}
            disableImagesLoaded={false}

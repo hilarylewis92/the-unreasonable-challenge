@@ -7,6 +7,7 @@ export default class ChallengeCard extends Component {
 
     return(
       <li>
+        
         <span>{challenge.title}</span>
         <span>{challenge.body}</span>
         <img src={challenge.image}/>

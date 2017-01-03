@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import firebase, { reference } from '../firebase'
+import firebase, { reference, remove } from '../firebase'
 import { map, extend, pick } from 'lodash';
 import moment from 'moment'
 
@@ -15,20 +15,18 @@ export default class App extends Component {
     super()
     this.state = {
       user: null,
-      challengesList: [
-        
-      ],
+      challengesList: [],
       draftChallengeTitle: '',
       draftChallengeBody: '',
       file: '',
-      imagePreviewURL: ''
+      imagePreviewURL: '',
     }
   }
 
   componentDidMount() {
     firebase.auth().onAuthStateChanged(
       user => this.setState({ user }
-    ))
+      ))
     reference.limitToLast(100).on('value', (snapshot) => {
       const challenges = snapshot.val() || {}
       this.setState({
@@ -38,6 +36,18 @@ export default class App extends Component {
       })
     })
   }
+
+  removeChallenge(key) {
+    this.state.challengesList.map(challenge => {
+      if(key === challenge.key) {
+        this.setState({
+          challengesList: firebase.database().ref(`${key}`).remove()
+        })
+    } else {
+      return
+    }
+  })
+ }
 
   updateChallengeTitleState(e) {
     this.setState({
@@ -67,6 +77,7 @@ export default class App extends Component {
 
   addNewChallenge() {
     const { user, draftChallengeTitle, draftChallengeBody, imagePreviewURL } = this.state
+
     reference.push({
       user: pick(user, 'dispayName', 'uid'),
       title: draftChallengeTitle,
@@ -102,6 +113,7 @@ export default class App extends Component {
 
           <ChallengesList
             challengesList={challengesList}
+            removeChallenge={this.removeChallenge.bind(this)}
           />
 
         </section>
