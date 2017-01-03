@@ -15,7 +15,9 @@ export default class App extends Component {
     super()
     this.state = {
       user: null,
-      challengesList: [],
+      challengesList: [
+        
+      ],
       draftChallengeTitle: '',
       draftChallengeBody: '',
       file: '',
