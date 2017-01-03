@@ -1,7 +1,16 @@
 li.challenge-elements {
   margin: auto;
   width: 28vw;
-  border: 1px solid black;
   text-align: center;
-  padding: 10px;
+  margin: 5px;
+  padding: 5px;
+}
+
+li.challenge-elements:hover {
+  box-shadow: 3px 3px 10px gray;
+}
+
+img.single-challenge-image{
+  width: 25vw;
+  border-radius: 5px;
 }

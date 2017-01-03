@@ -14,6 +14,10 @@ export default class ChallengesList extends Component {
      var childElements = challengesList.map(challenge => {
        return (
          <li className = 'challenge-elements'>
+           <img className='single-challenge-image'
+             src={challenge.image}
+           />
+
            <div className='single-challenge-title'>
              {challenge.title}
            </div>
@@ -22,16 +26,12 @@ export default class ChallengesList extends Component {
              {challenge.body}
            </div>
 
-           <img className='single-challenge-image'
-             src={challenge.image}
-            />
          </li>
        )
      })
 
      return (
        <div className="ChallengesList">
-         <h3>Challenges</h3>
          <Masonry
            classname={'my-gallery-class'}
            elementType={'ul'}
