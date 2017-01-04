@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import firebase, { reference, remove } from '../firebase'
+import firebase, { reference } from '../firebase'
 import { map, extend, pick } from 'lodash';
 import moment from 'moment'
 
@@ -38,8 +38,12 @@ export default class App extends Component {
   }
 
   removeChallenge(key) {
+    const { uid } = this.state.user
     let newChallengesList = this.state.challengesList.filter(challenge => {
       return challenge.key !== key
+    })
+    firebase.database().ref().update({
+      challengesList: newChallengesList
     })
     this.setState({
       challengesList: newChallengesList
