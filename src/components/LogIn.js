@@ -12,11 +12,12 @@ export default class LogIn extends Component {
           ~George Bernard Shaw~
         </p>
 
-        <button
+        <img
+          src={require('../images/signin.png')}
           className='log-in-btn'
-          onClick={()=>signIn()}>
-          Sign in with Google
-        </button>
+          onClick={()=>signIn()}
+        />
+
       </section>
     )
   }

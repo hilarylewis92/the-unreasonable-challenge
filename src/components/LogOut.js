@@ -10,11 +10,12 @@ export default class LogOut extends Component {
           className ='user-display'>
           Welcome, {user.displayName}!
         </span>
-        <button
+
+        <img
+          src={require('../images/signout.png')}
           className='log-out-btn'
-          onClick={()=>signOut()}>
-          Log Out
-        </button>
+          onClick={()=>signOut()}
+        />
       </section>
     )
   }

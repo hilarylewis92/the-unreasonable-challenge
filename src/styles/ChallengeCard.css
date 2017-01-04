@@ -1,0 +1,38 @@
+li.challenge-elements {
+  margin: auto;
+  width: 28vw;
+  text-align: center;
+  margin: 5px;
+  padding: 20px 0;
+  font-size: 18px;
+  color: gray;
+}
+
+li.challenge-elements:hover {
+  box-shadow: 3px 3px 10px gray;
+  border-radius: 5px;
+}
+
+img.single-challenge-image{
+  width: 25vw;
+  border-radius: 5px;
+}
+
+button.remove-challenge-btn {
+  font-size: 20px;
+  position: absolute;
+  right: 0;
+  top: 0;
+  margin: 10px 5px;
+  cursor: pointer;
+  width: 30px;
+  height: 30px;
+  font-weight: bold;
+  border-radius: 100%;
+  box-shadow: 1px 1px 10px grey;
+  border: thin solid black;
+  background: white;
+  &hover {
+    cursor: pointer;
+  }
+}
