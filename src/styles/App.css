@@ -1,4 +1,9 @@
+* {
+}
+
+
 .Application {
+  font-family: 'Muli', sans-serif;
   margin: 20px auto;
   width: 90vw;
 }

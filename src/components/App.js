@@ -23,10 +23,13 @@ export default class App extends Component {
     }
   }
 
-  componentDidMount() {
+  componentWillMount() {
     firebase.auth().onAuthStateChanged(
       user => this.setState({ user }
       ))
+  }
+
+  componentDidMount() {
     reference.limitToLast(100).on('value', (snapshot) => {
       const challenges = snapshot.val() || {}
       this.setState({
@@ -34,19 +37,6 @@ export default class App extends Component {
           extend(val, { key })
         )
       })
-    })
-  }
-
-  removeChallenge(key) {
-    const { uid } = this.state.user
-    let newChallengesList = this.state.challengesList.filter(challenge => {
-      return challenge.key !== key
-    })
-    firebase.database().ref().update({
-      challengesList: newChallengesList
-    })
-    this.setState({
-      challengesList: newChallengesList
     })
   }
 
@@ -63,7 +53,6 @@ export default class App extends Component {
   }
 
   updateChallengeImageState(e) {
-
     let reader = new FileReader()
     let file = e.target.files[0]
 
@@ -94,6 +83,17 @@ export default class App extends Component {
     })
   }
 
+  removeChallenge(key) {
+    const { uid } = this.state.user
+    let newChallengesList = this.state.challengesList.filter(challenge => {
+      return challenge.key !== key
+    })
+
+    this.setState({
+      challengesList: newChallengesList
+    })
+  }
+
   render() {
     const { user, challengesList } = this.state
 
@@ -101,15 +101,15 @@ export default class App extends Component {
       <div className="Application">
         {user ?
         <section>
-          <Search />
-          <LogOut user={user} />
           <Header user={user} />
+          <LogOut user={user} />
+          <Search />
 
           <ChallengeForm
             onDraftedChallengeTitleChange={this.updateChallengeTitleState.bind(this)}
             onDraftedChallengeBodyChange={this.updateChallengeBodyState.bind(this)}
             handleImageChange={this.updateChallengeImageState.bind(this)}
-            onChallengeSubmit={() => this.addNewChallenge()}
+            addNewChallenge={() => this.addNewChallenge()}
           />
 
           <ChallengesList

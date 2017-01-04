@@ -1,15 +1,17 @@
 .search {
-  float: right;
+  position: absolute;
+  right: 0;
+  top: 0;
+  margin: 35px 90px;
 }
 
 .search-field {
   font-size: 15px;
-  width: 150px;
+  width: 10vw;
   height: 25px;
   border: none;
   color: #444;
   box-shadow: 1px 1px 1px grey;
   border: thin solid #888;
-  padding-left: 5px;
-
+  padding: 5px;
 }

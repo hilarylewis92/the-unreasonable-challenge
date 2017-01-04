@@ -17,27 +17,54 @@
   }
 }
 
-.model-form {
-  height: 50vh;
-  width: 50vw;
+.modal {
+  width: 700px;
+}
+
+.modal-form {
+  height: 70vh;
   padding: 20px;
   border-radius: 5px;
   text-align: center;
 }
 
+.close-modal {
+  position: absolute;
+  right: 0;
+  top: 0;
+  font-size: 30px;
+  border: none;
+  background: none
+}
+
+.close-modal:hover {
+  cursor: pointer;
+}
+
 .form-title {
   font-size: 30px;
-  margin: 20px;
+  margin: 10px;
+  border-bottom: 1px solid gray;
+  padding-bottom: 10px;
+}
+
+.photo-camera {
+  height: 20px;
+  width: 30px;
+  padding-right: 10px;
+  padding-top: 10px;
 }
 
 .input {
-  width: 30vw;
+  width: 80%;
   margin: 10px;
   font-size: 20px;
 }
 
 .form-body-field {
-  height: 20vh;
+  height: 50vh;
+  overflow-y: scroll;
+  resize: none;
 }
 
 .add-challenge-btn-form{

@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import Masonry from 'react-masonry-component'
-
+import ChallengeCard from './ChallengeCard'
 
 var masonryOptions = {
   transitionDuration: 0
@@ -11,9 +11,9 @@ export default class ChallengesList extends Component {
    render() {
      const{ challengesList, removeChallenge } = this.props;
 
-     var childElements = challengesList.map(challenge => {
+     var singleCard = challengesList.map(challenge => {
        return (
-         <li className = 'challenge-elements' key={challenge.key}>
+         <li className='challenge-elements' key={challenge.key} >
            <button
              className='remove-challenge-btn'
              onClick={() => removeChallenge(challenge.key)}>
@@ -32,6 +32,7 @@ export default class ChallengesList extends Component {
              {challenge.body}
            </div>
 
+           <ChallengeCard challenge={challenge} />
          </li>
        )
      })
@@ -45,9 +46,12 @@ export default class ChallengesList extends Component {
            disableImagesLoaded={false}
            updateOnEachImageLoad={false}
            >
-          {childElements}
+          {singleCard}
+
         </Masonry>
        </div>
      )
    }
 }
+
+// <ChallengeCard singleCard={this.singleCard} removeChallenge={removeChallenge()}/>

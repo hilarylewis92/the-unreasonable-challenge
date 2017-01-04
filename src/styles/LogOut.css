@@ -1,9 +1,12 @@
-.log-out {
+.Log-Out {
   font-size: 20px;
+  position: absolute;
+  left: 0;
+  top: 0;
+  margin: 20px 90px;
 }
 
 .user-display {
-  margin: 5px;
 }
 
 .log-out-btn {
