@@ -14,26 +14,31 @@ const ChallengeCard = React.createClass({
     return (
       <div>
         <button
-          className='add-challenge-btn'
+          className='show-single-card'
           onClick={this.showModal}>
-          Show card
+          View Challenge
         </button>
 
         <Modal
-          className='model-card'
+          className='modal-card'
           ref="modal">
-          <li>
-            <img className='single-challenge-image'
+          <li className='challenge-card-item'>
+            <img className='single-challenge-image-modal'
               src={challenge.image}
               />
 
-            <div className='single-challenge-title'>
+            <div className='single-challenge-title-modal'>
               {challenge.title}
             </div>
 
-            <div className='single-challenge-body'>
+            <div className='single-challenge-body-modal'>
               {challenge.body}
             </div>
+
+            <textarea
+              className='comment-on-card'
+              placeholder='write a comment...'
+            />
           </li>
         </Modal>
       </div>
@@ -41,7 +46,12 @@ const ChallengeCard = React.createClass({
     );
   }
 });
-
+//
+// <button
+//   className='add-challenge-btn'
+//   onClick={this.showModal}>
+//   Show card
+// </button>
 // <Modal
 //   className='model-card'
 //   ref="modal">

@@ -10,10 +10,19 @@
 }
 
 .log-out-btn {
-  width: 100px;
+  border: none;
+  border-radius: 5px;
+  background-color: red;
+  color: white;
+  padding: 13px 30px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin-bottom: 10px;
 }
 
 .log-out-btn:hover{
   cursor: pointer;
-  box-shadow: 0 0 1em gray;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
 }

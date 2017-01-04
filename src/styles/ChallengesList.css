@@ -1,3 +1,8 @@
 .ChallengesList {
   text-align: center;
 }
+
+.my-gallery-class {
+  width: 90%;
+  margin: auto;
+}
