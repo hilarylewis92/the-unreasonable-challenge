@@ -6,11 +6,11 @@ export default class LogOut extends Component {
     const { user } = this.props
     return(
       <section className="Log-Out">
-        <img
-          src={require('../images/signout.png')}
+        <button
           className='log-out-btn'
-          onClick={()=>signOut()}
-          />
+          onClick={()=>signOut()}>
+          Sign out
+        </button>
 
         <h4
           className ='user-display'>
