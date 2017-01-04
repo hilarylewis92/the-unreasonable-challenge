@@ -10,8 +10,14 @@ const ChallengeForm = React.createClass({
     this.refs.modal.hide()
   },
 
+  onChallengeSubmit(e) {
+    e.preventDefault()
+    this.hideModal()
+    this.props.addNewChallenge
+  },
+
   render() {
-    const { onDraftedChallengeTitleChange, onDraftedChallengeBodyChange, handleImageChange, onChallengeSubmit } = this.props
+    const { onDraftedChallengeTitleChange, onDraftedChallengeBodyChange, handleImageChange } = this.props
     return (
       <div>
         <button
@@ -46,7 +52,7 @@ const ChallengeForm = React.createClass({
             />
             <button
               className='add-challenge-btn-form'
-              onClick={onChallengeSubmit}>
+              onClick={(e) => this.onChallengeSubmit(e)}>
               Save challenge
             </button>
           </form>
