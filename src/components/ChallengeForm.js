@@ -12,8 +12,8 @@ const ChallengeForm = React.createClass({
 
   onChallengeSubmit(e) {
     e.preventDefault()
+    this.props.addNewChallenge()
     this.hideModal()
-    this.props.addNewChallenge
   },
 
   render() {

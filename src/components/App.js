@@ -30,9 +30,6 @@ export default class App extends Component {
   }
 
   componentDidMount() {
-    // firebase.auth().onAuthStateChanged(
-    //   user => this.setState({ user }
-    //   ))
     reference.limitToLast(100).on('value', (snapshot) => {
       const challenges = snapshot.val() || {}
       this.setState({
@@ -67,7 +64,6 @@ export default class App extends Component {
   }
 
   updateChallengeImageState(e) {
-
     let reader = new FileReader()
     let file = e.target.files[0]
 
@@ -114,7 +110,7 @@ export default class App extends Component {
             onDraftedChallengeTitleChange={this.updateChallengeTitleState.bind(this)}
             onDraftedChallengeBodyChange={this.updateChallengeBodyState.bind(this)}
             handleImageChange={this.updateChallengeImageState.bind(this)}
-            addNewChallenge={this.addNewChallenge.bind(this)}
+            addNewChallenge={() => this.addNewChallenge()}
           />
 
           <ChallengesList
