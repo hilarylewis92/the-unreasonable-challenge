@@ -40,17 +40,6 @@ export default class App extends Component {
     })
   }
 
-  removeChallenge(key) {
-    const { uid } = this.state.user
-    let newChallengesList = this.state.challengesList.filter(challenge => {
-      return challenge.key !== key
-    })
-
-    this.setState({
-      challengesList: newChallengesList
-    })
-  }
-
   updateChallengeTitleState(e) {
     this.setState({
       draftChallengeTitle: e.target.value
@@ -77,7 +66,6 @@ export default class App extends Component {
   }
 
   addNewChallenge() {
-    console.log(this);
     const { user, draftChallengeTitle, draftChallengeBody, imagePreviewURL } = this.state
 
     reference.push({
@@ -95,6 +83,17 @@ export default class App extends Component {
     })
   }
 
+  removeChallenge(key) {
+    const { uid } = this.state.user
+    let newChallengesList = this.state.challengesList.filter(challenge => {
+      return challenge.key !== key
+    })
+
+    this.setState({
+      challengesList: newChallengesList
+    })
+  }
+
   render() {
     const { user, challengesList } = this.state
 
@@ -102,9 +101,9 @@ export default class App extends Component {
       <div className="Application">
         {user ?
         <section>
-          <Search />
-          <LogOut user={user} />
           <Header user={user} />
+          <LogOut user={user} />
+          <Search />
 
           <ChallengeForm
             onDraftedChallengeTitleChange={this.updateChallengeTitleState.bind(this)}

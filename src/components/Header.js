@@ -6,11 +6,7 @@ export default class Header extends Component {
     return(
       <section className="header">
         <h1 className='title'>
-          The
-          <be />
-          Unreasonable
-          <br />
-          Challenge
+          The Unreasonable Challenge
         </h1>
       </section>
     )

@@ -1,12 +1,11 @@
 .header {
-  height: 150px;
   text-align: center;
-  height: 250px;
-  border: 1px solid black;
-  margin: 10px 0;
+  height: 10vh;
+  border-bottom: 1px solid black;
+  margin-top: 30px;
 }
 
 .title {
-  margin-top: 75px;
   font-size: 45px;
+  display: inline-block;
 }

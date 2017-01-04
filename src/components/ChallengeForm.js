@@ -6,16 +6,15 @@ const ChallengeForm = React.createClass({
   showModal() {
     this.refs.modal.show();
   },
-  hideModal(){
+  hideModal(e){
+    e.preventDefault()
     this.refs.modal.hide()
   },
-
   onChallengeSubmit(e) {
     e.preventDefault()
     this.props.addNewChallenge()
-    this.hideModal()
+    this.hideModal(e)
   },
-
   render() {
     const { onDraftedChallengeTitleChange, onDraftedChallengeBodyChange, handleImageChange } = this.props
     return (
@@ -26,34 +25,49 @@ const ChallengeForm = React.createClass({
           +
         </button>
         <Modal
-          className='model-form'
+          className='modal-form'
           ref="modal">
           <form className='form'>
+            <button
+              className='close-modal'
+              onClick={(e) => this.hideModal(e)}>
+              x
+            </button>
+
             <h2 className='form-title'>
-              What is your unreasonable challenge?
+              New Challenge
             </h2>
+
+            <img
+              className='photo-camera'
+              src={require('../images/photo-camera.png')}
+            />
+          
             <input
               type='file'
               name='pic'
               accept='image/*'
               onChange={handleImageChange}
             />
+
             <input
               className='form-title-field input'
               type='text'
-              placeholder='title'
+              placeholder='challenge title'
               onChange={onDraftedChallengeTitleChange}
             />
+
             <textarea
               className='form-body-field input'
               type='text'
-              placeholder='write your challenge here...'
+              placeholder='compose challenge'
               onChange={onDraftedChallengeBodyChange}
             />
+
             <button
               className='add-challenge-btn-form'
               onClick={(e) => this.onChallengeSubmit(e)}>
-              Save challenge
+              Save
             </button>
           </form>
         </Modal>
