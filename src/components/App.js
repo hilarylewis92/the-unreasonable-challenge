@@ -38,16 +38,13 @@ export default class App extends Component {
   }
 
   removeChallenge(key) {
-    this.state.challengesList.map(challenge => {
-      if(key === challenge.key) {
-        this.setState({
-          challengesList: firebase.database().ref(`${key}`).remove()
-        })
-    } else {
-      return
-    }
-  })
- }
+    let newChallengesList = this.state.challengesList.filter(challenge => {
+      return challenge.key !== key
+    })
+    this.setState({
+      challengesList: newChallengesList
+    })
+  }
 
   updateChallengeTitleState(e) {
     this.setState({
