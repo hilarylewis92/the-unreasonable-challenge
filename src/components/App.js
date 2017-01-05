@@ -88,8 +88,12 @@ export default class App extends Component {
     })
   }
 
+  editChallenge (key) {
+    console.log(key);
+  }
+
   render() {
-    const { user, challengesList } = this.state
+    const { user, challengesList, draftChallengeTitle } = this.state
 
     return (
       <div className="Application">
@@ -108,6 +112,7 @@ export default class App extends Component {
           <ChallengesList
             challengesList={challengesList}
             removeChallenge={this.removeChallenge.bind(this)}
+            onEditTitle={this.updateChallengeTitleState.bind(this)}
           />
 
         </section>

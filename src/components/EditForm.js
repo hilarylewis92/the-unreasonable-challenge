@@ -3,7 +3,6 @@ import Modal from 'boron/DropModal';
 
 
 const EditForm = React.createClass({
-
   showModal() {
     this.refs.modal.show();
   },
@@ -13,8 +12,16 @@ const EditForm = React.createClass({
     this.refs.modal.hide()
   },
 
+  onEditChallengeSubmit(e) {
+    const { key } = this.props.challenge
+    console.log(key);
+    e.preventDefault()
+    // this.props.editChallenge(key)
+    this.hideModal(e)
+  },
+
   render() {
-    const { challenge } = this.props
+    const { challenge, onEditTitle } = this.props
     return (
       <div>
         <img
@@ -42,6 +49,7 @@ const EditForm = React.createClass({
               className='form-title-field input'
               type='text'
               placeholder={challenge.title}
+              onChange={onEditTitle}
             />
 
             <textarea
@@ -51,7 +59,8 @@ const EditForm = React.createClass({
             />
 
             <button
-              className='add-challenge-btn-form'>
+              className='add-challenge-btn-form'
+              onClick={(e) => this.onEditChallengeSubmit(e)}>
               Update challenge
             </button>
           </form>

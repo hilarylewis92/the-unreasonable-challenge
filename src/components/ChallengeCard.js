@@ -15,7 +15,7 @@ const ChallengeCard = React.createClass({
   },
 
   render() {
-    const { challenge } = this.props
+    const { challenge, onEditTitle } = this.props
     return (
       <div>
         <button
@@ -35,7 +35,10 @@ const ChallengeCard = React.createClass({
               x
             </button>
 
-            <EditForm challenge={challenge} />
+            <EditForm
+              challenge={challenge}
+              onEditTitle={onEditTitle}
+            />
 
             <img
               className='single-challenge-image-modal'
