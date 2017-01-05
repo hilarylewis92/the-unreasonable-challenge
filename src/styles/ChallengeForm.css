@@ -11,9 +11,11 @@
   border-radius: 100%;
   border: thin solid gray;
   background: white;
+  color: gray;
 }
 
 .add-challenge-btn:hover{
+  color: black;
   cursor: pointer;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
 }
@@ -24,6 +26,8 @@
   padding: 20px;
   border-radius: 5px;
   text-align: center;
+  max-height: calc(100vh - 210px);
+  overflow-y: auto;
 }
 
 .close-modal {
@@ -63,7 +67,7 @@
 }
 
 .form-body-field {
-  height: 30vh;
+  height: 40vh;
   overflow-y: scroll;
   resize: none;
 }

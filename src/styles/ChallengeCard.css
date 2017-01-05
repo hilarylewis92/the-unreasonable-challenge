@@ -14,7 +14,7 @@ li.challenge-elements:hover {
 }
 
 img.single-challenge-image {
-  width: 80%;
+  width: 90%;
   border-radius: 5px;
   margin: 5px;
 }
@@ -72,10 +72,12 @@ button.remove-challenge-btn {
   border-radius: 5px;
   padding: 40px;
   line-height: 130%;
+  max-height: calc(100vh - 210px);
+  overflow-y: auto;
 }
 
 .single-challenge-image-modal{
-  width: 75%;
+  width: 50%;
 }
 
 .single-challenge-body-modal {
