@@ -81,6 +81,14 @@ button.remove-challenge-btn {
   overflow-y: auto;
 }
 
+.edit-btn {
+  position: absolute;
+  top: 0;
+  right: 0;
+  height: 30px;
+  margin: 10px 20px;
+}
+
 .single-challenge-image-modal{
   width: 50%;
   border-radius: 5px;

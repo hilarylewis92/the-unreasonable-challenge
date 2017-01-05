@@ -49,7 +49,6 @@ export default class ChallengesList extends Component {
            updateOnEachImageLoad={false}
            >
           {singleCard}
-
         </Masonry>
        </div>
      )

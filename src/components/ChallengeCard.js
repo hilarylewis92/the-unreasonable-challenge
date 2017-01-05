@@ -31,11 +31,18 @@ const ChallengeCard = React.createClass({
               x
             </button>
 
-            <img className='single-challenge-image-modal'
-              src={challenge.image}
-              />
+            <img
+              className='edit-btn'
+              src={require('../images/edit-btn.png')}
+            />
 
-            <div className='single-challenge-title-modal'>
+            <img
+              className='single-challenge-image-modal'
+              src={challenge.image}
+            />
+
+            <div
+              className='single-challenge-title-modal'>
               {challenge.title}
             </div>
 
@@ -43,7 +50,8 @@ const ChallengeCard = React.createClass({
               ~ {challenge.user.displayName} on {challenge.createdAt} ~
             </div>
 
-            <div className='single-challenge-body-modal'>
+            <div
+              className='single-challenge-body-modal'>
               {challenge.body}
             </div>
 
