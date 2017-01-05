@@ -20,7 +20,7 @@ const EditForm = React.createClass({
   },
 
   render() {
-    const { challenge, onEditTitle } = this.props
+    const { challenge, onEditTitle, onEditBody } = this.props
     return (
       <div>
         <img
@@ -55,6 +55,7 @@ const EditForm = React.createClass({
               className='form-body-field input'
               type='text'
               placeholder={challenge.body}
+              onChange={onEditBody}
             />
 
             <button

@@ -96,17 +96,19 @@ export default class App extends Component {
   }
 
   editChallenge (key) {
-    const { draftChallengeTitle } = this.state
-    let newTitle
+    const { draftChallengeTitle, draftChallengeBody } = this.state
 
     this.state.challengesList.filter((challenge) => {
-
       if (challenge.key === key) {
         let oldTitle = challenge.title
         const newTitle = draftChallengeTitle ? draftChallengeTitle: oldTitle
 
+        let oldBody = challenge.body
+        const newBody = draftChallengeBody ? draftChallengeBody: oldBody
+
         firebase.database().ref(`challenges/${key}`).update({
-          title: newTitle
+          title: newTitle,
+          body: newBody,
         })
       }
     })
@@ -133,6 +135,7 @@ export default class App extends Component {
             challengesList={challengesList}
             removeChallenge={this.removeChallenge.bind(this)}
             onEditTitle={this.updateChallengeTitleState.bind(this)}
+            onEditBody={this.updateChallengeBodyState.bind(this)}
             editChallenge={this.editChallenge.bind(this)}
           />
 
