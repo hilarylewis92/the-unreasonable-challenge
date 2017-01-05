@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import firebase, { reference } from '../firebase'
+import firebase, { reference, update } from '../firebase'
 import { map, extend, pick } from 'lodash';
 import moment from 'moment'
 
@@ -78,7 +78,7 @@ export default class App extends Component {
   }
 
   removeChallenge(key) {
-    const { uid } = this.state.user
+    const { challenges } = this.state
     let newChallengesList = this.state.challengesList.filter(challenge => {
       return challenge.key !== key
     })
@@ -89,19 +89,19 @@ export default class App extends Component {
   }
 
   editChallenge (key) {
-    this.state.challengesList.map(challenge => {
+    const { challenges } = this.state
+    const { draftChallengeTitle } = this.state
+    let newTitle
+
+    this.state.challengesList.filter((challenge) => {
+
       if (challenge.key === key) {
         let oldTitle = challenge.title
-        console.log(challenge.title);
-        let newTitle = this.state.draftChallengeTitle
-        console.log(this.state.draftChallengeTitle);
+        const newTitle = draftChallengeTitle ? draftChallengeTitle: oldTitle
 
-        this.setState({
-          oldTitle: newTitle
+        firebase.database().ref(`${challenges}/${key}`).update({
+          title: newTitle
         })
-
-      } else {
-        return
       }
     })
   }
