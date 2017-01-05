@@ -23,22 +23,17 @@ export default class App extends Component {
     }
   }
 
-  componentWillMount() {
-    firebase.auth().onAuthStateChanged(
-      user => this.setState({ user }
-      ))
-  }
-
   componentDidMount() {
-    reference.limitToLast(100).on('value', (snapshot) => {
-      const challenges = snapshot.val() || {}
-      this.setState({
-        challengesList: map(challenges, (val, key) =>
-          extend(val, { key })
-        )
+      reference.limitToLast(100).on('value', (snapshot) => {
+        const challenge = snapshot.val() || {};
+        this.setState({
+          challengesList: map(challenge, (val, key) => extend(val, { key }))
+        })
       })
-    })
-  }
+
+      firebase.auth().onAuthStateChanged(user => this.setState({ user }));
+    }
+
 
   updateChallengeTitleState(e) {
     this.setState({
@@ -67,13 +62,12 @@ export default class App extends Component {
 
   addNewChallenge() {
     const { user, draftChallengeTitle, draftChallengeBody, imagePreviewURL } = this.state
-
     reference.push({
-      user: pick(user, 'dispayName', 'uid'),
+      user: pick(user, 'displayName', 'email', 'uid'),
       title: draftChallengeTitle,
       body: draftChallengeBody,
       image: imagePreviewURL,
-      createdAt: moment().format('MMMM Do, h:mm a')
+      createdAt: moment().format('MMMM Do')
     })
 
     this.setState({

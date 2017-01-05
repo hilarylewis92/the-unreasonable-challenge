@@ -14,13 +14,17 @@ export default class ChallengesList extends Component {
      var singleCard = challengesList.map(challenge => {
        return (
          <li className='challenge-elements' key={challenge.key} >
-           
+
            <img className='single-challenge-image'
              src={challenge.image}
            />
 
            <div className='single-challenge-title'>
              {challenge.title}
+           </div>
+
+           <div className='author-date'>
+             ~ {challenge.user.displayName} on {challenge.createdAt} ~
            </div>
 
            <div className='single-challenge-body'>

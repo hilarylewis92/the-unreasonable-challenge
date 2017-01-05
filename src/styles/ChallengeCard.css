@@ -43,6 +43,11 @@ button.remove-challenge-btn {
   margin: 10px;
 }
 
+.author-date {
+  font-size: 12px;
+  margin: 5px;
+}
+
 .single-challenge-body {
   width: 90%;
   margin: auto;
