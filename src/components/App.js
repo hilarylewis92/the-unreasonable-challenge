@@ -113,6 +113,7 @@ export default class App extends Component {
             challengesList={challengesList}
             removeChallenge={this.removeChallenge.bind(this)}
             onEditTitle={this.updateChallengeTitleState.bind(this)}
+            editChallenge={this.editChallenge.bind(this)}
           />
 
         </section>

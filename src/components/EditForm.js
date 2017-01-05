@@ -14,9 +14,8 @@ const EditForm = React.createClass({
 
   onEditChallengeSubmit(e) {
     const { key } = this.props.challenge
-    console.log(key);
     e.preventDefault()
-    // this.props.editChallenge(key)
+    this.props.editChallenge(key)
     this.hideModal(e)
   },
 
