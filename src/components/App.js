@@ -93,9 +93,15 @@ export default class App extends Component {
       if (challenge.key === key) {
         let oldTitle = challenge.title
         console.log(challenge.title);
-
+        let newTitle = this.state.draftChallengeTitle
         console.log(this.state.draftChallengeTitle);
 
+        this.setState({
+          oldTitle: newTitle
+        })
+
+      } else {
+        return
       }
     })
   }
