@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import firebase, { reference, update } from '../firebase'
-import { map, extend, pick } from 'lodash';
+import { map, extend, pick, filter } from 'lodash';
 import moment from 'moment'
 
 import LogOut from './LogOut'
@@ -31,13 +31,19 @@ export default class App extends Component {
         usersDatabase: firebase.database().ref(user.uid)
       },
 
-      () => reference.limitToLast(100).on('value', (snapshot) => {
-        const challenge = snapshot.val() || {};
-        this.setState({
-          challengesList: map(challenge, (val, key) => extend(val, { key }))
-        })
-      })
-    )))
+      () => {reference.limitToLast(100).on('value',
+        (snapshot) => {
+          const challenges = snapshot.val() || {};
+          let currentChallenges = map(challenges,
+            (val, key) => extend(val, { key }))
+
+          this.setState({
+            challengesList: currentChallenges
+          })
+        }
+      )}
+      )
+    ))
   }
 
 
