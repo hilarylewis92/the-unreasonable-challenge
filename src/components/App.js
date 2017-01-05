@@ -20,16 +20,11 @@ export default class App extends Component {
       draftChallengeBody: '',
       file: '',
       imagePreviewURL: '',
-      usersDatabase: null,
     }
   }
 
   componentDidMount() {
     firebase.auth().onAuthStateChanged(user => this.setState({ user },
-
-      () => this.setState({
-        usersDatabase: firebase.database().ref(user.uid)
-      },
 
       () => {reference.limitToLast(100).on('value',
         (snapshot) => {
@@ -42,7 +37,6 @@ export default class App extends Component {
           })
         }
       )}
-      )
     ))
   }
 
@@ -91,6 +85,7 @@ export default class App extends Component {
 
   removeChallenge(key) {
     const { challenges } = this.state
+
     let newChallengesList = this.state.challengesList.filter(challenge => {
       return challenge.key !== key
     })
@@ -101,7 +96,6 @@ export default class App extends Component {
   }
 
   editChallenge (key) {
-    const { challenges } = this.state
     const { draftChallengeTitle } = this.state
     let newTitle
 
@@ -111,7 +105,7 @@ export default class App extends Component {
         let oldTitle = challenge.title
         const newTitle = draftChallengeTitle ? draftChallengeTitle: oldTitle
 
-        firebase.database().ref(`${challenges}/${key}`).update({
+        firebase.database().ref(`challenges/${key}`).update({
           title: newTitle
         })
       }
