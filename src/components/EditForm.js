@@ -19,8 +19,15 @@ const EditForm = React.createClass({
     this.hideModal(e)
   },
 
+  onRemoveChallengeSubmit(e) {
+    const { key } = this.props.challenge
+    e.preventDefault()
+    this.props.removeChallenge(key)
+    this.hideModal(e)
+  },
+
   render() {
-    const { challenge, onEditTitle, onEditBody } = this.props
+    const { challenge, onEditTitle, onEditBody, removeChallenge } = this.props
     return (
       <div>
         <img
@@ -43,6 +50,12 @@ const EditForm = React.createClass({
             <h2 className='form-title'>
               Edit Challenge
             </h2>
+
+            <button
+              className='remove-challenge'
+              onClick={(e) => this.onRemoveChallengeSubmit(e)}>
+              x
+            </button>
 
             <input
               className='form-title-field input'

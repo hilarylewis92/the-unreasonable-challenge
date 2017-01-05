@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import firebase, { reference, update } from '../firebase'
+import firebase, { reference, update, remove } from '../firebase'
 import { map, extend, pick, filter } from 'lodash';
 import moment from 'moment'
 
@@ -20,6 +20,7 @@ export default class App extends Component {
       draftChallengeBody: '',
       file: '',
       imagePreviewURL: '',
+
     }
   }
 
@@ -84,14 +85,13 @@ export default class App extends Component {
   }
 
   removeChallenge(key) {
-    const { challenges } = this.state
-
-    let newChallengesList = this.state.challengesList.filter(challenge => {
-      return challenge.key !== key
-    })
-
-    this.setState({
-      challengesList: newChallengesList
+    this.state.challengesList.map(challenge => {
+      if(key === challenge.key) {
+        debugger
+        firebase.database().ref(`challenges/${key}`).remove()
+      } else {
+        return
+      }
     })
   }
 
