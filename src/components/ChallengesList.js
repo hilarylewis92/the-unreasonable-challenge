@@ -30,8 +30,11 @@ export default class ChallengesList extends Component {
            <div className='single-challenge-body'>
              {challenge.body}
            </div>
-
-           <ChallengeCard challenge={challenge} />
+           <ul>
+             <ChallengeCard
+               challenge={challenge}
+               />
+           </ul>
          </li>
        )
      })

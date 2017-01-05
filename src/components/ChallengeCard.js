@@ -5,7 +5,8 @@ const ChallengeCard = React.createClass({
   showModal() {
     this.refs.modal.show();
   },
-  hideModal(){
+  hideModal(e){
+    e.preventDefault()
     this.refs.modal.hide()
   },
 
@@ -23,6 +24,13 @@ const ChallengeCard = React.createClass({
           className='modal-card'
           ref="modal">
           <li className='challenge-card-item'>
+
+            <button
+              className='close-modal'
+              onClick={(e) => this.hideModal(e)}>
+              x
+            </button>
+
             <img className='single-challenge-image-modal'
               src={challenge.image}
               />
