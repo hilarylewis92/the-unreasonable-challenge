@@ -7,9 +7,8 @@ var masonryOptions = {
 }
 
 export default class ChallengesList extends Component {
-
    render() {
-     const{ challengesList, removeChallenge } = this.props;
+     const{ challengesList, removeChallenge, onEditTitle, onEditBody, editChallenge } = this.props;
 
      var singleCard = challengesList.map(challenge => {
        return (
@@ -30,8 +29,14 @@ export default class ChallengesList extends Component {
            <div className='single-challenge-body'>
              {challenge.body}
            </div>
-
-           <ChallengeCard challenge={challenge} />
+           <ul>
+             <ChallengeCard
+               challenge={challenge}
+               onEditTitle={onEditTitle}
+               onEditBody={onEditBody}
+               editChallenge={editChallenge}
+              />
+           </ul>
          </li>
        )
      })
@@ -46,7 +51,6 @@ export default class ChallengesList extends Component {
            updateOnEachImageLoad={false}
            >
           {singleCard}
-
         </Masonry>
        </div>
      )

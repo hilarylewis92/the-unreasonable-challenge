@@ -1,16 +1,21 @@
-import React from 'react';
-import Modal from 'boron/DropModal';
+import React from 'react'
+import Modal from 'boron/DropModal'
+
+import EditForm from './EditForm.js'
 
 const ChallengeCard = React.createClass({
+
   showModal() {
     this.refs.modal.show();
   },
-  hideModal(){
+
+  hideModal(e){
+    e.preventDefault()
     this.refs.modal.hide()
   },
 
   render() {
-    const { challenge } = this.props
+    const { challenge, onEditTitle, onEditBody, editChallenge } = this.props
     return (
       <div>
         <button
@@ -23,11 +28,27 @@ const ChallengeCard = React.createClass({
           className='modal-card'
           ref="modal">
           <li className='challenge-card-item'>
-            <img className='single-challenge-image-modal'
-              src={challenge.image}
-              />
 
-            <div className='single-challenge-title-modal'>
+            <button
+              className='close-modal'
+              onClick={(e) => this.hideModal(e)}>
+              x
+            </button>
+
+            <EditForm
+              challenge={challenge}
+              onEditTitle={onEditTitle}
+              onEditBody={onEditBody}
+              editChallenge={editChallenge}
+            />
+
+            <img
+              className='single-challenge-image-modal'
+              src={challenge.image}
+            />
+
+            <div
+              className='single-challenge-title-modal'>
               {challenge.title}
             </div>
 
@@ -35,7 +56,8 @@ const ChallengeCard = React.createClass({
               ~ {challenge.user.displayName} on {challenge.createdAt} ~
             </div>
 
-            <div className='single-challenge-body-modal'>
+            <div
+              className='single-challenge-body-modal'>
               {challenge.body}
             </div>
 

@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
-import firebase, { reference } from '../firebase'
-import { map, extend, pick } from 'lodash';
+import firebase, { reference, update } from '../firebase'
+import { map, extend, pick, filter } from 'lodash';
 import moment from 'moment'
 
 import LogOut from './LogOut'
@@ -24,15 +24,21 @@ export default class App extends Component {
   }
 
   componentDidMount() {
-      reference.limitToLast(100).on('value', (snapshot) => {
-        const challenge = snapshot.val() || {};
-        this.setState({
-          challengesList: map(challenge, (val, key) => extend(val, { key }))
-        })
-      })
+    firebase.auth().onAuthStateChanged(user => this.setState({ user },
 
-      firebase.auth().onAuthStateChanged(user => this.setState({ user }));
-    }
+      () => {reference.limitToLast(100).on('value',
+        (snapshot) => {
+          const challenges = snapshot.val() || {};
+          let currentChallenges = map(challenges,
+            (val, key) => extend(val, { key }))
+
+          this.setState({
+            challengesList: currentChallenges
+          })
+        }
+      )}
+    ))
+  }
 
 
   updateChallengeTitleState(e) {
@@ -78,7 +84,8 @@ export default class App extends Component {
   }
 
   removeChallenge(key) {
-    const { uid } = this.state.user
+    const { challenges } = this.state
+
     let newChallengesList = this.state.challengesList.filter(challenge => {
       return challenge.key !== key
     })
@@ -88,8 +95,27 @@ export default class App extends Component {
     })
   }
 
+  editChallenge (key) {
+    const { draftChallengeTitle, draftChallengeBody } = this.state
+
+    this.state.challengesList.filter((challenge) => {
+      if (challenge.key === key) {
+        let oldTitle = challenge.title
+        const newTitle = draftChallengeTitle ? draftChallengeTitle: oldTitle
+
+        let oldBody = challenge.body
+        const newBody = draftChallengeBody ? draftChallengeBody: oldBody
+
+        firebase.database().ref(`challenges/${key}`).update({
+          title: newTitle,
+          body: newBody,
+        })
+      }
+    })
+  }
+
   render() {
-    const { user, challengesList } = this.state
+    const { user, challengesList, draftChallengeTitle } = this.state
 
     return (
       <div className="Application">
@@ -108,6 +134,9 @@ export default class App extends Component {
           <ChallengesList
             challengesList={challengesList}
             removeChallenge={this.removeChallenge.bind(this)}
+            onEditTitle={this.updateChallengeTitleState.bind(this)}
+            onEditBody={this.updateChallengeBodyState.bind(this)}
+            editChallenge={this.editChallenge.bind(this)}
           />
 
         </section>

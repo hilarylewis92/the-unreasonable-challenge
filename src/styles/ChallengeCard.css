@@ -75,14 +75,23 @@ button.remove-challenge-btn {
 /*modal*/
 .modal-card {
   border-radius: 5px;
-  padding: 40px;
+  padding: 10px 40px;
   line-height: 130%;
   max-height: calc(100vh - 210px);
   overflow-y: auto;
 }
 
+.edit-btn {
+  position: absolute;
+  top: 0;
+  right: 0;
+  height: 30px;
+  margin: 10px 20px;
+}
+
 .single-challenge-image-modal{
   width: 50%;
+  border-radius: 5px;
 }
 
 .single-challenge-body-modal {
