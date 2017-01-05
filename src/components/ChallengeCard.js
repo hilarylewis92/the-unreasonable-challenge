@@ -1,10 +1,14 @@
-import React from 'react';
-import Modal from 'boron/DropModal';
+import React from 'react'
+import Modal from 'boron/DropModal'
+
+import EditForm from './EditForm.js'
 
 const ChallengeCard = React.createClass({
+
   showModal() {
     this.refs.modal.show();
   },
+
   hideModal(e){
     e.preventDefault()
     this.refs.modal.hide()
@@ -31,10 +35,7 @@ const ChallengeCard = React.createClass({
               x
             </button>
 
-            <img
-              className='edit-btn'
-              src={require('../images/edit-btn.png')}
-            />
+            <EditForm challenge={challenge} />
 
             <img
               className='single-challenge-image-modal'
