@@ -31,6 +31,10 @@ const ChallengeCard = React.createClass({
               {challenge.title}
             </div>
 
+            <div className='author-date'>
+              ~ {challenge.user.displayName} on {challenge.createdAt} ~
+            </div>
+
             <div className='single-challenge-body-modal'>
               {challenge.body}
             </div>
