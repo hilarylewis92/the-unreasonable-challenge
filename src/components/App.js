@@ -8,7 +8,7 @@ import LogIn from './LogIn'
 import Header from './Header'
 import ChallengeForm from './ChallengeForm'
 import ChallengesList from './ChallengesList'
-import Search from './Search'
+// import Search from './Search'
 
 export default class App extends Component {
   constructor() {
@@ -103,7 +103,6 @@ export default class App extends Component {
         <section>
           <Header user={user} />
           <LogOut user={user} />
-          <Search />
 
           <ChallengeForm
             onDraftedChallengeTitleChange={this.updateChallengeTitleState.bind(this)}

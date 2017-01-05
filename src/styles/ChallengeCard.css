@@ -1,8 +1,8 @@
 li.challenge-elements {
-  width: 20vw;
+  width: 20%;
   text-align: center;
-  margin: 40px;
-  padding: 10px;
+  margin: 20px;
+  padding: 5px;
   font-size: 18px;
   color: gray;
   line-height: 130%;
@@ -14,11 +14,11 @@ li.challenge-elements:hover {
 }
 
 img.single-challenge-image {
-  width: 15vw;
+  width: 80%;
   border-radius: 5px;
-  margin: 10px;
+  margin: 5px;
 }
-
+/*
 button.remove-challenge-btn {
   font-size: 20px;
   position: absolute;
@@ -36,7 +36,7 @@ button.remove-challenge-btn {
   &hover {
     cursor: pointer;
   }
-}
+}*/
 
 .single-challenge-title {
   font-size: 25px;
@@ -44,7 +44,7 @@ button.remove-challenge-btn {
 }
 
 .single-challenge-body {
-  width: 15vw;
+  width: 90%;
   margin: auto;
   text-align: left;
 }
@@ -54,12 +54,12 @@ button.remove-challenge-btn {
   border-radius: 5px;
   background-color: gray;
   color: white;
-  padding: 13px 30px;
+  padding: 10px 20px;
   text-align: center;
   text-decoration: none;
   display: inline-block;
-  font-size: 16px;
-  margin: 20px;
+  font-size: 15px;
+  margin: 15px;
 }
 
 .show-single-card:hover{

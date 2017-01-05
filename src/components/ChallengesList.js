@@ -14,12 +14,7 @@ export default class ChallengesList extends Component {
      var singleCard = challengesList.map(challenge => {
        return (
          <li className='challenge-elements' key={challenge.key} >
-           <button
-             className='remove-challenge-btn'
-             onClick={() => removeChallenge(challenge.key)}>
-             x
-           </button>
-
+           
            <img className='single-challenge-image'
              src={challenge.image}
            />
@@ -55,3 +50,9 @@ export default class ChallengesList extends Component {
 }
 
 // <ChallengeCard singleCard={this.singleCard} removeChallenge={removeChallenge()}/>
+
+// <button
+//   className='remove-challenge-btn'
+//   onClick={() => removeChallenge(challenge.key)}>
+//   x
+// </button>
