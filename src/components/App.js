@@ -89,7 +89,15 @@ export default class App extends Component {
   }
 
   editChallenge (key) {
-    console.log(key);
+    this.state.challengesList.map(challenge => {
+      if (challenge.key === key) {
+        let oldTitle = challenge.title
+        console.log(challenge.title);
+
+        console.log(this.state.draftChallengeTitle);
+
+      }
+    })
   }
 
   render() {
