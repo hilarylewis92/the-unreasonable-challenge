@@ -24,9 +24,11 @@ const ChallengeForm = React.createClass({
           onClick={this.showModal}>
           +
         </button>
+
         <Modal
           className='modal-form'
           ref="modal">
+
           <form className='form'>
             <button
               className='close-modal'
@@ -42,7 +44,7 @@ const ChallengeForm = React.createClass({
               className='photo-camera'
               src={require('../images/photo-camera.png')}
             />
-          
+
             <input
               type='file'
               name='pic'
@@ -70,6 +72,7 @@ const ChallengeForm = React.createClass({
               Save
             </button>
           </form>
+
         </Modal>
       </div>
     );

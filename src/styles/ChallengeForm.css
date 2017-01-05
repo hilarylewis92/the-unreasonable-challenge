@@ -9,25 +9,25 @@
   height: 50px;
   font-weight: bold;
   border-radius: 100%;
-  /*box-shadow: 1px 1px 10px grey;*/
   border: thin solid gray;
   background: white;
+  color: gray;
 }
 
 .add-challenge-btn:hover{
+  color: black;
   cursor: pointer;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
 }
 
-.modal {
-  width: 700px;
-}
 
 .modal-form {
   height: 70vh;
   padding: 20px;
   border-radius: 5px;
   text-align: center;
+  max-height: calc(100vh - 210px);
+  overflow-y: auto;
 }
 
 .close-modal {
@@ -36,16 +36,19 @@
   top: 0;
   font-size: 30px;
   border: none;
-  background: none
+  background: none;
+  color: gray;
 }
 
 .close-modal:hover {
+  color: black;
   cursor: pointer;
 }
 
 .form-title {
   font-size: 30px;
-  margin: 10px;
+  margin-bottom: 10px;
+  padding-top: 5px;
   border-bottom: 1px solid gray;
   padding-bottom: 10px;
 }
@@ -60,27 +63,29 @@
 .input {
   width: 80%;
   margin: 10px;
-  font-size: 20px;
+  font-size: 15px;
 }
 
 .form-body-field {
-  height: 50vh;
+  height: 40vh;
   overflow-y: scroll;
   resize: none;
 }
 
 .add-challenge-btn-form{
-  font-size: 15px;
-  cursor: pointer;
-  width: 180px;
-  height: 25px;
   border: none;
-  color: #444;
   border-radius: 5px;
-  box-shadow: 1px 1px 1px grey;
-  border: thin solid #888;
-  background: white;
-  &hover{
-    cursor: pointer;
-  }
+  background-color: gray;
+  color: white;
+  padding: 10px 20px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 15px;
+  margin: 15px;
+}
+
+.add-challenge-btn-form:hover{
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+  cursor: pointer;
 }

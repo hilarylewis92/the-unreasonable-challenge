@@ -6,8 +6,9 @@
 
 .quote {
   font-size: 30px;
-  margin: 30vh 0 10px 0;
+  margin: 20vh 0;
   line-height: 120%;
+  color: gray;
 }
 
 .log-in-btn {
@@ -24,5 +25,5 @@
 
 .log-in-btn:hover{
   cursor: pointer;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.9);
 }
