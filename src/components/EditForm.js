@@ -1,10 +1,9 @@
-import React from 'react';
-import Modal from 'boron/DropModal';
-
+import React from 'react'
+import Modal from 'boron/DropModal'
 
 const EditForm = React.createClass({
   showModal() {
-    this.refs.modal.show();
+    this.refs.modal.show()
   },
 
   hideModal(e){
@@ -28,6 +27,7 @@ const EditForm = React.createClass({
 
   render() {
     const { challenge, onEditTitle, onEditBody, removeChallenge } = this.props
+    
     return (
       <div>
         <img
@@ -37,7 +37,7 @@ const EditForm = React.createClass({
         />
 
         <Modal
-          className='modal-form edit-form'
+          className='edit-form'
           ref="modal">
 
           <form className='form'>
@@ -65,7 +65,7 @@ const EditForm = React.createClass({
             />
 
             <textarea
-              className='form-body-field input'
+              className='input'
               type='text'
               placeholder={challenge.body}
               onChange={onEditBody}
@@ -76,12 +76,12 @@ const EditForm = React.createClass({
               onClick={(e) => this.onEditChallengeSubmit(e)}>
               Update challenge
             </button>
-          </form>
 
+          </form>
         </Modal>
       </div>
-    );
+    )
   }
-});
+})
 
 export default EditForm

@@ -1,14 +1,18 @@
-import React, { Component } from 'react';
+import React, { Component } from 'react'
 
 export default class Search extends Component {
+  
   render() {
     return(
-      <section className="search">
+      <section
+        className="search">
+
         <input
           className='search-field'
           type='text'
           placeholder='search'
         />
+
       </section>
     )
   }

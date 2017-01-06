@@ -1,11 +1,14 @@
-import React, { Component } from 'react';
-import firebase, { signOut } from '../firebase';
+import React, { Component } from 'react'
+import firebase, { signOut } from '../firebase'
 
 export default class LogOut extends Component {
   render() {
     const { user } = this.props
+
     return(
-      <section className="Log-Out">
+      <section
+        className="Log-Out">
+
         <button
           className='log-out-btn'
           onClick={()=>signOut()}>
