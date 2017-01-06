@@ -1,14 +1,13 @@
 import React, { Component } from 'react'
-import firebase, { reference, update } from '../firebase'
+import firebase, { reference, update, remove } from '../firebase'
 import { map, extend, pick, filter } from 'lodash';
 import moment from 'moment'
 
 import LogOut from './LogOut'
 import LogIn from './LogIn'
 import Header from './Header'
-import ChallengeForm from './ChallengeForm'
 import ChallengesList from './ChallengesList'
-// import Search from './Search'
+import ChallengeForm from './ChallengeForm'
 
 export default class App extends Component {
   constructor() {
@@ -40,7 +39,6 @@ export default class App extends Component {
     ))
   }
 
-
   updateChallengeTitleState(e) {
     this.setState({
       draftChallengeTitle: e.target.value
@@ -68,30 +66,29 @@ export default class App extends Component {
 
   addNewChallenge() {
     const { user, draftChallengeTitle, draftChallengeBody, imagePreviewURL } = this.state
+
     reference.push({
       user: pick(user, 'displayName', 'email', 'uid'),
       title: draftChallengeTitle,
       body: draftChallengeBody,
       image: imagePreviewURL,
-      createdAt: moment().format('MMMM Do')
+      createdAt: moment().format('MMMM Do'),
     })
 
     this.setState({
       draftChallengeTitle: '',
       draftChallengeBody: '',
-      imagePreviewURL: ''
+      imagePreviewURL: '',
     })
   }
 
   removeChallenge(key) {
-    const { challenges } = this.state
-
-    let newChallengesList = this.state.challengesList.filter(challenge => {
-      return challenge.key !== key
-    })
-
-    this.setState({
-      challengesList: newChallengesList
+    this.state.challengesList.map(challenge => {
+      if(key === challenge.key) {
+        firebase.database().ref(`challenges/${key}`).remove()
+      } else {
+        return
+      }
     })
   }
 
@@ -101,9 +98,9 @@ export default class App extends Component {
     this.state.challengesList.filter((challenge) => {
       if (challenge.key === key) {
         let oldTitle = challenge.title
-        const newTitle = draftChallengeTitle ? draftChallengeTitle: oldTitle
-
         let oldBody = challenge.body
+
+        const newTitle = draftChallengeTitle ? draftChallengeTitle: oldTitle
         const newBody = draftChallengeBody ? draftChallengeBody: oldBody
 
         firebase.database().ref(`challenges/${key}`).update({
@@ -121,8 +118,14 @@ export default class App extends Component {
       <div className="Application">
         {user ?
         <section>
-          <Header user={user} />
-          <LogOut user={user} />
+
+          <Header
+            user={user}
+          />
+
+          <LogOut
+            user={user}
+          />
 
           <ChallengeForm
             onDraftedChallengeTitleChange={this.updateChallengeTitleState.bind(this)}
@@ -142,7 +145,11 @@ export default class App extends Component {
         </section>
 
       :<section>
-        <LogIn user={user} />
+
+        <LogIn
+          user={user}
+        />
+
       </section>
     }
     </div>

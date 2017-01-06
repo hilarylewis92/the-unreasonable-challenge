@@ -4,9 +4,8 @@ import Modal from 'boron/DropModal'
 import EditForm from './EditForm.js'
 
 const ChallengeCard = React.createClass({
-
   showModal() {
-    this.refs.modal.show();
+    this.refs.modal.show()
   },
 
   hideModal(e){
@@ -15,9 +14,11 @@ const ChallengeCard = React.createClass({
   },
 
   render() {
-    const { challenge, onEditTitle, onEditBody, editChallenge } = this.props
+    const { challenge, onEditTitle, onEditBody, editChallenge, removeChallenge } = this.props
+
     return (
       <div>
+
         <button
           className='show-single-card'
           onClick={this.showModal}>
@@ -27,7 +28,9 @@ const ChallengeCard = React.createClass({
         <Modal
           className='modal-card'
           ref="modal">
-          <li className='challenge-card-item'>
+
+          <li
+            className='challenge-card-item'>
 
             <button
               className='close-modal'
@@ -40,6 +43,7 @@ const ChallengeCard = React.createClass({
               onEditTitle={onEditTitle}
               onEditBody={onEditBody}
               editChallenge={editChallenge}
+              removeChallenge={removeChallenge}
             />
 
             <img
@@ -65,41 +69,12 @@ const ChallengeCard = React.createClass({
               className='comment-on-card'
               placeholder='write a comment...'
             />
+
           </li>
         </Modal>
       </div>
-
-    );
+    )
   }
-});
-//
-// <button
-//   className='add-challenge-btn'
-//   onClick={this.showModal}>
-//   Show card
-// </button>
-// <Modal
-//   className='model-card'
-//   ref="modal">
-//   <li className = 'challenge-elements' key={challenge.key}>
-//     <button
-//       className='remove-challenge-btn'
-//       onClick={() => removeChallenge(challenge.key)}>
-//       x
-//     </button>
-//
-//     <img className='single-challenge-image'
-//       src={challenge.image}
-//       />
-//
-//     <div className='single-challenge-title'>
-//       {challenge.title}
-//     </div>
-//
-//     <div className='single-challenge-body'>
-//       {challenge.body}
-//     </div>
-//
-//   </li>
-// </Modal>
+})
+
 export default ChallengeCard
