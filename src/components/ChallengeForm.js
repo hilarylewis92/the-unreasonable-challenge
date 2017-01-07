@@ -22,7 +22,6 @@ const ChallengeForm = React.createClass({
 
     return (
       <div>
-
         <button
           className='add-challenge-btn'
           onClick={this.showModal}>
@@ -75,7 +74,7 @@ const ChallengeForm = React.createClass({
             <button
               className='add-challenge-btn-form'
               onClick={(e) => this.onChallengeSubmit(e)}>
-              Save
+              save
             </button>
 
           </form>

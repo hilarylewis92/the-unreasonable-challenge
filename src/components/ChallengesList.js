@@ -37,7 +37,7 @@ export default class ChallengesList extends Component {
 
           <div
             className='single-challenge-body'>
-            {challenge.listBody + `...`} 
+            {challenge.listBody + ` ...`} 
           </div>
 
           <ul>

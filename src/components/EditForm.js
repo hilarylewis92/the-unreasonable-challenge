@@ -27,54 +27,54 @@ const EditForm = React.createClass({
 
   render() {
     const { challenge, onEditTitle, onEditBody, removeChallenge } = this.props
-    
+
     return (
       <div>
         <img
           className='edit-btn'
-          src={require('../images/edit-btn.png')}
+          src={require('../images/edit.png')}
           onClick={this.showModal}
         />
 
         <Modal
-          className='edit-form'
+          className='edit-modal'
           ref="modal">
 
-          <form className='form'>
+          <form className='edit-form'>
             <button
-              className='close-modal'
+              className='close-edit-modal'
               onClick={(e) => this.hideModal(e)}>
               x
             </button>
 
-            <h2 className='form-title'>
+            <h2 className='edit-form-title'>
               Edit Challenge
             </h2>
 
-            <button
-              className='remove-challenge'
-              onClick={(e) => this.onRemoveChallengeSubmit(e)}>
-              x
-            </button>
-
             <input
-              className='form-title-field input'
+              className='edit-title-field input'
               type='text'
               placeholder={challenge.title}
               onChange={onEditTitle}
             />
 
             <textarea
-              className='input'
+              className='edit-body-field input'
               type='text'
               placeholder={challenge.body}
               onChange={onEditBody}
             />
 
             <button
-              className='add-challenge-btn-form'
+              className='edit-remove-challenge'
+              onClick={(e) => this.onRemoveChallengeSubmit(e)}>
+              remove
+            </button>
+
+            <button
+              className='update-challenge-btn'
               onClick={(e) => this.onEditChallengeSubmit(e)}>
-              Update challenge
+              save
             </button>
 
           </form>

@@ -1,5 +1,14 @@
+/*#234C63 blue
+#379956 green
+#FFC85B yellow
+#EEEEEE gray*/
+
 .Application {
   font-family: 'Muli', sans-serif;
-  margin: 20px auto;
-  width: 90vw;
+  margin: auto;
+  width: 95vw;
+}
+
+*:focus {
+  outline: none;
 }

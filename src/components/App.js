@@ -119,12 +119,12 @@ export default class App extends Component {
       <div className="Application">
         {user ?
         <section>
-
-          <Header
+          
+          <LogOut
             user={user}
           />
 
-          <LogOut
+          <Header
             user={user}
           />
 
