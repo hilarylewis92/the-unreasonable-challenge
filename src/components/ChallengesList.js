@@ -18,6 +18,16 @@ export default class ChallengesList extends Component {
           className='challenge-elements'
           key={challenge.key}>
 
+          {challenge.checked ?
+            <button
+              className='checked check-list'
+              onClick={(e) => this.onCheckedSubmit(e)}>
+              &#10003;
+            </button>
+            :
+            null 
+          }
+
           <img className='single-challenge-image'
             src={challenge.image}
           />

@@ -58,9 +58,6 @@ const ChallengeCard = React.createClass({
               </button>
             }
 
-
-
-
             <EditForm
               challenge={challenge}
               onEditTitle={onEditTitle}

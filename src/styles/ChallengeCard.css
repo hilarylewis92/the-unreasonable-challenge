@@ -47,9 +47,9 @@
   position: absolute;
   font-size: 45px;
   border: none;
-  color: green;
+  color: #379956;
   font-weight: bold;
-  background: white;
+  background: none;
   top: 0;
   left: 0;
   margin: 5px 60px;
@@ -69,6 +69,10 @@
 .check-challenge:hover {
   color: black;
   cursor: pointer;
+}
+
+.check-list {
+  margin: -10px 0px;
 }
 
 .single-challenge-image-modal{
