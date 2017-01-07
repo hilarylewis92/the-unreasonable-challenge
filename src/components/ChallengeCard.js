@@ -20,7 +20,7 @@ const ChallengeCard = React.createClass({
   },
 
   render() {
-    const { challenge, onEditTitle, onEditBody, editChallenge, removeChallenge, toggleCheck } = this.props
+    const { challenge, onEditTitle, onEditBody, editChallenge, removeChallenge, toggleCheck, handleImageChange } = this.props
 
     return (
       <div>
@@ -64,6 +64,7 @@ const ChallengeCard = React.createClass({
               onEditBody={onEditBody}
               editChallenge={editChallenge}
               removeChallenge={removeChallenge}
+              handleImageChange={handleImageChange}
             />
 
             <img

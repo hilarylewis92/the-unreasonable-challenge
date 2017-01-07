@@ -10,7 +10,7 @@ var masonryOptions = {
 export default class ChallengesList extends Component {
 
   render() {
-    const{ challengesList, onEditTitle, onEditBody, editChallenge, removeChallenge, toggleCheck } = this.props
+    const{ challengesList, onEditTitle, onEditBody, editChallenge, removeChallenge, toggleCheck, handleImageChange } = this.props
 
     var singleCard = challengesList.map(challenge => {
       return (
@@ -25,7 +25,7 @@ export default class ChallengesList extends Component {
               &#10003;
             </button>
             :
-            null 
+            null
           }
 
           <img className='single-challenge-image'
@@ -49,14 +49,15 @@ export default class ChallengesList extends Component {
 
           <ul>
 
-             <ChallengeCard
-               challenge={challenge}
-               onEditTitle={onEditTitle}
-               onEditBody={onEditBody}
-               editChallenge={editChallenge}
-               removeChallenge={removeChallenge}
-               toggleCheck={toggleCheck}
-              />
+           <ChallengeCard
+             challenge={challenge}
+             onEditTitle={onEditTitle}
+             onEditBody={onEditBody}
+             editChallenge={editChallenge}
+             removeChallenge={removeChallenge}
+             toggleCheck={toggleCheck}
+             handleImageChange={handleImageChange}
+            />
 
           </ul>
         </li>
