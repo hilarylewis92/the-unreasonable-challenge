@@ -30,11 +30,12 @@ const EditForm = React.createClass({
 
     return (
       <div>
-        <img
+
+        <button
           className='edit-btn'
-          src={require('../images/edit.png')}
-          onClick={this.showModal}
-        />
+          onClick={this.showModal}>
+          &#9998;
+        </button>
 
         <Modal
           className='edit-modal'
@@ -44,7 +45,7 @@ const EditForm = React.createClass({
             <button
               className='close-edit-modal'
               onClick={(e) => this.hideModal(e)}>
-              x
+              &#10005;
             </button>
 
             <h2 className='edit-form-title'>

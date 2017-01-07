@@ -8,15 +8,25 @@ var masonryOptions = {
 }
 
 export default class ChallengesList extends Component {
-  
+
   render() {
-    const{ challengesList, onEditTitle, onEditBody, editChallenge, removeChallenge } = this.props
+    const{ challengesList, onEditTitle, onEditBody, editChallenge, removeChallenge, toggleCheck } = this.props
 
     var singleCard = challengesList.map(challenge => {
       return (
         <li
           className='challenge-elements'
           key={challenge.key}>
+
+          {challenge.checked ?
+            <button
+              className='checked check-list'
+              onClick={(e) => this.onCheckedSubmit(e)}>
+              &#10003;
+            </button>
+            :
+            null 
+          }
 
           <img className='single-challenge-image'
             src={challenge.image}
@@ -45,6 +55,7 @@ export default class ChallengesList extends Component {
                onEditBody={onEditBody}
                editChallenge={editChallenge}
                removeChallenge={removeChallenge}
+               toggleCheck={toggleCheck}
               />
 
           </ul>
