@@ -64,7 +64,6 @@ const ChallengeCard = React.createClass({
               onEditBody={onEditBody}
               editChallenge={editChallenge}
               removeChallenge={removeChallenge}
-              toggleCheck={toggleCheck}
             />
 
             <img
