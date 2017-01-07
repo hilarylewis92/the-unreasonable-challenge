@@ -123,6 +123,11 @@ export default class App extends Component {
           image: newImage,
         })
       }
+      this.setState({
+        draftChallengeTitle: '',
+        draftChallengeBody: '',
+        imagePreviewURL: '',
+      })
     })
   }
 
