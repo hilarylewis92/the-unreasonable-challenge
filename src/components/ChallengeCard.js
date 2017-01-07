@@ -43,12 +43,23 @@ const ChallengeCard = React.createClass({
               onClick={(e) => this.hideModal(e)}>
               &#10005;
             </button>
-            
-            <button
-              className='check-challenge'
-              onClick={(e) => this.onCheckedSubmit(e)}>
-              &#10003;
-            </button>
+
+            {challenge.checked ?
+              <button
+                className='checked'
+                onClick={(e) => this.onCheckedSubmit(e)}>
+                &#10003;
+              </button>
+              :
+              <button
+                className='check-challenge'
+                onClick={(e) => this.onCheckedSubmit(e)}>
+                &#10003;
+              </button>
+            }
+
+
+
 
             <EditForm
               challenge={challenge}

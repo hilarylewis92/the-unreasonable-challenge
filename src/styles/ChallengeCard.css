@@ -43,15 +43,27 @@
   color: black;
 }
 
+.checked {
+  position: absolute;
+  font-size: 45px;
+  border: none;
+  color: green;
+  font-weight: bold;
+  background: white;
+  top: 0;
+  left: 0;
+  margin: 5px 60px;
+}
+
 .check-challenge {
   position: absolute;
-  font-size: 40px;
+  font-size: 45px;
   border: none;
   color: gray;
   background: white;
   top: 0;
   left: 0;
-  margin: 5px 65px;
+  margin: 5px 60px;
 }
 
 .check-challenge:hover {
