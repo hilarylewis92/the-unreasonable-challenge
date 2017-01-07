@@ -13,8 +13,14 @@ const ChallengeCard = React.createClass({
     this.refs.modal.hide()
   },
 
+  onCheckedSubmit(e) {
+    const { key } = this.props.challenge
+    e.preventDefault()
+    this.props.toggleCheck(key)
+  },
+
   render() {
-    const { challenge, onEditTitle, onEditBody, editChallenge, removeChallenge } = this.props
+    const { challenge, onEditTitle, onEditBody, editChallenge, removeChallenge, toggleCheck } = this.props
 
     return (
       <div>
@@ -35,7 +41,13 @@ const ChallengeCard = React.createClass({
             <button
               className='close-modal'
               onClick={(e) => this.hideModal(e)}>
-              x
+              &#10005;
+            </button>
+            
+            <button
+              className='check-challenge'
+              onClick={(e) => this.onCheckedSubmit(e)}>
+              &#10003;
             </button>
 
             <EditForm
@@ -44,6 +56,7 @@ const ChallengeCard = React.createClass({
               onEditBody={onEditBody}
               editChallenge={editChallenge}
               removeChallenge={removeChallenge}
+              toggleCheck={toggleCheck}
             />
 
             <img
@@ -72,7 +85,7 @@ const ChallengeCard = React.createClass({
   }
 })
 
-// 
+//
 // <textarea
 //   className='comment-on-card'
 //   placeholder='write a comment...'

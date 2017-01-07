@@ -25,16 +25,23 @@ const EditForm = React.createClass({
     this.hideModal(e)
   },
 
+  onCheckedSubmit(e) {
+    const { key } = this.props.challenge
+    e.preventDefault()
+    this.props.toggleCheck(key)
+  },
+
   render() {
     const { challenge, onEditTitle, onEditBody, removeChallenge } = this.props
 
     return (
       <div>
-        <img
+
+        <button
           className='edit-btn'
-          src={require('../images/edit.png')}
-          onClick={this.showModal}
-        />
+          onClick={this.showModal}>
+          &#9998;
+        </button>
 
         <Modal
           className='edit-modal'
@@ -44,7 +51,13 @@ const EditForm = React.createClass({
             <button
               className='close-edit-modal'
               onClick={(e) => this.hideModal(e)}>
-              x
+              &#10005;
+            </button>
+
+            <button
+              className='check-challenge'
+              onClick={(e) => this.onCheckedSubmit(e)}>
+              &#10003;
             </button>
 
             <h2 className='edit-form-title'>

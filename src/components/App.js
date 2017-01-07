@@ -71,6 +71,7 @@ export default class App extends Component {
       user: pick(user, 'displayName', 'email', 'uid'),
       title: draftChallengeTitle,
       body: draftChallengeBody,
+      checked: false,
       listBody: draftChallengeBody.slice(1, 100),
       image: imagePreviewURL,
       createdAt: moment().format('MMMM Do'),
@@ -89,6 +90,16 @@ export default class App extends Component {
         firebase.database().ref(`challenges/${key}`).remove()
       } else {
         return
+      }
+    })
+  }
+
+  toggleCheck(key) {
+    this.state.challengesList.filter((challenge) => {
+      if(key === challenge.key) {
+        firebase.database().ref(`challenges/${key}`).update({
+          checked: !challenge.checked,
+        })
       }
     })
   }
@@ -119,7 +130,7 @@ export default class App extends Component {
       <div className="Application">
         {user ?
         <section>
-          
+
           <LogOut
             user={user}
           />
@@ -141,6 +152,7 @@ export default class App extends Component {
             onEditTitle={this.updateChallengeTitleState.bind(this)}
             onEditBody={this.updateChallengeBodyState.bind(this)}
             editChallenge={this.editChallenge.bind(this)}
+            toggleCheck={this.toggleCheck.bind(this)}
           />
 
         </section>

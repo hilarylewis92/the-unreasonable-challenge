@@ -30,10 +30,33 @@
 
 .edit-btn {
   position: absolute;
+  font-size: 40px;
+  border: none;
+  color: gray;
+  background: white;
   top: 0;
   right: 0;
-  height: 30px;
-  margin: 9px 25px;
+  margin: 0px 20px;
+}
+
+.edit-btn:hover {
+  color: black;
+}
+
+.check-challenge {
+  position: absolute;
+  font-size: 40px;
+  border: none;
+  color: gray;
+  background: white;
+  top: 0;
+  left: 0;
+  margin: 5px 65px;
+}
+
+.check-challenge:hover {
+  color: black;
+  cursor: pointer;
 }
 
 .single-challenge-image-modal{

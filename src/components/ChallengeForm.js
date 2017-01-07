@@ -37,7 +37,7 @@ const ChallengeForm = React.createClass({
             <button
               className='close-modal'
               onClick={(e) => this.hideModal(e)}>
-              x
+              &#10005;
             </button>
 
             <h2
@@ -49,7 +49,7 @@ const ChallengeForm = React.createClass({
               className='photo-camera'
               src={require('../images/camera.png')}
             />
-          
+
             <input
               className='add-image-btn'
               type='file'
