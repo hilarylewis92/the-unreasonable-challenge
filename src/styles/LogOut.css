@@ -1,29 +1,32 @@
 .Log-Out {
-  font-size: 15px;
-  position: absolute;
-  left: 0;
-  top: 0;
-  margin: 20px 90px;
+  font-size: 13px;
+  margin: auto;
+  text-align: center;
 }
 
 .log-out-btn {
+  float: left;
+  display: absolute;
   border: none;
   border-radius: 5px;
-  background-color: red;
+  background-color: #FFC85B;
   color: white;
-  padding: 5px 12px;
+  padding: 10px;
   text-align: center;
   text-decoration: none;
   display: inline-block;
-  font-size: 15px;
-  margin-bottom: 10px;
+  font-size: 13px;
+  margin: 25px 0  0 10px ;
 }
 
 .log-out-btn:hover{
   cursor: pointer;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.9);
 }
 
 .user-display {
+  margin: 10px;
+  display: inline-block;
   color: gray;
+  margin: 5px;
 }

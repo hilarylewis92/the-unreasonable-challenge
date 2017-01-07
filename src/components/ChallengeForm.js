@@ -22,7 +22,6 @@ const ChallengeForm = React.createClass({
 
     return (
       <div>
-
         <button
           className='add-challenge-btn'
           onClick={this.showModal}>
@@ -48,10 +47,11 @@ const ChallengeForm = React.createClass({
 
             <img
               className='photo-camera'
-              src={require('../images/photo-camera.png')}
+              src={require('../images/camera.png')}
             />
-
+          
             <input
+              className='add-image-btn'
               type='file'
               name='pic'
               accept='image/*'
@@ -75,7 +75,7 @@ const ChallengeForm = React.createClass({
             <button
               className='add-challenge-btn-form'
               onClick={(e) => this.onChallengeSubmit(e)}>
-              Save
+              save
             </button>
 
           </form>

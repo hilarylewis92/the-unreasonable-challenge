@@ -1,9 +1,10 @@
 .add-challenge-btn {
   font-size: 30px;
   position: fixed;
+  z-index: 10000;
   right: 0;
   bottom: 0;
-  margin: 40px 40px;
+  margin: 20px;
   cursor: pointer;
   width: 50px;
   height: 50px;
@@ -14,19 +15,18 @@
   color: gray;
 }
 
-.add-challenge-btn:hover{
+.add-challenge-btn:hover {
+  border: thin solid black;
   color: black;
   cursor: pointer;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.9);
 }
 
-
 .modal-form {
-  height: 70vh;
-  padding: 20px;
+  padding: 10px;
   border-radius: 5px;
   text-align: center;
-  max-height: calc(100vh - 210px);
+  height: 90vh;
   overflow-y: auto;
 }
 
@@ -34,7 +34,8 @@
   position: absolute;
   right: 0;
   top: 0;
-  font-size: 30px;
+  margin: 0 30px;
+  font-size: 40px;
   border: none;
   background: none;
   color: gray;
@@ -45,29 +46,45 @@
   cursor: pointer;
 }
 
-.form-title {
-  font-size: 30px;
-  margin-bottom: 10px;
-  padding-top: 5px;
-  border-bottom: 1px solid gray;
-  padding-bottom: 10px;
+.edit-btn {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 30px;
+  padding: 10px 10px;
+}
+
+.edit-btn:hover {
+  cursor: pointer;
 }
 
 .photo-camera {
-  height: 20px;
-  width: 30px;
-  padding-right: 10px;
-  padding-top: 10px;
+  height: 50px;
+  display: block;
+  margin: auto;
+  padding: 10px;
+}
+
+.add-image-btn {
+  margin: auto;
+}
+
+.form-title {
+  font-size: 30px;
+  margin-bottom: 10px;
+  padding: 10px 0;
+  border-bottom: 1px solid gray;
 }
 
 .input {
-  width: 80%;
+  width: 90%;
   margin: 10px;
   font-size: 15px;
+  padding: 5px;
 }
 
 .form-body-field {
-  height: 40vh;
+  height: 50vh;
   overflow-y: scroll;
   resize: none;
 }
@@ -75,17 +92,18 @@
 .add-challenge-btn-form{
   border: none;
   border-radius: 5px;
-  background-color: gray;
+  background-color: #379956;
   color: white;
-  padding: 10px 20px;
+  width: 90px;
+  padding: 10px;
   text-align: center;
   text-decoration: none;
   display: inline-block;
-  font-size: 15px;
-  margin: 15px;
+  font-size: 13px;
+  margin: 15px 0;
 }
 
 .add-challenge-btn-form:hover{
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.9);
   cursor: pointer;
 }

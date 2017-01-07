@@ -1,8 +1,35 @@
-.ChallengesList {
+.challenge-elements {
+  width: 32%;
   text-align: center;
+  margin: auto;
+  font-size: 18px;
+  color: gray;
+  line-height: 130%;
 }
 
-.my-gallery-class {
-  width: 90vw;
+.challenge-elements:hover {
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.9);
+  border-radius: 5px;
+}
+
+.single-challenge-image {
+  margin: 15px 0;
+  width: 90%;
+  border-radius: 5px;
+}
+
+.single-challenge-title {
+  font-size: 25px;
+  margin: 10px 0;
+}
+
+.author-date {
+  font-size: 13px;
+  margin: 5px 0;
+}
+
+.single-challenge-body {
+  width: 90%;
   margin: auto;
+  text-align: left;
 }

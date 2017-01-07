@@ -22,7 +22,7 @@ const ChallengeCard = React.createClass({
         <button
           className='show-single-card'
           onClick={this.showModal}>
-          View Challenge
+          show challenge
         </button>
 
         <Modal
@@ -65,11 +65,6 @@ const ChallengeCard = React.createClass({
               {challenge.body}
             </div>
 
-            <textarea
-              className='comment-on-card'
-              placeholder='write a comment...'
-            />
-
           </li>
         </Modal>
       </div>
@@ -77,4 +72,9 @@ const ChallengeCard = React.createClass({
   }
 })
 
+// 
+// <textarea
+//   className='comment-on-card'
+//   placeholder='write a comment...'
+// />
 export default ChallengeCard

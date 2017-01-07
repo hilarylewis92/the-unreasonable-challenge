@@ -8,6 +8,7 @@ var masonryOptions = {
 }
 
 export default class ChallengesList extends Component {
+  
   render() {
     const{ challengesList, onEditTitle, onEditBody, editChallenge, removeChallenge } = this.props
 
@@ -33,7 +34,7 @@ export default class ChallengesList extends Component {
 
           <div
             className='single-challenge-body'>
-            {challenge.body}
+            {challenge.listBody + ` ...`}
           </div>
 
           <ul>

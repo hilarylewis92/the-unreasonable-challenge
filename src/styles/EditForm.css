@@ -1,5 +1,54 @@
-.edit-form {
-  max-height: calc(100vh - 210px);
+.edit-modal {
+  height: 100%;
+  border-radius: 5px;
   overflow-y: auto;
+}
+
+.close-edit-modal {
   position: absolute;
+  right: 0;
+  top: 0;
+  font-size: 30px;
+  border: none;
+  background: none;
+  color: gray;
+}
+
+.edit-form-title {
+  font-size: 30px;
+  margin-bottom: 10px;
+  padding: 10px 0;
+  border-bottom: 1px solid gray;
+}
+
+.edit-body-field {
+  height: 50vh;
+  overflow-y: scroll;
+  resize: none;
+}
+
+.update-challenge-btn, .edit-remove-challenge {
+  border: none;
+  border-radius: 5px;
+  color: white;
+  width: 90px;
+  padding: 10px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 13px;
+  margin: 15px 10px;
+}
+
+.edit-remove-challenge {
+  background-color: #FFC85B;
+}
+
+.update-challenge-btn {
+  background-color: #379956;
+}
+
+.update-challenge-btn:hover, .edit-remove-challenge:hover {
+  cursor: pointer;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.9);
 }

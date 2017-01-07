@@ -71,6 +71,7 @@ export default class App extends Component {
       user: pick(user, 'displayName', 'email', 'uid'),
       title: draftChallengeTitle,
       body: draftChallengeBody,
+      listBody: draftChallengeBody.slice(1, 100),
       image: imagePreviewURL,
       createdAt: moment().format('MMMM Do'),
     })
@@ -118,12 +119,12 @@ export default class App extends Component {
       <div className="Application">
         {user ?
         <section>
-
-          <Header
+          
+          <LogOut
             user={user}
           />
 
-          <LogOut
+          <Header
             user={user}
           />
 
