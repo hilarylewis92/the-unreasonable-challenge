@@ -71,6 +71,7 @@ export default class App extends Component {
       user: pick(user, 'displayName', 'email', 'uid'),
       title: draftChallengeTitle,
       body: draftChallengeBody,
+      listBody: draftChallengeBody.slice(1, 100),
       image: imagePreviewURL,
       createdAt: moment().format('MMMM Do'),
     })
