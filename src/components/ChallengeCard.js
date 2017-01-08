@@ -1,7 +1,7 @@
 import React from 'react'
 import Modal from 'boron/DropModal'
 
-import EditForm from './EditForm.js'
+import EditFormModal from './EditFormModal.js'
 
 const ChallengeCard = React.createClass({
   showModal() {
@@ -58,17 +58,6 @@ const ChallengeCard = React.createClass({
               </button>
             }
 
-            <EditForm
-              challenge={challenge}
-              editChallenge={editChallenge}
-              removeChallenge={removeChallenge}
-              handleImageChange={handleImageChange}
-              onEditTitle={onEditTitle}
-              draftChallengeTitle={draftChallengeTitle}
-              onEditBody={onEditBody}
-              draftChallengeBody={draftChallengeBody}
-            />
-
             <img
               className='single-challenge-image-modal'
               src={challenge.image}
@@ -90,14 +79,21 @@ const ChallengeCard = React.createClass({
 
           </li>
         </Modal>
+
+        <EditFormModal
+          challenge={challenge}
+          editChallenge={editChallenge}
+          removeChallenge={removeChallenge}
+          handleImageChange={handleImageChange}
+          onEditTitle={onEditTitle}
+          draftChallengeTitle={draftChallengeTitle}
+          onEditBody={onEditBody}
+          draftChallengeBody={draftChallengeBody}
+          cardHideModal={(e) => this.hideModal(e)}
+        />
       </div>
     )
   }
 })
 
-//
-// <textarea
-//   className='comment-on-card'
-//   placeholder='write a comment...'
-// />
 export default ChallengeCard

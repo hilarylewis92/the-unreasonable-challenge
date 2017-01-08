@@ -1,48 +1,71 @@
 import React from 'react'
-import Modal from 'boron/DropModal'
-
-import Form from './Form.js'
 
 const EditForm = React.createClass({
-  showModal() {
-    this.refs.modal.show()
+  onEditChallengeSubmit(e) {
+    const { key } = this.props.challenge
+    e.preventDefault()
+    this.props.editChallenge(key)
+    this.props.hideModal(e)
   },
 
-  hideModal(e){
+  onRemoveChallengeSubmit(e) {
+    const { key } = this.props.challenge
     e.preventDefault()
-    this.refs.modal.hide()
+    this.props.removeChallenge(key)
+    this.props.hideModal(e)
   },
 
   render() {
-    const { challenge, onEditTitle, onEditBody, removeChallenge, handleImageChange, draftChallengeTitle, draftChallengeBody, editChallenge } = this.props
+    const { challenge, onEditTitle, onEditBody, removeChallenge, handleImageChange, draftChallengeTitle, draftChallengeBody } = this.props
 
     return (
-      <div>
+      <form className='edit-form'>
 
         <button
-          className='edit-btn'
-          onClick={this.showModal}>
-          &#9998;
+          className='close-edit-modal'
+          onClick={(e) => this.hideModal(e)}>
+          &#10005;
         </button>
 
-        <Modal
-          className='edit-modal'
-          ref="modal">
+        <h2 className='edit-form-title'>
+          Edit Challenge
+        </h2>
 
-          <Form
-            hideModal={(e) => this.hideModal(e)}
-            challenge={challenge}
-            handleImageChange={handleImageChange}
-            onEditTitle={onEditTitle}
-            draftChallengeTitle={draftChallengeTitle}
-            onEditBody={onEditBody}
-            draftChallengeBody={draftChallengeBody}
-            removeChallenge={removeChallenge}
-            editChallenge={editChallenge}
-          />
+        <input
+          className='add-image-btn'
+          type='file'
+          name='pic'
+          accept='image/*'
+          onChange={handleImageChange}
+        />
 
-        </Modal>
-      </div>
+        <input
+          className='edit-title-field input'
+          type='text'
+          value={draftChallengeTitle || challenge.title}
+          onChange={onEditTitle}
+        />
+
+        <textarea
+          className='edit-body-field input'
+          type='text'
+          value={draftChallengeBody || challenge.body}
+          onChange={onEditBody}
+        />
+
+        <button
+          className='edit-remove-challenge'
+          onClick={(e) => this.onRemoveChallengeSubmit(e)}>
+          remove
+        </button>
+
+        <button
+          className='update-challenge-btn'
+          onClick={(e) => this.onEditChallengeSubmit(e)}>
+          save
+        </button>
+
+      </form>
     )
   }
 })
