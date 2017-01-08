@@ -105,26 +105,34 @@ export default class App extends Component {
   }
 
   editChallenge (key) {
-    const { draftChallengeTitle, draftChallengeBody } = this.state
+    const { draftChallengeTitle, draftChallengeBody, imagePreviewURL } = this.state
 
     this.state.challengesList.filter((challenge) => {
       if (challenge.key === key) {
         let oldTitle = challenge.title
         let oldBody = challenge.body
+        let oldImage = challenge.image
 
         const newTitle = draftChallengeTitle ? draftChallengeTitle: oldTitle
         const newBody = draftChallengeBody ? draftChallengeBody: oldBody
+        const newImage = imagePreviewURL ? imagePreviewURL: oldImage
 
         firebase.database().ref(`challenges/${key}`).update({
           title: newTitle,
           body: newBody,
+          image: newImage,
         })
       }
+      this.setState({
+        draftChallengeTitle: '',
+        draftChallengeBody: '',
+        imagePreviewURL: '',
+      })
     })
   }
 
   render() {
-    const { user, challengesList, draftChallengeTitle } = this.state
+    const { user, challengesList, draftChallengeTitle, draftChallengeBody } = this.state
 
     return (
       <div className="Application">
@@ -151,8 +159,11 @@ export default class App extends Component {
             removeChallenge={this.removeChallenge.bind(this)}
             onEditTitle={this.updateChallengeTitleState.bind(this)}
             onEditBody={this.updateChallengeBodyState.bind(this)}
+            handleImageChange={this.updateChallengeImageState.bind(this)}
             editChallenge={this.editChallenge.bind(this)}
             toggleCheck={this.toggleCheck.bind(this)}
+            draftChallengeTitle={draftChallengeTitle}
+            draftChallengeBody={draftChallengeBody}
           />
 
         </section>

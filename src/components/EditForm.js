@@ -26,7 +26,7 @@ const EditForm = React.createClass({
   },
 
   render() {
-    const { challenge, onEditTitle, onEditBody, removeChallenge } = this.props
+    const { challenge, onEditTitle, onEditBody, removeChallenge, handleImageChange, draftChallengeTitle, draftChallengeBody } = this.props
 
     return (
       <div>
@@ -42,6 +42,7 @@ const EditForm = React.createClass({
           ref="modal">
 
           <form className='edit-form'>
+
             <button
               className='close-edit-modal'
               onClick={(e) => this.hideModal(e)}>
@@ -53,16 +54,24 @@ const EditForm = React.createClass({
             </h2>
 
             <input
+              className='add-image-btn'
+              type='file'
+              name='pic'
+              accept='image/*'
+              onChange={handleImageChange}
+            />
+
+            <input
               className='edit-title-field input'
               type='text'
-              placeholder={challenge.title}
+              value={draftChallengeTitle || challenge.title}
               onChange={onEditTitle}
             />
 
             <textarea
               className='edit-body-field input'
               type='text'
-              placeholder={challenge.body}
+              value={draftChallengeBody || challenge.body}
               onChange={onEditBody}
             />
 
