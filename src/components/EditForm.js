@@ -26,7 +26,7 @@ const EditForm = React.createClass({
   },
 
   render() {
-    const { challenge, onEditTitle, onEditBody, removeChallenge, handleImageChange } = this.props
+    const { challenge, onEditTitle, onEditBody, removeChallenge, handleImageChange, draftChallengeTitle, draftChallengeBody } = this.props
 
     return (
       <div>
@@ -64,14 +64,14 @@ const EditForm = React.createClass({
             <input
               className='edit-title-field input'
               type='text'
-              placeholder={challenge.title}
+              value={draftChallengeTitle || challenge.title}
               onChange={onEditTitle}
             />
 
             <textarea
               className='edit-body-field input'
               type='text'
-              placeholder={challenge.body}
+              value={draftChallengeBody || challenge.body}
               onChange={onEditBody}
             />
 

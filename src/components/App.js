@@ -132,7 +132,7 @@ export default class App extends Component {
   }
 
   render() {
-    const { user, challengesList, draftChallengeTitle } = this.state
+    const { user, challengesList, draftChallengeTitle, draftChallengeBody } = this.state
 
     return (
       <div className="Application">
@@ -162,6 +162,8 @@ export default class App extends Component {
             handleImageChange={this.updateChallengeImageState.bind(this)}
             editChallenge={this.editChallenge.bind(this)}
             toggleCheck={this.toggleCheck.bind(this)}
+            draftChallengeTitle={draftChallengeTitle}
+            draftChallengeBody={draftChallengeBody}
           />
 
         </section>
