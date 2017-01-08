@@ -7,7 +7,7 @@ import LogOut from './LogOut'
 import LogIn from './LogIn'
 import Header from './Header'
 import ChallengesList from './ChallengesList'
-import ChallengeForm from './ChallengeForm'
+import ChallengeFormModal from './ChallengeFormModal'
 
 export default class App extends Component {
   constructor() {
@@ -72,7 +72,6 @@ export default class App extends Component {
       title: draftChallengeTitle,
       body: draftChallengeBody,
       checked: false,
-      listBody: draftChallengeBody.slice(1, 100),
       image: imagePreviewURL,
       createdAt: moment().format('MMMM Do'),
     })
@@ -147,7 +146,7 @@ export default class App extends Component {
             user={user}
           />
 
-          <ChallengeForm
+        <ChallengeFormModal
             onDraftedChallengeTitleChange={this.updateChallengeTitleState.bind(this)}
             onDraftedChallengeBodyChange={this.updateChallengeBodyState.bind(this)}
             handleImageChange={this.updateChallengeImageState.bind(this)}

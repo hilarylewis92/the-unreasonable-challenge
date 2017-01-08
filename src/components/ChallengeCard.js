@@ -1,7 +1,9 @@
 import React from 'react'
 import Modal from 'boron/DropModal'
 
-import EditForm from './EditForm.js'
+import CompleteChallenge from './CompleteChallenge'
+import EditFormModal from './EditFormModal'
+import CardDisplay from './CardDisplay'
 
 const ChallengeCard = React.createClass({
   showModal() {
@@ -44,47 +46,20 @@ const ChallengeCard = React.createClass({
               &#10005;
             </button>
 
-            {challenge.checked ?
-              <button
-                className='checked'
-                onClick={(e) => this.onCheckedSubmit(e)}>
-                &#10003;
-              </button>
-              :
-              <button
-                className='check-challenge'
-                onClick={(e) => this.onCheckedSubmit(e)}>
-                &#10003;
-              </button>
-            }
-
-            <EditForm
+            <CardDisplay
               challenge={challenge}
-              onEditTitle={onEditTitle}
-              onEditBody={onEditBody}
               editChallenge={editChallenge}
               removeChallenge={removeChallenge}
               handleImageChange={handleImageChange}
+              onEditTitle={onEditTitle}
               draftChallengeTitle={draftChallengeTitle}
+              onEditBody={onEditBody}
               draftChallengeBody={draftChallengeBody}
-            />
-
-            <img
-              className='single-challenge-image-modal'
-              src={challenge.image}
+              toggleCheck={toggleCheck}
             />
 
             <div
-              className='single-challenge-title-modal'>
-              {challenge.title}
-            </div>
-
-            <div className='author-date'>
-              ~ {challenge.user.displayName} on {challenge.createdAt} ~
-            </div>
-
-            <div
-              className='single-challenge-body-modal'>
+              className='single-challenge-body'>
               {challenge.body}
             </div>
 
@@ -95,9 +70,4 @@ const ChallengeCard = React.createClass({
   }
 })
 
-//
-// <textarea
-//   className='comment-on-card'
-//   placeholder='write a comment...'
-// />
 export default ChallengeCard
