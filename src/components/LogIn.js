@@ -17,6 +17,7 @@ export default class LogIn extends Component {
 
         <button
           className='log-in-btn'
+          aria-label='sign in button'
           onClick={() => signIn()}>
           Sign in with Google
         </button>

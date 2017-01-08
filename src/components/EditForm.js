@@ -15,27 +15,33 @@ const EditForm = React.createClass({
     if(confirm('Are you sure you want to delete this challenge?')) {
       this.props.removeChallenge(key)
       this.props.hideModal(e)
-    } 
+    }
   },
 
   render() {
     const { challenge, onEditTitle, onEditBody, removeChallenge, handleImageChange, draftChallengeTitle, draftChallengeBody } = this.props
 
     return (
-      <form className='edit-form'>
+      <form
+        className='edit-form'
+        aria-label='edit challenge form'>
 
         <button
           className='close-edit-modal'
+          aria-label='close edit modal'
           onClick={(e) => this.props.hideModal(e)}>
           &#10005;
         </button>
 
-        <h2 className='edit-form-title'>
+        <h2
+          className='edit-form-title'
+          aria-label='edit form title'>
           Edit Challenge
         </h2>
 
         <input
           className='add-image-btn'
+          aria-label='edit image'
           type='file'
           name='pic'
           accept='image/*'
@@ -44,6 +50,7 @@ const EditForm = React.createClass({
 
         <input
           className='edit-title-field input'
+          aria-label='edit title'
           type='text'
           value={draftChallengeTitle || challenge.title}
           onChange={onEditTitle}
@@ -51,6 +58,7 @@ const EditForm = React.createClass({
 
         <textarea
           className='edit-body-field input'
+          aria-label='edit body'
           type='text'
           value={draftChallengeBody || challenge.body}
           onChange={onEditBody}
@@ -58,12 +66,14 @@ const EditForm = React.createClass({
 
         <button
           className='edit-remove-challenge'
+          aria-label='remove challenge'
           onClick={(e) => this.onRemoveChallengeSubmit(e)}>
           remove
         </button>
 
         <button
           className='update-challenge-btn'
+          aria-label='save edit'
           onClick={(e) => this.onEditChallengeSubmit(e)}>
           save
         </button>

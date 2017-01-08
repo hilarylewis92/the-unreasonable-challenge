@@ -21,6 +21,7 @@ const EditFormModal = React.createClass({
 
         <button
           className='edit-btn'
+          aria-label='edit challenge button'
           onClick={(e) => this.showModal(e)}>
           &#9998;
         </button>
