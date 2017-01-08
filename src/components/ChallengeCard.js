@@ -60,12 +60,12 @@ const ChallengeCard = React.createClass({
 
             <EditForm
               challenge={challenge}
-              onEditTitle={onEditTitle}
-              onEditBody={onEditBody}
               editChallenge={editChallenge}
               removeChallenge={removeChallenge}
               handleImageChange={handleImageChange}
+              onEditTitle={onEditTitle}
               draftChallengeTitle={draftChallengeTitle}
+              onEditBody={onEditBody}
               draftChallengeBody={draftChallengeBody}
             />
 

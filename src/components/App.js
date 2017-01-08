@@ -72,7 +72,6 @@ export default class App extends Component {
       title: draftChallengeTitle,
       body: draftChallengeBody,
       checked: false,
-      listBody: draftChallengeBody.slice(1, 100),
       image: imagePreviewURL,
       createdAt: moment().format('MMMM Do'),
     })

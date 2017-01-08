@@ -44,7 +44,7 @@ export default class ChallengesList extends Component {
 
           <div
             className='single-challenge-body'>
-            {challenge.listBody + ` ...`}
+            {challenge.body.slice(0, 100) + ` ...`}
           </div>
 
           <ul>
