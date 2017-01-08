@@ -4,6 +4,7 @@ import Masonry from 'react-masonry-component'
 import ChallengeCard from './ChallengeCard'
 import EditFormModal from './EditFormModal'
 import CompleteChallenge from './CompleteChallenge'
+import CardDisplay from './CardDisplay'
 
 var masonryOptions = {
   transitionDuration: 0
@@ -20,24 +21,17 @@ export default class ChallengesList extends Component {
           className='challenge-elements'
           key={challenge.key}>
 
-          <img className='single-challenge-image'
-            src={challenge.image}
+          <CardDisplay
+            challenge={challenge}
+            editChallenge={editChallenge}
+            removeChallenge={removeChallenge}
+            handleImageChange={handleImageChange}
+            onEditTitle={onEditTitle}
+            draftChallengeTitle={draftChallengeTitle}
+            onEditBody={onEditBody}
+            draftChallengeBody={draftChallengeBody}
+            toggleCheck={toggleCheck}
           />
-
-          <div
-            className='single-challenge-title'>
-            {challenge.title}
-          </div>
-
-          <div
-            className='author-date'>
-            ~ {challenge.user.displayName} on {challenge.createdAt} ~
-          </div>
-
-          <div
-            className='single-challenge-body'>
-            {challenge.body.slice(0, 100) + ` ...`}
-          </div>
 
           <ul>
 
@@ -52,22 +46,6 @@ export default class ChallengesList extends Component {
              draftChallengeTitle={draftChallengeTitle}
              draftChallengeBody={draftChallengeBody}
             />
-
-            <EditFormModal
-              challenge={challenge}
-              editChallenge={editChallenge}
-              removeChallenge={removeChallenge}
-              handleImageChange={handleImageChange}
-              onEditTitle={onEditTitle}
-              draftChallengeTitle={draftChallengeTitle}
-              onEditBody={onEditBody}
-              draftChallengeBody={draftChallengeBody}
-            />
-
-          <CompleteChallenge
-            challenge={challenge}
-            toggleCheck={toggleCheck}
-          />
 
           </ul>
         </li>

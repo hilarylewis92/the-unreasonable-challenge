@@ -1,7 +1,9 @@
 import React from 'react'
 import Modal from 'boron/DropModal'
 
-import CompleteChallenge from './CompleteChallenge' 
+import CompleteChallenge from './CompleteChallenge'
+import EditFormModal from './EditFormModal'
+import CardDisplay from './CardDisplay'
 
 const ChallengeCard = React.createClass({
   showModal() {
@@ -44,29 +46,17 @@ const ChallengeCard = React.createClass({
               &#10005;
             </button>
 
-            <CompleteChallenge
+            <CardDisplay
               challenge={challenge}
+              editChallenge={editChallenge}
+              removeChallenge={removeChallenge}
+              handleImageChange={handleImageChange}
+              onEditTitle={onEditTitle}
+              draftChallengeTitle={draftChallengeTitle}
+              onEditBody={onEditBody}
+              draftChallengeBody={draftChallengeBody}
               toggleCheck={toggleCheck}
             />
-
-            <img
-              className='single-challenge-image-modal'
-              src={challenge.image}
-            />
-
-            <div
-              className='single-challenge-title-modal'>
-              {challenge.title}
-            </div>
-
-            <div className='author-date'>
-              ~ {challenge.user.displayName} on {challenge.createdAt} ~
-            </div>
-
-            <div
-              className='single-challenge-body-modal'>
-              {challenge.body}
-            </div>
 
           </li>
         </Modal>
