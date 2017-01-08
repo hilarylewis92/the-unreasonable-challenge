@@ -5,7 +5,6 @@ import EditForm from './EditForm.js'
 
 const EditFormModal = React.createClass({
   showModal(e) {
-    this.props.cardHideModal(e)
     this.refs.modal.show()
   },
 

@@ -1,7 +1,7 @@
 import React from 'react'
 import Modal from 'boron/DropModal'
 
-import EditFormModal from './EditFormModal.js'
+import CompleteChallenge from './CompleteChallenge' 
 
 const ChallengeCard = React.createClass({
   showModal() {
@@ -44,19 +44,10 @@ const ChallengeCard = React.createClass({
               &#10005;
             </button>
 
-            {challenge.checked ?
-              <button
-                className='checked'
-                onClick={(e) => this.onCheckedSubmit(e)}>
-                &#10003;
-              </button>
-              :
-              <button
-                className='check-challenge'
-                onClick={(e) => this.onCheckedSubmit(e)}>
-                &#10003;
-              </button>
-            }
+            <CompleteChallenge
+              challenge={challenge}
+              toggleCheck={toggleCheck}
+            />
 
             <img
               className='single-challenge-image-modal'
@@ -79,18 +70,6 @@ const ChallengeCard = React.createClass({
 
           </li>
         </Modal>
-
-        <EditFormModal
-          challenge={challenge}
-          editChallenge={editChallenge}
-          removeChallenge={removeChallenge}
-          handleImageChange={handleImageChange}
-          onEditTitle={onEditTitle}
-          draftChallengeTitle={draftChallengeTitle}
-          onEditBody={onEditBody}
-          draftChallengeBody={draftChallengeBody}
-          cardHideModal={(e) => this.hideModal(e)}
-        />
       </div>
     )
   }

@@ -2,6 +2,8 @@ import React, { Component } from 'react'
 import Masonry from 'react-masonry-component'
 
 import ChallengeCard from './ChallengeCard'
+import EditFormModal from './EditFormModal'
+import CompleteChallenge from './CompleteChallenge'
 
 var masonryOptions = {
   transitionDuration: 0
@@ -17,16 +19,6 @@ export default class ChallengesList extends Component {
         <li
           className='challenge-elements'
           key={challenge.key}>
-
-          {challenge.checked ?
-            <button
-              className='checked check-list'
-              onClick={(e) => this.onCheckedSubmit(e)}>
-              &#10003;
-            </button>
-            :
-            null
-          }
 
           <img className='single-challenge-image'
             src={challenge.image}
@@ -60,6 +52,22 @@ export default class ChallengesList extends Component {
              draftChallengeTitle={draftChallengeTitle}
              draftChallengeBody={draftChallengeBody}
             />
+
+            <EditFormModal
+              challenge={challenge}
+              editChallenge={editChallenge}
+              removeChallenge={removeChallenge}
+              handleImageChange={handleImageChange}
+              onEditTitle={onEditTitle}
+              draftChallengeTitle={draftChallengeTitle}
+              onEditBody={onEditBody}
+              draftChallengeBody={draftChallengeBody}
+            />
+
+          <CompleteChallenge
+            challenge={challenge}
+            toggleCheck={toggleCheck}
+          />
 
           </ul>
         </li>
