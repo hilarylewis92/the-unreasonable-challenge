@@ -11,8 +11,10 @@ const EditForm = React.createClass({
   onRemoveChallengeSubmit(e) {
     const { key } = this.props.challenge
     e.preventDefault()
-    this.props.removeChallenge(key)
-    this.props.hideModal(e)
+    if(confirm('Are you sure you want to delete this challenge?')){
+      this.props.removeChallenge(key)
+      this.props.hideModal(e)
+    } 
   },
 
   render() {
