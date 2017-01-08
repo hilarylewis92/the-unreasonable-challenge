@@ -58,6 +58,11 @@ const ChallengeCard = React.createClass({
               toggleCheck={toggleCheck}
             />
 
+            <div
+              className='single-challenge-body'>
+              {challenge.body}
+            </div>
+
           </li>
         </Modal>
       </div>

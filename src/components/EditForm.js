@@ -23,7 +23,7 @@ const EditForm = React.createClass({
 
         <button
           className='close-edit-modal'
-          onClick={(e) => this.hideModal(e)}>
+          onClick={(e) => this.props.hideModal(e)}>
           &#10005;
         </button>
 

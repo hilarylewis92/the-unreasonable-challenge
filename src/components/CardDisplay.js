@@ -40,11 +40,6 @@ const CardDisplay = React.createClass({
           ~ {challenge.user.displayName} on {challenge.createdAt} ~
         </div>
 
-        <div
-          className='single-challenge-body'>
-          {challenge.body.slice(0, 100) + ` ...`}
-        </div>
-
       </div>
     )
   }

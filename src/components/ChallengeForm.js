@@ -2,85 +2,63 @@ import React from 'react'
 import Modal from 'boron/DropModal'
 
 const ChallengeForm = React.createClass({
-  showModal() {
-    this.refs.modal.show()
-  },
-
-  hideModal(e){
-    e.preventDefault()
-    this.refs.modal.hide()
-  },
-
   onChallengeSubmit(e) {
     e.preventDefault()
     this.props.addNewChallenge()
-    this.hideModal(e)
+    this.props.hideModal(e)
   },
 
   render() {
-    const { onDraftedChallengeTitleChange, onDraftedChallengeBodyChange, handleImageChange } = this.props
+    const { onDraftedChallengeTitleChange, onDraftedChallengeBodyChange, handleImageChange, hideModal } = this.props
 
     return (
-      <div>
+      <form className='form'>
+
         <button
-          className='add-challenge-btn'
-          onClick={this.showModal}>
-          +
+          className='close-modal'
+          onClick={(e) => this.props.hideModal(e)}>
+          &#10005;
         </button>
 
-        <Modal
-          className='modal-form'
-          ref="modal">
+        <h2
+          className='form-title'>
+          New Challenge
+        </h2>
 
-          <form className='form'>
+        <img
+          className='photo-camera'
+          src={require('../images/camera.png')}
+        />
 
-            <button
-              className='close-modal'
-              onClick={(e) => this.hideModal(e)}>
-              &#10005;
-            </button>
+        <input
+          className='add-image-btn'
+          type='file'
+          name='pic'
+          accept='image/*'
+          onChange={handleImageChange}
+        />
 
-            <h2
-              className='form-title'>
-              New Challenge
-            </h2>
+        <input
+          className='form-title-field input'
+          type='text'
+          placeholder='challenge title'
+          onChange={onDraftedChallengeTitleChange}
+        />
 
-            <img
-              className='photo-camera'
-              src={require('../images/camera.png')}
-            />
+        <textarea
+          className='form-body-field input'
+          type='text'
+          placeholder='compose challenge'
+          onChange={onDraftedChallengeBodyChange}
+        />
 
-            <input
-              className='add-image-btn'
-              type='file'
-              name='pic'
-              accept='image/*'
-              onChange={handleImageChange}
-            />
+        <button
+          className='add-challenge-btn-form'
+          onClick={(e) => this.onChallengeSubmit(e)}>
+          save
+        </button>
 
-            <input
-              className='form-title-field input'
-              type='text'
-              placeholder='challenge title'
-              onChange={onDraftedChallengeTitleChange}
-            />
-
-            <textarea
-              className='form-body-field input'
-              type='text'
-              placeholder='compose challenge'
-              onChange={onDraftedChallengeBodyChange}
-            />
-
-            <button
-              className='add-challenge-btn-form'
-              onClick={(e) => this.onChallengeSubmit(e)}>
-              save
-            </button>
-
-          </form>
-        </Modal>
-      </div>
+      </form>
     )
   }
 })

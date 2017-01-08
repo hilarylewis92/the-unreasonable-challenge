@@ -32,6 +32,11 @@ export default class ChallengesList extends Component {
             draftChallengeBody={draftChallengeBody}
             toggleCheck={toggleCheck}
           />
+        
+          <div
+            className='single-challenge-body'>
+            {challenge.body.slice(0, 100) + ` ...`}
+          </div>
 
           <ul>
 
