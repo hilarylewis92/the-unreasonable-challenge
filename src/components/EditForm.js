@@ -39,14 +39,20 @@ const EditForm = React.createClass({
           Edit Challenge
         </h2>
 
-        <input
-          className='add-image-btn'
-          aria-label='edit image'
-          type='file'
-          name='pic'
-          accept='image/*'
-          onChange={handleImageChange}
-        />
+        <div>
+          <input
+            className='file inputfile'
+            aria-label='add image'
+            type='file'
+            name='file'
+            id='file'
+            accept='image/*'
+            onChange={handleImageChange}
+            />
+          <label htmlFor='file'>
+            add image
+          </label>
+        </div>
 
         <input
           className='edit-title-field input'

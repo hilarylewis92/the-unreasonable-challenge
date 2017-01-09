@@ -34,14 +34,20 @@ const ChallengeForm = React.createClass({
           src={require('../images/camera.png')}
         />
 
+      <div>
         <input
-          className='add-image-btn'
+          className='file inputfile'
           aria-label='add image'
           type='file'
-          name='pic'
+          name='file'
+          id='file'
           accept='image/*'
           onChange={handleImageChange}
-        />
+          />
+        <label htmlFor='file'>
+          add image
+        </label>
+      </div>
 
         <input
           className='form-title-field input'

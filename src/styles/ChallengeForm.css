@@ -53,8 +53,33 @@
   padding: 10px;
 }
 
-.add-image-btn {
-  margin: auto;
+.inputfile {
+	width: 0.1px;
+	height: 0.1px;
+	opacity: 0;
+	overflow: hidden;
+	position: absolute;
+	z-index: -1;
+}
+
+.inputfile + label {
+  border: none;
+  border-radius: 5px;
+  background-color: #234C63;
+  color: white;
+  width: 90px;
+  padding: 10px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 13px;
+  margin: 15px 0;
+}
+
+.inputfile:focus + label,
+.inputfile + label:hover {
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.9);
+  cursor: pointer;
 }
 
 .form-title {
