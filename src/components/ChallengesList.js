@@ -12,11 +12,20 @@ var masonryOptions = {
 
 export default class ChallengesList extends Component {
 
+
   render() {
     const{ challengesList, onEditTitle, onEditBody, editChallenge, removeChallenge, toggleCheck, handleImageChange, draftChallengeTitle, draftChallengeBody } = this.props
 
+
+
     var singleCard = challengesList.map(challenge => {
+
+      var bodyText = challenge.body.length > 100
+        ? challenge.body.slice(0, 100) + ` ...`
+        : challenge.body
+
       return (
+
         <li
           className='challenge-elements'
           key={challenge.key}>
@@ -36,11 +45,10 @@ export default class ChallengesList extends Component {
           <div
             className='single-challenge-body'
             aria-label='challenge body'>
-            {challenge.body.slice(0, 100) + ` ...`}
+            {bodyText}
           </div>
 
           <ul>
-
            <ChallengeCard
              challenge={challenge}
              onEditTitle={onEditTitle}

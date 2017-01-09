@@ -16,6 +16,8 @@ const EditFormModal = React.createClass({
   render() {
     const { challenge, onEditTitle, onEditBody, removeChallenge, handleImageChange, draftChallengeTitle, draftChallengeBody, editChallenge } = this.props
 
+    console.log(this);
+
     return (
       <div>
 

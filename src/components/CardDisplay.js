@@ -44,10 +44,22 @@ const CardDisplay = React.createClass({
           onEditBody={onEditBody}
           draftChallengeBody={draftChallengeBody}
         />
-
+      
       </div>
     )
   }
 })
 
 export default CardDisplay
+
+
+// <EditFormModal
+//   challenge={challenge}
+//   editChallenge={editChallenge}
+//   removeChallenge={removeChallenge}
+//   handleImageChange={handleImageChange}
+//   onEditTitle={onEditTitle}
+//   draftChallengeTitle={draftChallengeTitle}
+//   onEditBody={onEditBody}
+//   draftChallengeBody={draftChallengeBody}
+// />

@@ -1,10 +1,21 @@
 .challenge-elements {
-  width: 32%;
+  width: 30%;
   text-align: center;
   margin: auto;
   font-size: 18px;
   color: gray;
   line-height: 130%;
+}
+@media (max-width: 1020px) {
+  .challenge-elements {
+    width: 48%;
+  }
+}
+
+@media (max-width: 780px) {
+  .challenge-elements {
+    width: 90%;
+  }
 }
 
 .challenge-elements:hover {
