@@ -52,3 +52,10 @@
 .challenge-card-item {
   padding-bottom: 60px;
 }
+
+.complete-section {
+  height: 20px;
+  width: 95vw;
+  border: 1px solid black;
+  display: block;
+}

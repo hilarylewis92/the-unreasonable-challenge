@@ -121,8 +121,13 @@ export default class ChallengesList extends Component {
       <div
         className="ChallengesList">
 
+        <section
+          className='complete-section'>
+          complete challenges
+        </section>
+
         <Masonry
-          className={''}
+          className={'complete'}
           elementType={'ul'}
           options={masonryOptions}
           disableImagesLoaded={false}
@@ -131,8 +136,13 @@ export default class ChallengesList extends Component {
           {completedChallenge}
         </Masonry>
 
+        <section
+          className='complete-section'>
+          incomplete challenges
+        </section>
+
         <Masonry
-          className={''}
+          className={'incomplete'}
           elementType={'ul'}
           options={masonryOptions}
           disableImagesLoaded={false}
