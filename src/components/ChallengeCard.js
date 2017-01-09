@@ -42,7 +42,7 @@ const ChallengeCard = React.createClass({
             className='challenge-card-item'>
 
             <button
-              className='close-modal'
+              className='close-modal-card'
               aria-label='close challenge'
               onClick={(e) => this.hideModal(e)}>
               &#10005;

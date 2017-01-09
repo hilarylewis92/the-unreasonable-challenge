@@ -9,3 +9,15 @@
   color: gray;
   font-size: 45px;
 }
+
+
+@media (max-width: 780px) {
+  .header {
+    height: 120px;
+  }
+  .title {
+    display: block;
+    width: 100%;
+    font-size: 38px;
+  }
+}

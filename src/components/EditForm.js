@@ -19,7 +19,7 @@ const EditForm = React.createClass({
   },
 
   render() {
-    const { challenge, onEditTitle, onEditBody, removeChallenge, handleImageChange, draftChallengeTitle, draftChallengeBody } = this.props
+    const { challenge, onEditTitle, onEditBody, removeChallenge, handleImageChange, draftChallengeTitle, draftChallengeBody, imagePreviewURL } = this.props
 
     return (
       <form
@@ -39,14 +39,25 @@ const EditForm = React.createClass({
           Edit Challenge
         </h2>
 
-        <input
-          className='add-image-btn'
-          aria-label='edit image'
-          type='file'
-          name='pic'
-          accept='image/*'
-          onChange={handleImageChange}
+        <img
+          className='image-preview'
+          src={imagePreviewURL || challenge.image}
         />
+
+        <div>
+          <input
+            className='file inputfile'
+            aria-label='add image'
+            type='file'
+            name='file'
+            id='file'
+            accept='image/*'
+            onChange={handleImageChange}
+            />
+          <label htmlFor='file'>
+            new image
+          </label>
+        </div>
 
         <input
           className='edit-title-field input'

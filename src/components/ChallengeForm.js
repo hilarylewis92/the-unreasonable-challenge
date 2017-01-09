@@ -9,7 +9,11 @@ const ChallengeForm = React.createClass({
   },
 
   render() {
-    const { onDraftedChallengeTitleChange, onDraftedChallengeBodyChange, handleImageChange, hideModal } = this.props
+    const { onDraftedChallengeTitleChange, onDraftedChallengeBodyChange, handleImageChange, hideModal, imagePreviewURL } = this.props
+
+    var imagePreview = imagePreviewURL
+      ? <img className='image-preview' src={imagePreviewURL} />
+      : <img src={require('../images/camera.png')} />
 
     return (
       <form
@@ -28,20 +32,24 @@ const ChallengeForm = React.createClass({
           New Challenge
         </h2>
 
-        <img
-          className='photo-camera'
-          aria-label='camera image'
-          src={require('../images/camera.png')}
-        />
+        <div>
+          {imagePreview}
+        </div>
 
+      <div>
         <input
-          className='add-image-btn'
+          className='file inputfile'
           aria-label='add image'
           type='file'
-          name='pic'
+          name='file'
+          id='file'
           accept='image/*'
           onChange={handleImageChange}
-        />
+          />
+        <label htmlFor='file'>
+          add image
+        </label>
+      </div>
 
         <input
           className='form-title-field input'

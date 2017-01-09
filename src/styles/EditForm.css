@@ -1,6 +1,8 @@
 .edit-modal {
-  height: 100%;
+  padding: 10px;
   border-radius: 5px;
+  text-align: center;
+  height: 90vh;
   overflow-y: auto;
 }
 
@@ -8,21 +10,27 @@
   position: absolute;
   right: 0;
   top: 0;
-  font-size: 30px;
+  margin: 0 30px;
+  font-size: 40px;
   border: none;
   background: none;
   color: gray;
 }
 
+.close-edit-modal:hover {
+  color: black;
+  cursor: pointer;
+}
+
 .edit-form-title {
   font-size: 30px;
   margin-bottom: 10px;
-  padding: 10px 0;
+  padding: 15px 0;
   border-bottom: 1px solid gray;
 }
 
 .edit-body-field {
-  height: 50vh;
+  height: 30vh;
   overflow-y: scroll;
   resize: none;
 }

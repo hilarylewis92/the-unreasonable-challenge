@@ -5,8 +5,8 @@
 
 .Application {
   font-family: 'Muli', sans-serif;
-  margin: auto;
   width: 95vw;
+  padding: 30px;
 }
 
 *:focus {

@@ -18,14 +18,26 @@
 /*modal*/
 .modal-card {
   border-radius: 5px;
-  padding: 10px;
+  padding: 30px;
   line-height: 130%;
   height: 90vh;
   overflow-y: auto;
 }
 
-.close-modal {
+.close-modal-card {
   font-size: 40px;
+  position: absolute;
+  top: 0;
+  right: 0;
+  margin: -25px -20px;
+  border: none;
+  background: none;
+  color: gray;
+}
+
+.close-modal-card:hover {
+  color: black;
+  cursor: pointer;
 }
 
 .edit-btn {
@@ -52,7 +64,7 @@
   background: none;
   bottom: 0;
   right: 0;
-  margin: 5px 55px;
+  margin: 5px 50px;
 }
 
 .checked:hover {
@@ -67,7 +79,7 @@
   background: white;
   bottom: 0;
   right: 0;
-  margin: 5px 55px;
+  margin: 5px 50px;
 }
 
 .check-challenge:hover {
