@@ -46,18 +46,6 @@
   cursor: pointer;
 }
 
-.edit-btn {
-  position: absolute;
-  top: 0;
-  left: 0;
-  height: 30px;
-  padding: 10px 10px;
-}
-
-.edit-btn:hover {
-  cursor: pointer;
-}
-
 .photo-camera {
   height: 50px;
   display: block;

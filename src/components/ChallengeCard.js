@@ -61,7 +61,7 @@ const ChallengeCard = React.createClass({
             />
 
             <div
-              className='single-challenge-body'
+              className='single-challenge-body full-challenge-body'
               aria-label='challenge body'>
               {challenge.body}
             </div>

@@ -10,21 +10,6 @@ const CardDisplay = React.createClass({
 
     return (
       <div>
-        <EditFormModal
-          challenge={challenge}
-          editChallenge={editChallenge}
-          removeChallenge={removeChallenge}
-          handleImageChange={handleImageChange}
-          onEditTitle={onEditTitle}
-          draftChallengeTitle={draftChallengeTitle}
-          onEditBody={onEditBody}
-          draftChallengeBody={draftChallengeBody}
-        />
-
-        <CompleteChallenge
-          challenge={challenge}
-          toggleCheck={toggleCheck}
-        />
 
         <img
           className='single-challenge-image'
@@ -43,6 +28,22 @@ const CardDisplay = React.createClass({
           aria-label='challenge author and date'>
           ~ {challenge.user.displayName} on {challenge.createdAt} ~
         </div>
+
+        <CompleteChallenge
+          challenge={challenge}
+          toggleCheck={toggleCheck}
+        />
+
+        <EditFormModal
+          challenge={challenge}
+          editChallenge={editChallenge}
+          removeChallenge={removeChallenge}
+          handleImageChange={handleImageChange}
+          onEditTitle={onEditTitle}
+          draftChallengeTitle={draftChallengeTitle}
+          onEditBody={onEditBody}
+          draftChallengeBody={draftChallengeBody}
+        />
 
       </div>
     )
