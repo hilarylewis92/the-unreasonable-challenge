@@ -18,8 +18,10 @@ const ChallengeFormModal = React.createClass({
 
     return (
       <div>
+
         <button
           className='add-challenge-btn'
+          aria-label='add new challenge'
           onClick={this.showModal}>
           +
         </button>
@@ -35,6 +37,7 @@ const ChallengeFormModal = React.createClass({
             hideModal={(e) => this.hideModal(e)}
             addNewChallenge={addNewChallenge}
           />
+
         </Modal>
       </div>
     )

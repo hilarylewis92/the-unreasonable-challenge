@@ -12,10 +12,13 @@ const ChallengeForm = React.createClass({
     const { onDraftedChallengeTitleChange, onDraftedChallengeBodyChange, handleImageChange, hideModal } = this.props
 
     return (
-      <form className='form'>
+      <form
+        className='form'
+        aria-label='challenge form'>
 
         <button
           className='close-modal'
+          aria-label='close form'
           onClick={(e) => this.props.hideModal(e)}>
           &#10005;
         </button>
@@ -27,11 +30,13 @@ const ChallengeForm = React.createClass({
 
         <img
           className='photo-camera'
+          aria-label='camera image'
           src={require('../images/camera.png')}
         />
 
         <input
           className='add-image-btn'
+          aria-label='add image'
           type='file'
           name='pic'
           accept='image/*'
@@ -40,6 +45,7 @@ const ChallengeForm = React.createClass({
 
         <input
           className='form-title-field input'
+          aria-label='add title'
           type='text'
           placeholder='challenge title'
           onChange={onDraftedChallengeTitleChange}
@@ -47,6 +53,7 @@ const ChallengeForm = React.createClass({
 
         <textarea
           className='form-body-field input'
+          aria-label='add body'
           type='text'
           placeholder='compose challenge'
           onChange={onDraftedChallengeBodyChange}
@@ -54,6 +61,7 @@ const ChallengeForm = React.createClass({
 
         <button
           className='add-challenge-btn-form'
+          aria-label='add challenge'
           onClick={(e) => this.onChallengeSubmit(e)}>
           save
         </button>

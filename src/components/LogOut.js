@@ -16,6 +16,7 @@ export default class LogOut extends Component {
 
         <button
           className='log-out-btn'
+          aria-label='sign out button'
           onClick={()=>signOut()}>
           sign out
         </button>

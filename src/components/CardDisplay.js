@@ -10,6 +10,30 @@ const CardDisplay = React.createClass({
 
     return (
       <div>
+
+        <img
+          className='single-challenge-image'
+          aria-label='challenge image'
+          src={challenge.image}
+        />
+
+        <div
+          className='single-challenge-title'
+          aria-label='challenge title'>
+          {challenge.title}
+        </div>
+
+        <div
+          className='author-date'
+          aria-label='challenge author and date'>
+          ~ {challenge.user.displayName} on {challenge.createdAt} ~
+        </div>
+
+        <CompleteChallenge
+          challenge={challenge}
+          toggleCheck={toggleCheck}
+        />
+
         <EditFormModal
           challenge={challenge}
           editChallenge={editChallenge}
@@ -20,25 +44,6 @@ const CardDisplay = React.createClass({
           onEditBody={onEditBody}
           draftChallengeBody={draftChallengeBody}
         />
-
-        <CompleteChallenge
-          challenge={challenge}
-          toggleCheck={toggleCheck}
-        />
-
-        <img className='single-challenge-image'
-          src={challenge.image}
-        />
-
-        <div
-          className='single-challenge-title'>
-          {challenge.title}
-        </div>
-
-        <div
-          className='author-date'>
-          ~ {challenge.user.displayName} on {challenge.createdAt} ~
-        </div>
 
       </div>
     )

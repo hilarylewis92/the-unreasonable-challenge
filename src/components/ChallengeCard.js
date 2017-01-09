@@ -29,6 +29,7 @@ const ChallengeCard = React.createClass({
 
         <button
           className='show-single-card'
+          aria-label='show full challenge'
           onClick={this.showModal}>
           show challenge
         </button>
@@ -42,6 +43,7 @@ const ChallengeCard = React.createClass({
 
             <button
               className='close-modal'
+              aria-label='close challenge'
               onClick={(e) => this.hideModal(e)}>
               &#10005;
             </button>
@@ -59,7 +61,8 @@ const ChallengeCard = React.createClass({
             />
 
             <div
-              className='single-challenge-body'>
+              className='single-challenge-body full-challenge-body'
+              aria-label='challenge body'>
               {challenge.body}
             </div>
 

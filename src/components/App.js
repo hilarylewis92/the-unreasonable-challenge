@@ -134,7 +134,8 @@ export default class App extends Component {
     const { user, challengesList, draftChallengeTitle, draftChallengeBody } = this.state
 
     return (
-      <div className="Application">
+      <div
+        className="Application">
         {user ?
         <section>
 

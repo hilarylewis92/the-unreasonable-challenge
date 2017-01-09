@@ -29,7 +29,12 @@
 }
 
 .single-challenge-body {
+  position: relative;
   width: 90%;
   margin: auto;
   text-align: left;
+}
+
+.full-challenge-body {
+  padding-bottom: 60px;
 }
