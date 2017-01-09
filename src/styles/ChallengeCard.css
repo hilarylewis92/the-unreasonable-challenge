@@ -31,16 +31,17 @@
 .edit-btn {
   position: absolute;
   bottom: 0;
-  left: 0;
+  right: 0;
   font-size: 40px;
   border: none;
   color: gray;
   background: none;
-  margin: 0 0 7px 15px;
+  margin: 0 15px 7px 0;
 }
 
 .edit-btn:hover {
   color: black;
+  cursor: pointer;
 }
 
 .checked {
@@ -50,8 +51,8 @@
   color: #379956;
   background: none;
   bottom: 0;
-  left: 0;
-  margin: 5px 60px;
+  right: 0;
+  margin: 5px 55px;
 }
 
 .checked:hover {
@@ -65,8 +66,8 @@
   color: gray;
   background: white;
   bottom: 0;
-  left: 0;
-  margin: 5px 60px;
+  right: 0;
+  margin: 5px 55px;
 }
 
 .check-challenge:hover {
