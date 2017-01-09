@@ -53,6 +53,13 @@
   padding: 10px;
 }
 
+.image-preview {
+  width: 70%;
+  display: block;
+  margin: auto;
+  padding: 10px;
+}
+
 .inputfile {
 	width: 0.1px;
 	height: 0.1px;

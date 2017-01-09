@@ -52,6 +52,8 @@ export default class App extends Component {
   }
 
   updateChallengeImageState(e) {
+    e.preventDefault()
+
     let reader = new FileReader()
     let file = e.target.files[0]
 
@@ -131,7 +133,7 @@ export default class App extends Component {
   }
 
   render() {
-    const { user, challengesList, draftChallengeTitle, draftChallengeBody } = this.state
+    const { user, challengesList, draftChallengeTitle, draftChallengeBody, imagePreviewURL } = this.state
 
     return (
       <div
@@ -152,6 +154,7 @@ export default class App extends Component {
             onDraftedChallengeBodyChange={this.updateChallengeBodyState.bind(this)}
             handleImageChange={this.updateChallengeImageState.bind(this)}
             addNewChallenge={() => this.addNewChallenge()}
+            imagePreviewURL={imagePreviewURL}
           />
 
           <ChallengesList

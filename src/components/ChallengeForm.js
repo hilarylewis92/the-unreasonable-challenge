@@ -9,7 +9,13 @@ const ChallengeForm = React.createClass({
   },
 
   render() {
-    const { onDraftedChallengeTitleChange, onDraftedChallengeBodyChange, handleImageChange, hideModal } = this.props
+    const { onDraftedChallengeTitleChange, onDraftedChallengeBodyChange, handleImageChange, hideModal, imagePreviewURL } = this.props
+
+    console.log(imagePreview);
+
+    var imagePreview = imagePreviewURL
+      ? <img className='image-preview' src={imagePreviewURL} />
+      : <img src={require('../images/camera.png')} />
 
     return (
       <form
@@ -28,11 +34,9 @@ const ChallengeForm = React.createClass({
           New Challenge
         </h2>
 
-        <img
-          className='photo-camera'
-          aria-label='camera image'
-          src={require('../images/camera.png')}
-        />
+        <div>
+          {imagePreview}
+        </div>
 
       <div>
         <input
