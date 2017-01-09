@@ -55,6 +55,7 @@
 
 .image-preview {
   width: 70%;
+  border-radius: 5px;
   display: block;
   margin: auto;
   padding: 10px;

@@ -14,7 +14,7 @@ export default class ChallengesList extends Component {
 
 
   render() {
-    const{ challengesList, onEditTitle, onEditBody, editChallenge, removeChallenge, toggleCheck, handleImageChange, draftChallengeTitle, draftChallengeBody } = this.props
+    const{ challengesList, onEditTitle, onEditBody, editChallenge, removeChallenge, toggleCheck, handleImageChange, draftChallengeTitle, draftChallengeBody, imagePreviewURL} = this.props
 
 
 
@@ -69,6 +69,7 @@ export default class ChallengesList extends Component {
               draftChallengeTitle={draftChallengeTitle}
               onEditBody={onEditBody}
               draftChallengeBody={draftChallengeBody}
+              imagePreviewURL={imagePreviewURL}
             />
 
           </ul>

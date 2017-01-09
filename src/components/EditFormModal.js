@@ -14,9 +14,7 @@ const EditFormModal = React.createClass({
   },
 
   render() {
-    const { challenge, onEditTitle, onEditBody, removeChallenge, handleImageChange, draftChallengeTitle, draftChallengeBody, editChallenge } = this.props
-
-    console.log(this);
+    const { challenge, onEditTitle, onEditBody, removeChallenge, handleImageChange, draftChallengeTitle, draftChallengeBody, editChallenge, imagePreviewURL } = this.props
 
     return (
       <div>
@@ -42,6 +40,7 @@ const EditFormModal = React.createClass({
             draftChallengeBody={draftChallengeBody}
             removeChallenge={removeChallenge}
             editChallenge={editChallenge}
+            imagePreviewURL={imagePreviewURL}
           />
 
         </Modal>

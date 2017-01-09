@@ -167,6 +167,7 @@ export default class App extends Component {
             toggleCheck={this.toggleCheck.bind(this)}
             draftChallengeTitle={draftChallengeTitle}
             draftChallengeBody={draftChallengeBody}
+            imagePreviewURL={imagePreviewURL}
           />
 
         </section>

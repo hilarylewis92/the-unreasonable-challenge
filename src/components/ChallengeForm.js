@@ -11,8 +11,6 @@ const ChallengeForm = React.createClass({
   render() {
     const { onDraftedChallengeTitleChange, onDraftedChallengeBodyChange, handleImageChange, hideModal, imagePreviewURL } = this.props
 
-    console.log(imagePreview);
-
     var imagePreview = imagePreviewURL
       ? <img className='image-preview' src={imagePreviewURL} />
       : <img src={require('../images/camera.png')} />
