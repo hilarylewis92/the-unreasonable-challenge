@@ -130,7 +130,11 @@ export default class ChallengesList extends Component {
         >
           {inCompleteChallenge}
         </Masonry>
-        <div className='completed-below'></div>
+
+        <div
+          className='completed-below'>
+        </div>
+
         <Masonry
           className={'complete'}
           elementType={'ul'}
