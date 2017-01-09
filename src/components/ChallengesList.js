@@ -60,6 +60,16 @@ export default class ChallengesList extends Component {
              draftChallengeTitle={draftChallengeTitle}
              draftChallengeBody={draftChallengeBody}
             />
+            <EditFormModal
+              challenge={challenge}
+              editChallenge={editChallenge}
+              removeChallenge={removeChallenge}
+              handleImageChange={handleImageChange}
+              onEditTitle={onEditTitle}
+              draftChallengeTitle={draftChallengeTitle}
+              onEditBody={onEditBody}
+              draftChallengeBody={draftChallengeBody}
+            />
 
           </ul>
         </li>

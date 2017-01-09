@@ -34,17 +34,6 @@ const CardDisplay = React.createClass({
           toggleCheck={toggleCheck}
         />
 
-        <EditFormModal
-          challenge={challenge}
-          editChallenge={editChallenge}
-          removeChallenge={removeChallenge}
-          handleImageChange={handleImageChange}
-          onEditTitle={onEditTitle}
-          draftChallengeTitle={draftChallengeTitle}
-          onEditBody={onEditBody}
-          draftChallengeBody={draftChallengeBody}
-        />
-      
       </div>
     )
   }

@@ -6,13 +6,13 @@
   color: gray;
   line-height: 130%;
 }
-@media (max-width: 1020px) {
+@media (max-width: 1150px) {
   .challenge-elements {
     width: 48%;
   }
 }
 
-@media (max-width: 780px) {
+@media (max-width: 1000px) {
   .challenge-elements {
     width: 90%;
   }
