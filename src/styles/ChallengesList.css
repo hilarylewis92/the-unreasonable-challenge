@@ -1,5 +1,5 @@
 .challenge-elements {
-  width: 28%;
+  width: 22%;
   text-align: center;
   margin: 10px;
   font-size: 18px;
@@ -12,6 +12,12 @@
 
 @media (max-width: 1150px) {
   .challenge-elements {
+    width: 30%;
+  }
+}
+
+@media (max-width: 800px) {
+  .challenge-elements {
     width: 90%;
   }
 }
@@ -22,9 +28,8 @@
 }
 
 .single-challenge-image {
-  margin: 15px 0;
-  width: 90%;
-  border-radius: 5px;
+  width: 100%;
+  border-radius: 5px 5px 0px 0px;
 }
 
 .single-challenge-title {

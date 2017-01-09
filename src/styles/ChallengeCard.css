@@ -3,11 +3,11 @@
   border-radius: 5px;
   background-color: #234C63;
   color: white;
-  padding: 10px;
-  text-align: center;
+  padding: 5px;
+  float: left;
   text-decoration: none;
   font-size: 13px;
-  margin: 30px 0;
+  margin: 30px;
 }
 
 .show-single-card:hover{
@@ -92,8 +92,8 @@
 }
 
 .single-challenge-image-modal{
-  width: 50%;
-  border-radius: 5px;
+  width: 100%;
+  border-radius: 5px 5px 0px 0px;
 }
 
 .single-challenge-title-modal {

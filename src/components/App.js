@@ -13,12 +13,12 @@ export default class App extends Component {
   constructor() {
     super()
     this.state = {
-      user: null,
       challengesList: [],
       draftChallengeTitle: '',
       draftChallengeBody: '',
-      file: '',
       imagePreviewURL: '',
+      file: '',
+      user: null,
     }
   }
 
