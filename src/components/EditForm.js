@@ -39,6 +39,11 @@ const EditForm = React.createClass({
           Edit Challenge
         </h2>
 
+        <img
+          className='image-preview'
+          src={imagePreviewURL || challenge.image}
+        />
+
         <div>
           <input
             className='file inputfile'
@@ -50,14 +55,9 @@ const EditForm = React.createClass({
             onChange={handleImageChange}
             />
           <label htmlFor='file'>
-            add image
+            new image
           </label>
         </div>
-
-        <img
-          className='image-preview'
-          src={imagePreviewURL || challenge.image}
-        />
 
         <input
           className='edit-title-field input'

@@ -28,12 +28,6 @@ const CardDisplay = React.createClass({
           aria-label='challenge author and date'>
           ~ {challenge.user.displayName} on {challenge.createdAt} ~
         </div>
-
-        <CompleteChallenge
-          challenge={challenge}
-          toggleCheck={toggleCheck}
-        />
-
       </div>
     )
   }

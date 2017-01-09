@@ -60,6 +60,7 @@ export default class ChallengesList extends Component {
              draftChallengeTitle={draftChallengeTitle}
              draftChallengeBody={draftChallengeBody}
             />
+
             <EditFormModal
               challenge={challenge}
               editChallenge={editChallenge}
@@ -70,6 +71,11 @@ export default class ChallengesList extends Component {
               onEditBody={onEditBody}
               draftChallengeBody={draftChallengeBody}
               imagePreviewURL={imagePreviewURL}
+            />
+
+            <CompleteChallenge
+              challenge={challenge}
+              toggleCheck={toggleCheck}
             />
 
           </ul>
