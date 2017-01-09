@@ -1,17 +1,16 @@
 import React, { Component } from 'react'
 import Masonry from 'react-masonry-component'
 
-import ChallengeCard from './ChallengeCard'
+import ChallengeCardModal from './ChallengeCardModal'
 import EditFormModal from './EditFormModal'
 import CompleteChallenge from './CompleteChallenge'
 import CardDisplay from './CardDisplay'
 
 var masonryOptions = {
-  transitionDuration: 0
+  transitionDuration: 1
 }
 
 export default class ChallengesList extends Component {
-
 
   render() {
     const{ challengesList, onEditTitle, onEditBody, editChallenge, removeChallenge, toggleCheck, handleImageChange, draftChallengeTitle, draftChallengeBody, imagePreviewURL} = this.props
@@ -32,14 +31,6 @@ export default class ChallengesList extends Component {
 
           <CardDisplay
             challenge={challenge}
-            editChallenge={editChallenge}
-            removeChallenge={removeChallenge}
-            handleImageChange={handleImageChange}
-            onEditTitle={onEditTitle}
-            draftChallengeTitle={draftChallengeTitle}
-            onEditBody={onEditBody}
-            draftChallengeBody={draftChallengeBody}
-            toggleCheck={toggleCheck}
           />
 
           <div
@@ -49,16 +40,8 @@ export default class ChallengesList extends Component {
           </div>
 
           <ul>
-           <ChallengeCard
+           <ChallengeCardModal
              challenge={challenge}
-             onEditTitle={onEditTitle}
-             onEditBody={onEditBody}
-             editChallenge={editChallenge}
-             removeChallenge={removeChallenge}
-             toggleCheck={toggleCheck}
-             handleImageChange={handleImageChange}
-             draftChallengeTitle={draftChallengeTitle}
-             draftChallengeBody={draftChallengeBody}
             />
 
             <EditFormModal
@@ -88,7 +71,7 @@ export default class ChallengesList extends Component {
         className="ChallengesList">
 
         <Masonry
-          className={'my-gallery-class'}
+          className={''}
           elementType={'ul'}
           options={masonryOptions}
           disableImagesLoaded={false}

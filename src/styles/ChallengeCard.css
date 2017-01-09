@@ -7,7 +7,7 @@
   text-align: center;
   text-decoration: none;
   font-size: 13px;
-  margin: 15px 0;
+  margin: 30px 0;
 }
 
 .show-single-card:hover{
@@ -48,7 +48,7 @@
   border: none;
   color: gray;
   background: none;
-  margin: 0 15px 7px 0;
+  margin: 0 15px 20px 0;
 }
 
 .edit-btn:hover {
@@ -64,7 +64,7 @@
   background: none;
   bottom: 0;
   right: 0;
-  margin: 5px 50px;
+  margin: 17px 50px;
 }
 
 .checked:hover {
@@ -79,7 +79,7 @@
   background: white;
   bottom: 0;
   right: 0;
-  margin: 5px 50px;
+  margin: 17px 50px;
 }
 
 .check-challenge:hover {

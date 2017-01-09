@@ -1,18 +1,16 @@
 .challenge-elements {
-  width: 30%;
+  width: 28%;
   text-align: center;
-  margin: auto;
+  margin: 10px;
   font-size: 18px;
   color: gray;
   line-height: 130%;
-}
-@media (max-width: 1150px) {
-  .challenge-elements {
-    width: 48%;
-  }
+  border-radius: 5px;
+  transition: left 0.5s;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
 }
 
-@media (max-width: 1000px) {
+@media (max-width: 1150px) {
   .challenge-elements {
     width: 90%;
   }
@@ -36,12 +34,12 @@
 
 .author-date {
   font-size: 13px;
-  margin: 5px 0;
+  margin: 10px;
 }
 
 .single-challenge-body {
   position: relative;
-  width: 90%;
+  width: 75%;
   margin: auto;
   text-align: left;
 }

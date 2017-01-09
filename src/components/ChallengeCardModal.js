@@ -5,7 +5,7 @@ import CompleteChallenge from './CompleteChallenge'
 import EditFormModal from './EditFormModal'
 import CardDisplay from './CardDisplay'
 
-const ChallengeCard = React.createClass({
+const ChallengeCardModal = React.createClass({
   showModal() {
     this.refs.modal.show()
   },
@@ -22,7 +22,7 @@ const ChallengeCard = React.createClass({
   },
 
   render() {
-    const { challenge, onEditTitle, onEditBody, editChallenge, removeChallenge, toggleCheck, handleImageChange, draftChallengeTitle, draftChallengeBody } = this.props
+    const { challenge } = this.props
 
     return (
       <div>
@@ -50,14 +50,6 @@ const ChallengeCard = React.createClass({
 
             <CardDisplay
               challenge={challenge}
-              editChallenge={editChallenge}
-              removeChallenge={removeChallenge}
-              handleImageChange={handleImageChange}
-              onEditTitle={onEditTitle}
-              draftChallengeTitle={draftChallengeTitle}
-              onEditBody={onEditBody}
-              draftChallengeBody={draftChallengeBody}
-              toggleCheck={toggleCheck}
             />
 
             <div
@@ -73,4 +65,4 @@ const ChallengeCard = React.createClass({
   }
 })
 
-export default ChallengeCard
+export default ChallengeCardModal
