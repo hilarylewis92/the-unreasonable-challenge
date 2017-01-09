@@ -24,7 +24,7 @@ export default class ChallengesList extends Component {
       return (
        challenge.checked ?
         <li
-          className='challenge-elements completed'
+          className='challenge-elements is-complete'
           key={challenge.key}>
 
           <CardDisplay
@@ -75,7 +75,7 @@ export default class ChallengesList extends Component {
       return (
        !challenge.checked ?
         <li
-          className='challenge-elements in-complete'
+          className='challenge-elements not-complete'
           key={challenge.key}>
 
           <CardDisplay
@@ -121,26 +121,6 @@ export default class ChallengesList extends Component {
       <div
         className="ChallengesList">
 
-        <section
-          className='complete-section'>
-          complete challenges
-        </section>
-
-        <Masonry
-          className={'complete'}
-          elementType={'ul'}
-          options={masonryOptions}
-          disableImagesLoaded={false}
-          updateOnEachImageLoad={false}
-        >
-          {completedChallenge}
-        </Masonry>
-
-        <section
-          className='complete-section'>
-          incomplete challenges
-        </section>
-
         <Masonry
           className={'incomplete'}
           elementType={'ul'}
@@ -150,8 +130,17 @@ export default class ChallengesList extends Component {
         >
           {inCompleteChallenge}
         </Masonry>
-
-       </div>
+        <div className='completed-below'></div>
+        <Masonry
+          className={'complete'}
+          elementType={'ul'}
+          options={masonryOptions}
+          disableImagesLoaded={false}
+          updateOnEachImageLoad={false}
+        >
+          {completedChallenge}
+        </Masonry>
+      </div>
     )
   }
 }
