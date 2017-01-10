@@ -11,11 +11,17 @@ var masonryOptions = {
 }
 
 export default class ChallengesList extends Component {
+  constructor() {
+  super();
+    this.state = {
+      currentImage: 0,
+    };
+  }
 
   render() {
     const{ challengesList, onEditTitle, onEditBody, editChallenge, removeChallenge, addCount, handleImageChange, draftChallengeTitle, draftChallengeBody, imagePreviewURL} = this.props
 
-    var challenges = challengesList.map(challenge => {
+    var challenges = challengesList.map((challenge, i) => {
 
       var bodyText = challenge.body.length > 100
         ? challenge.body.slice(0, 100) + ` ...`
@@ -38,6 +44,7 @@ export default class ChallengesList extends Component {
 
          <ChallengeCardModal
            challenge={challenge}
+           i={i}
           />
 
           <EditFormModal
@@ -52,7 +59,7 @@ export default class ChallengesList extends Component {
             imagePreviewURL={imagePreviewURL}
           />
 
-        <ChallengeCount
+          <ChallengeCount
             challenge={challenge}
             addCount={addCount}
           />
