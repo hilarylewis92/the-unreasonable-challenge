@@ -1,10 +1,8 @@
 import React, { Component } from 'react'
-
 export default class Comments extends Component {
   constructor() {
     super()
     this.state = {
-      comments: [],
       comment: '',
     }
   }
@@ -17,26 +15,25 @@ export default class Comments extends Component {
 
   submitComment(e){
     e.preventDefault()
-    const { comments, comment } = this.state
-
+    const { comment } = this.state
+    const { comments, key } = this.props.challenge
     comments.push(comment)
-
-    this.setState ({
-      comments: comments
-    })
 
     this.setState ({
       comment: ''
     })
-    debugger
+
+    this.props.database.database().ref(`challenges/${key}`).update({
+      comments: comments
+    })
   }
 
   render() {
-    const { comments } = this.state
+    const { comments, comment } = this.state
 
-    var commentsList = comments.filter((comment) => {
+    var commentsList = this.props.challenge.comments.map((comment, i) => {
       return (
-        <li>
+        <li key={i}>
           {comment}
         </li>
       )
@@ -52,6 +49,7 @@ export default class Comments extends Component {
 
         <input
           className='comment-on-card'
+          value={comment}
           onChange={(e) => this.onCommentChange(e)}
         />
 
