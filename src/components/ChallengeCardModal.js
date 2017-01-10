@@ -1,7 +1,6 @@
 import React from 'react'
 import Modal from 'boron/DropModal'
 
-import CompleteChallenge from './CompleteChallenge'
 import EditFormModal from './EditFormModal'
 import CardDisplay from './CardDisplay'
 import Comments from './Comments'
@@ -19,7 +18,7 @@ const ChallengeCardModal = React.createClass({
   onCheckedSubmit(e) {
     const { key } = this.props.challenge
     e.preventDefault()
-    this.props.toggleCheck(key)
+    this.props.addCount(key)
   },
 
   render() {
@@ -43,7 +42,7 @@ const ChallengeCardModal = React.createClass({
             className='challenge-card-item'>
 
             <div>
-              This challenge has been completed {challenge.checked} times.
+              This challenge has been completed {challenge.count} times.
             </div>
 
             <CardDisplay

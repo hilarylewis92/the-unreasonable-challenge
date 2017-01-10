@@ -72,7 +72,7 @@ export default class App extends Component {
       user: pick(user, 'displayName', 'email', 'uid', 'photoURL'),
       title: draftChallengeTitle,
       body: draftChallengeBody,
-      checked: 0,
+      count: 0,
       image: imagePreviewURL,
       createdAt: moment().format('MMMM Do'),
       createdMonth: moment().format('MMMM YYYY'),
@@ -96,11 +96,11 @@ export default class App extends Component {
     })
   }
 
-  toggleCheck(key) {
+  addCount(key) {
     this.state.challengesList.filter((challenge) => {
       if(key === challenge.key) {
         firebase.database().ref(`challenges/${key}`).update({
-          checked: challenge.checked+=1,
+          count: challenge.count+=1,
         })
       }
     })
@@ -146,7 +146,7 @@ export default class App extends Component {
             user={user}
           />
 
-        <ChallengeFormModal
+          <ChallengeFormModal
             onDraftedChallengeTitleChange={this.updateChallengeTitleState.bind(this)}
             onDraftedChallengeBodyChange={this.updateChallengeBodyState.bind(this)}
             handleImageChange={this.updateChallengeImageState.bind(this)}
@@ -161,7 +161,7 @@ export default class App extends Component {
             onEditBody={this.updateChallengeBodyState.bind(this)}
             handleImageChange={this.updateChallengeImageState.bind(this)}
             editChallenge={this.editChallenge.bind(this)}
-            toggleCheck={this.toggleCheck.bind(this)}
+            addCount={this.addCount.bind(this)}
             draftChallengeTitle={draftChallengeTitle}
             draftChallengeBody={draftChallengeBody}
             imagePreviewURL={imagePreviewURL}

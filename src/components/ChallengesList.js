@@ -3,7 +3,7 @@ import Masonry from 'react-masonry-component'
 
 import ChallengeCardModal from './ChallengeCardModal'
 import EditFormModal from './EditFormModal'
-import CompleteChallenge from './CompleteChallenge'
+import ChallengeCount from './ChallengeCount'
 import CardDisplay from './CardDisplay'
 
 var masonryOptions = {
@@ -13,7 +13,7 @@ var masonryOptions = {
 export default class ChallengesList extends Component {
 
   render() {
-    const{ challengesList, onEditTitle, onEditBody, editChallenge, removeChallenge, toggleCheck, handleImageChange, draftChallengeTitle, draftChallengeBody, imagePreviewURL} = this.props
+    const{ challengesList, onEditTitle, onEditBody, editChallenge, removeChallenge, addCount, handleImageChange, draftChallengeTitle, draftChallengeBody, imagePreviewURL} = this.props
 
     var challenges = challengesList.map(challenge => {
 
@@ -36,29 +36,27 @@ export default class ChallengesList extends Component {
             {bodyText}
           </div>
 
-          <ul>
-           <ChallengeCardModal
-             challenge={challenge}
-            />
+         <ChallengeCardModal
+           challenge={challenge}
+          />
 
-            <EditFormModal
-              challenge={challenge}
-              editChallenge={editChallenge}
-              removeChallenge={removeChallenge}
-              handleImageChange={handleImageChange}
-              onEditTitle={onEditTitle}
-              draftChallengeTitle={draftChallengeTitle}
-              onEditBody={onEditBody}
-              draftChallengeBody={draftChallengeBody}
-              imagePreviewURL={imagePreviewURL}
-            />
+          <EditFormModal
+            challenge={challenge}
+            editChallenge={editChallenge}
+            removeChallenge={removeChallenge}
+            handleImageChange={handleImageChange}
+            onEditTitle={onEditTitle}
+            draftChallengeTitle={draftChallengeTitle}
+            onEditBody={onEditBody}
+            draftChallengeBody={draftChallengeBody}
+            imagePreviewURL={imagePreviewURL}
+          />
 
-            <CompleteChallenge
-              challenge={challenge}
-              toggleCheck={toggleCheck}
-            />
+        <ChallengeCount
+            challenge={challenge}
+            addCount={addCount}
+          />
 
-          </ul>
         </li>
       )
     })

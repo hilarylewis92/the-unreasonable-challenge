@@ -1,27 +1,27 @@
 import React from 'react'
 
-const CompleteChallenge = React.createClass({
+const ChallengeCount = React.createClass({
 
-  onCheckedSubmit(e) {
+  onCountClicked(e) {
     const { key } = this.props.challenge
     e.preventDefault()
-    this.props.toggleCheck(key)
+    this.props.addCount(key)
   },
 
   render() {
-    const { challenge, toggleCheck } = this.props
+    const { challenge, addCount } = this.props
 
     return (
       <div>
         <button
           className='checked'
           aria-label='challenge completed'
-          onClick={(e) => this.onCheckedSubmit(e)}>
-          {challenge.checked}
+          onClick={(e) => this.onCountClicked(e)}>
+          {challenge.count}
         </button>
       </div>
     )
   }
 })
 
-export default CompleteChallenge
+export default ChallengeCount
