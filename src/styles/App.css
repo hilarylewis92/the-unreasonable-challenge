@@ -6,7 +6,9 @@
 .Application {
   font-family: 'Muli', sans-serif;
   width: 95vw;
-  padding: 30px;
+  margin: auto;
+  padding: 10px 0;
+  color: gray;
 }
 
 *:focus {

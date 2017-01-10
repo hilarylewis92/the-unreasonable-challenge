@@ -3,7 +3,6 @@ import firebase, { reference, update, remove } from '../firebase'
 import { map, extend, pick, filter } from 'lodash';
 import moment from 'moment'
 
-import LogOut from './LogOut'
 import LogIn from './LogIn'
 import Header from './Header'
 import ChallengesList from './ChallengesList'
@@ -142,10 +141,6 @@ export default class App extends Component {
         className="Application">
         {user ?
         <section>
-
-          <LogOut
-            user={user}
-          />
 
           <Header
             user={user}

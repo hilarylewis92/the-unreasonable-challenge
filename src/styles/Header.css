@@ -1,22 +1,53 @@
-.header {
-  text-align: center;
-  height: 70px;
-  margin: 10px;
+.Header {
+  height: 80px;
 }
 
-.title {
-  color: gray;
+.header-title {
   font-size: 35px;
+  text-align: center;
+  margin-top: 20px;
 }
 
+.log-out-btn {
+  position: absolute;
+  right: 0;
+  top: 0;
+  border: 1px solid gray;
+  border-radius: 100px;
+  background-color: white;
+  color: gray;
+  padding: 10px 15px;
+  text-align: center;
+  text-decoration: none;
+  font-size: 13px;
+  margin: 30px;
+}
 
-@media (max-width: 780px) {
-  .header {
+.log-out-btn:hover{
+  cursor: pointer;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.9);
+  color: black;
+  border: black;
+}
+
+.user-photo {
+  height: 50px;
+  border-radius: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  margin: 25px 35px;
+}
+
+.display-name {
+  text-align: center;
+}
+
+@media (max-width: 680px) {
+  .Header {
     height: 120px;
   }
-  .title {
-    display: block;
-    width: 100%;
-    font-size: 28px;
+  .header-title {
+    font-size: 25px;
   }
 }
