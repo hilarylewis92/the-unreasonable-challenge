@@ -155,7 +155,6 @@ export default class App extends Component {
           />
 
           <ChallengesList
-            database={firebase}
             challengesList={challengesList}
             removeChallenge={this.removeChallenge.bind(this)}
             onEditTitle={this.updateChallengeTitleState.bind(this)}

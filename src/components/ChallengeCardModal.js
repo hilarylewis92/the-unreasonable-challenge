@@ -38,7 +38,7 @@ const ChallengeCardModal = React.createClass({
           className='modal-card'
           ref="modal">
 
-          <li
+          <div
             className='challenge-card-item'>
 
             <div>
@@ -59,7 +59,7 @@ const ChallengeCardModal = React.createClass({
               database={this.props.database}
               challenge={challenge}
             />
-          </li>
+          </div>
         </Modal>
       </div>
     )
