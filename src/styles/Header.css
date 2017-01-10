@@ -25,9 +25,9 @@
 
 .log-out-btn:hover{
   cursor: pointer;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.9);
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
   color: black;
-  border: black;
+  border: 1px solid black;
 }
 
 .user-photo {

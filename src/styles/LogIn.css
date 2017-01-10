@@ -1,30 +1,38 @@
 .Log-In {
   width: 50vw;
-  margin: auto;
+  margin: 20vh auto;
   text-align: center;
 }
 
 .quote {
-  display: block;
   font-size: 30px;
   margin: 20vh 0;
   line-height: 130%;
-  color: gray;
+}
+
+.quote-author {
+  font-size: 20px;
+  margin: 20px;
 }
 
 .log-in-btn {
-  border-radius: 5px;
+  border-radius: 100px;
   border: none;
   background-color: #234C63;
   color: white;
   padding: 15px 32px;
   text-align: center;
   text-decoration: none;
-  display: inline-block;
   font-size: 16px;
 }
 
 .log-in-btn:hover{
   cursor: pointer;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.9);
+}
+
+@media (max-width: 800px) {
+  .Log-In {
+    width: 90vw;
+  }
 }
