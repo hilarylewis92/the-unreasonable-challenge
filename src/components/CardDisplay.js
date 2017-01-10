@@ -1,12 +1,9 @@
 import React from 'react'
 
-import CompleteChallenge from './CompleteChallenge'
-import EditFormModal from './EditFormModal'
-
 const CardDisplay = React.createClass({
 
   render() {
-    const { challenge, onEditTitle, onEditBody, editChallenge, removeChallenge, toggleCheck, handleImageChange, draftChallengeTitle, draftChallengeBody } = this.props
+    const { challenge  } = this.props
 
     return (
       <div>
@@ -34,15 +31,3 @@ const CardDisplay = React.createClass({
 })
 
 export default CardDisplay
-
-
-// <EditFormModal
-//   challenge={challenge}
-//   editChallenge={editChallenge}
-//   removeChallenge={removeChallenge}
-//   handleImageChange={handleImageChange}
-//   onEditTitle={onEditTitle}
-//   draftChallengeTitle={draftChallengeTitle}
-//   onEditBody={onEditBody}
-//   draftChallengeBody={draftChallengeBody}
-// />

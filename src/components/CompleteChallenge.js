@@ -1,5 +1,4 @@
 import React from 'react'
-import Modal from 'boron/DropModal'
 
 const CompleteChallenge = React.createClass({
 

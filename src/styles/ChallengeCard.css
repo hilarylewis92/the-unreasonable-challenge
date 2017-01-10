@@ -1,18 +1,18 @@
 .show-single-card {
   border: none;
-  border-radius: 5px;
-  background-color: #234C63;
-  color: white;
-  padding: 10px;
-  text-align: center;
+  border-radius: 100%;
+  color: gray;
   text-decoration: none;
-  font-size: 13px;
-  margin: 15px 0;
+  font-size: 30px;
+  float: right;
+  margin: 15px 60px;
 }
 
 .show-single-card:hover{
+  color: black;
+  border: black;
   cursor: pointer;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.9);
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.9);
 }
 
 /*modal*/
@@ -48,7 +48,7 @@
   border: none;
   color: gray;
   background: none;
-  margin: 0 15px 7px 0;
+  margin: 0 20px 10px 0;
 }
 
 .edit-btn:hover {
@@ -58,33 +58,40 @@
 
 .checked {
   position: absolute;
-  font-size: 45px;
-  border: none;
-  color: #379956;
-  background: none;
-  bottom: 0;
+  font-size: 25px;
+  border: 1px solid green;
+  border-radius: 100%;
+  color: white;
+  background: green;
+  top: 0;
   right: 0;
-  margin: 5px 50px;
+  margin: -10px;
+  z-index: 1000;
 }
 
 .checked:hover {
   cursor: pointer;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.9);
 }
 
 .check-challenge {
   position: absolute;
-  font-size: 45px;
-  border: none;
+  font-size: 25px;
+  border: 1px solid gray;
+  border-radius: 100%;
   color: gray;
   background: white;
-  bottom: 0;
+  top: 0;
   right: 0;
-  margin: 5px 50px;
+  margin: -10px;
+  z-index: 1000;
 }
 
 .check-challenge:hover {
   color: black;
+  border: black;
   cursor: pointer;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.9);
 }
 
 .check-list {
@@ -92,8 +99,8 @@
 }
 
 .single-challenge-image-modal{
-  width: 50%;
-  border-radius: 5px;
+  width: 100%;
+  border-radius: 5px 5px 0px 0px;
 }
 
 .single-challenge-title-modal {

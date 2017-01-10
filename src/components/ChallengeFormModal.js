@@ -14,7 +14,7 @@ const ChallengeFormModal = React.createClass({
   },
 
   render() {
-    const { onDraftedChallengeTitleChange, onDraftedChallengeBodyChange, handleImageChange, addNewChallenge, imagePreviewURL } = this.props
+    const { onDraftedChallengeTitleChange, onDraftedChallengeBodyChange, handleImageChange, addNewChallenge, imagePreviewURL, toggleModal } = this.props
 
     return (
       <div>

@@ -18,6 +18,8 @@ const EditFormModal = React.createClass({
 
     return (
       <div>
+        <div className='card-nav'>
+        </div>
 
         <button
           className='edit-btn'
@@ -25,7 +27,7 @@ const EditFormModal = React.createClass({
           onClick={(e) => this.showModal(e)}>
           &#9998;
         </button>
-
+        
         <Modal
           className='edit-modal'
           ref="modal">
