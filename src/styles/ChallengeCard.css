@@ -1,18 +1,26 @@
 .show-single-card {
+  /*background: white;*/
   border: none;
   border-radius: 100%;
   color: gray;
   text-decoration: none;
-  font-size: 30px;
+  font-size: 20px;
   float: right;
-  margin: 15px 60px;
+  margin: 12px;
+  /*box-shadow: 0 4px #999*/
 }
 
 .show-single-card:hover{
   color: black;
-  border: black;
   cursor: pointer;
-  box-shadow: 0 0 5px rgba(0, 0, 0, 0.9);
+  /*background-color: #379956;*/
+  /*box-shadow: 0 0 5px rgba(0, 0, 0, 0.9);*/
+}
+
+.show-single-card:active{
+  background-color: #379956;
+  box-shadow: 0 4px #666;
+  transform: translateY(4px);
 }
 
 /*modal*/
@@ -20,7 +28,7 @@
   border-radius: 5px;
   padding: 30px;
   line-height: 130%;
-  height: 90vh;
+  height: 80vh;
   overflow-y: auto;
 }
 
@@ -44,11 +52,11 @@
   position: absolute;
   bottom: 0;
   right: 0;
-  font-size: 40px;
+  font-size: 30px;
   border: none;
   color: gray;
   background: none;
-  margin: 0 20px 10px 0;
+  margin: 0 40px 5px 0;
 }
 
 .edit-btn:hover {
@@ -59,19 +67,27 @@
 .checked {
   position: absolute;
   font-size: 25px;
-  border: 1px solid green;
+  border: 1px solid gray;
   border-radius: 100%;
   color: white;
-  background: green;
+  background: #379956;
   top: 0;
   right: 0;
-  margin: -10px;
+  margin: -15px;
   z-index: 1000;
+  box-shadow: 0 4px #999
 }
 
 .checked:hover {
+  color: white;
   cursor: pointer;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.9);
+  background-color: #379956;
+}
+
+.checked:active {
+  background-color: #379956;
+  box-shadow: 0 4px #666;
+  transform: translateY(4px);
 }
 
 .check-challenge {
@@ -83,15 +99,21 @@
   background: white;
   top: 0;
   right: 0;
-  margin: -10px;
+  margin: -15px;
   z-index: 1000;
+  box-shadow: 0 4px #999
 }
 
 .check-challenge:hover {
-  color: black;
-  border: black;
+  color: white;
   cursor: pointer;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.9);
+  background-color: #379956;
+}
+
+.check-challenge:active {
+  background-color: #379956;
+  box-shadow: 0 4px #666;
+  transform: translateY(4px);
 }
 
 .check-list {

@@ -1,6 +1,5 @@
 .Log-Out {
   font-size: 13px;
-  margin: auto;
   text-align: center;
 }
 
@@ -9,14 +8,13 @@
   display: absolute;
   border: none;
   border-radius: 5px;
-  background-color: #FFC85B;
+  background-color: #63232c;
   color: white;
   padding: 10px;
   text-align: center;
   text-decoration: none;
   display: inline-block;
   font-size: 13px;
-  margin: 25px 0  0 10px ;
 }
 
 .log-out-btn:hover{
@@ -25,8 +23,10 @@
 }
 
 .user-display {
-  margin: 10px;
-  display: inline-block;
   color: gray;
-  margin: 5px;
+  margin: auto;
+  position: absolute;
+  top: 0;
+  left: 0;
+  margin: 15px 30px;
 }

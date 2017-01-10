@@ -13,7 +13,7 @@ const ChallengeForm = React.createClass({
 
     var imagePreview = imagePreviewURL
       ? <img className='image-preview' src={imagePreviewURL} />
-      : <img src={require('../images/camera.png')} />
+      : <img className='photo-camera' src={require('../images/camera.png')} />
 
     return (
       <form
