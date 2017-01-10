@@ -14,6 +14,11 @@ const CardDisplay = React.createClass({
           src={challenge.image}
         />
 
+        <img
+          className='user-photo-card'
+          src={challenge.user.photoURL}
+        />
+
         <div
           className='single-challenge-title'
           aria-label='challenge title'>
@@ -23,7 +28,7 @@ const CardDisplay = React.createClass({
         <div
           className='author-date'
           aria-label='challenge author and date'>
-          ~ {challenge.user.displayName} on {challenge.createdAt} ~
+          {challenge.user.displayName}
         </div>
       </div>
     )

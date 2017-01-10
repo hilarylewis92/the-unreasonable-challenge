@@ -4,6 +4,7 @@ import Modal from 'boron/DropModal'
 import CompleteChallenge from './CompleteChallenge'
 import EditFormModal from './EditFormModal'
 import CardDisplay from './CardDisplay'
+import Comments from './Comments'
 
 const ChallengeCardModal = React.createClass({
   showModal() {
@@ -31,7 +32,7 @@ const ChallengeCardModal = React.createClass({
           className='show-single-card'
           aria-label='show full challenge'
           onClick={this.showModal}>
-          +
+          ...
         </button>
 
         <Modal
@@ -40,7 +41,7 @@ const ChallengeCardModal = React.createClass({
 
           <li
             className='challenge-card-item'>
-            
+
             <div>
               This challenge has been completed {challenge.checked} times.
             </div>
@@ -54,6 +55,10 @@ const ChallengeCardModal = React.createClass({
               aria-label='challenge body'>
               {challenge.body}
             </div>
+
+            <Comments
+              challenge={challenge}
+            />
 
           </li>
         </Modal>

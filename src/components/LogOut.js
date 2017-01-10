@@ -14,6 +14,11 @@ export default class LogOut extends Component {
           Signed in as {user.displayName}
         </h4>
 
+        <img
+          className='user-photo'
+          src={user.photoURL}
+        />
+
         <button
           className='log-out-btn'
           aria-label='sign out button'

@@ -28,5 +28,14 @@
   position: absolute;
   top: 0;
   left: 0;
-  margin: 15px 30px;
+  margin: 15px 50px;
+}
+
+.user-photo {
+  height: 30px;
+  border-radius: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  margin: 5px 20px;
 }

@@ -70,7 +70,7 @@ export default class App extends Component {
     const { user, draftChallengeTitle, draftChallengeBody, imagePreviewURL } = this.state
 
     reference.push({
-      user: pick(user, 'displayName', 'email', 'uid'),
+      user: pick(user, 'displayName', 'email', 'uid', 'photoURL'),
       title: draftChallengeTitle,
       body: draftChallengeBody,
       checked: 0,
@@ -100,7 +100,7 @@ export default class App extends Component {
     this.state.challengesList.filter((challenge) => {
       if(key === challenge.key) {
         firebase.database().ref(`challenges/${key}`).update({
-          checked: challenge.checked ++,
+          checked: challenge.checked+=1,
         })
       }
     })
