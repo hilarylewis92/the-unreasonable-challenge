@@ -1,25 +1,25 @@
-import React from 'react'
+import React, { Component } from 'react'
 import Modal from 'boron/DropModal'
 
-import EditFormModal from './EditFormModal'
 import CardDisplay from './CardDisplay'
 import Comments from './Comments'
 
-const ChallengeCardModal = React.createClass({
+export default class ChallengeCardModal extends Component {
+
   showModal() {
     this.refs.modal.show()
-  },
+  }
 
   hideModal(e){
     e.preventDefault()
     this.refs.modal.hide()
-  },
+  }
 
   onCheckedSubmit(e) {
     const { key } = this.props.challenge
     e.preventDefault()
     this.props.addCount(key)
-  },
+  }
 
   render() {
     const { challenge } = this.props
@@ -30,7 +30,7 @@ const ChallengeCardModal = React.createClass({
         <button
           className='show-single-card'
           aria-label='show full challenge'
-          onClick={this.showModal}>
+          onClick={this.showModal.bind(this)}>
           ...
         </button>
 
@@ -63,6 +63,4 @@ const ChallengeCardModal = React.createClass({
       </div>
     )
   }
-})
-
-export default ChallengeCardModal
+}
