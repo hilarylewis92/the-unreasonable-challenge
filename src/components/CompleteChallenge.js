@@ -13,12 +13,12 @@ const CompleteChallenge = React.createClass({
 
     return (
       <div>
-          <button
-            className='checked'
-            aria-label='challenge completed'
-            onClick={(e) => this.onCheckedSubmit(e)}>
-            {challenge.checked}
-          </button>
+        <button
+          className='checked'
+          aria-label='challenge completed'
+          onClick={(e) => this.onCheckedSubmit(e)}>
+          {challenge.checked}
+        </button>
       </div>
     )
   }

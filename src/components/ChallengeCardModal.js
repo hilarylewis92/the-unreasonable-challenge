@@ -40,6 +40,10 @@ const ChallengeCardModal = React.createClass({
 
           <li
             className='challenge-card-item'>
+            
+            <div>
+              This challenge has been completed {challenge.checked} times.
+            </div>
 
             <CardDisplay
               challenge={challenge}
