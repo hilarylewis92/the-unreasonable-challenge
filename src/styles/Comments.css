@@ -1,0 +1,12 @@
+.Comments {
+  text-align: left;
+  font-size: 13px;
+}
+
+.comment-name {
+  color: black;
+}
+
+.comment-display {
+  padding: 0 0 5px 5px;
+}

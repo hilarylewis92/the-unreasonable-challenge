@@ -37,7 +37,6 @@ export default class ChallengesList extends Component {
           </div>
 
          <ChallengeCardModal
-           database={this.props.database}
            challenge={challenge}
           />
 

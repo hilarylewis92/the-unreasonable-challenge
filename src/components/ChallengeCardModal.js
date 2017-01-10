@@ -56,7 +56,6 @@ const ChallengeCardModal = React.createClass({
             </div>
 
             <Comments
-              database={this.props.database}
               challenge={challenge}
             />
           </div>

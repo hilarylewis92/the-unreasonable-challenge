@@ -18,12 +18,16 @@ export default class Comments extends Component {
 
   submitComment(e){
     e.preventDefault()
+
     const { comment } = this.state
     const { comments, key, user } = this.props.challenge
 
     let commentArray = comments ? comments : []
 
-    commentArray.push({comment: comment, name: user.displayName})
+    commentArray.push({
+      comment: comment,
+      name: user.displayName
+    })
 
     this.setState ({
       comment: ''
@@ -41,9 +45,20 @@ export default class Comments extends Component {
 
     var commentsList = array.map((comment, i) => {
       return (
-        <li key={i}>
-          {comment.name}
-          {comment.comment}    
+        <li
+          className='Comments'
+          key={i}>
+
+          <p
+            className='comment-name'>
+            {comment.name}
+          </p>
+
+          <p
+            className='comment-display'>
+            {comment.comment}
+          </p>
+
         </li>
       )
     })
@@ -58,6 +73,7 @@ export default class Comments extends Component {
 
         <input
           className='comment-on-card'
+          placeholder='comment...'
           value={comment}
           onChange={(e) => this.onCommentChange(e)}
         />
