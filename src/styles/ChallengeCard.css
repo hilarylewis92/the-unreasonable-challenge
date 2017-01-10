@@ -1,18 +1,18 @@
 .show-single-card {
   border: none;
-  border-radius: 5px;
-  background-color: #234C63;
-  color: white;
-  padding: 5px;
-  float: left;
+  border-radius: 100%;
+  color: gray;
   text-decoration: none;
-  font-size: 13px;
-  margin: 30px;
+  font-size: 30px;
+  float: right;
+  margin: 15px 60px;
 }
 
 .show-single-card:hover{
+  color: black;
+  border: black;
   cursor: pointer;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.9);
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.9);
 }
 
 /*modal*/
@@ -48,7 +48,7 @@
   border: none;
   color: gray;
   background: none;
-  margin: 0 15px 20px 0;
+  margin: 0 20px 10px 0;
 }
 
 .edit-btn:hover {

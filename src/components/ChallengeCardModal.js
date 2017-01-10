@@ -31,7 +31,7 @@ const ChallengeCardModal = React.createClass({
           className='show-single-card'
           aria-label='show full challenge'
           onClick={this.showModal}>
-          read more
+          &#8943;
         </button>
 
         <Modal

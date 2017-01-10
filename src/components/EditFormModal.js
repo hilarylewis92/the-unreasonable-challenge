@@ -18,15 +18,16 @@ const EditFormModal = React.createClass({
 
     return (
       <div>
-        <div>
-          <button
-            className='edit-btn'
-            aria-label='edit challenge button'
-            onClick={(e) => this.showModal(e)}>
-            &#9998;
-          </button>          
+        <div className='card-nav'>
         </div>
 
+        <button
+          className='edit-btn'
+          aria-label='edit challenge button'
+          onClick={(e) => this.showModal(e)}>
+          &#9998;
+        </button>
+        
         <Modal
           className='edit-modal'
           ref="modal">
