@@ -26,7 +26,7 @@
   padding: 10px;
   border-radius: 5px;
   text-align: center;
-  height: 90vh;
+  height: 80vh;
   overflow-y: auto;
 }
 
@@ -50,7 +50,6 @@
   height: 50px;
   display: block;
   margin: auto;
-  padding: 10px;
 }
 
 .image-preview {
@@ -81,7 +80,7 @@
   text-decoration: none;
   display: inline-block;
   font-size: 13px;
-  margin: 15px 0;
+  margin: 5px 0;
 }
 
 .inputfile:focus + label,
