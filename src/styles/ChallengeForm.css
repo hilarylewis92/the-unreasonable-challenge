@@ -13,13 +13,18 @@
   border: thin solid gray;
   background: white;
   color: gray;
+  box-shadow: 0 4px #999
 }
 
 .add-challenge-btn:hover {
-  border: thin solid black;
   color: black;
   cursor: pointer;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.9);
+}
+
+.add-challenge-btn:active {
+  /*background-color: #379956;*/
+  box-shadow: 0 4px #666;
+  transform: translateY(4px);
 }
 
 .modal-form {
