@@ -1,17 +1,17 @@
-import React from 'react'
+import React, { Component } from 'react'
 import Modal from 'boron/DropModal'
 
 import ChallengeForm from './ChallengeForm'
 
-const ChallengeFormModal = React.createClass({
+export default class ChallengeFormModal extends Component {
   showModal() {
     this.refs.modal.show()
-  },
+  }
 
   hideModal(e){
     e.preventDefault()
     this.refs.modal.hide()
-  },
+  }
 
   render() {
     const { onDraftedChallengeTitleChange, onDraftedChallengeBodyChange, handleImageChange, addNewChallenge, imagePreviewURL, toggleModal } = this.props
@@ -22,7 +22,7 @@ const ChallengeFormModal = React.createClass({
         <button
           className='add-challenge-btn'
           aria-label='add new challenge'
-          onClick={this.showModal}>
+          onClick={this.showModal.bind(this)}>
           +
         </button>
 
@@ -43,6 +43,4 @@ const ChallengeFormModal = React.createClass({
       </div>
     )
   }
-})
-
-export default ChallengeFormModal
+}

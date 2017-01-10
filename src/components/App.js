@@ -3,7 +3,6 @@ import firebase, { reference, update, remove } from '../firebase'
 import { map, extend, pick, filter } from 'lodash';
 import moment from 'moment'
 
-import LogOut from './LogOut'
 import LogIn from './LogIn'
 import Header from './Header'
 import ChallengesList from './ChallengesList'
@@ -70,13 +69,14 @@ export default class App extends Component {
     const { user, draftChallengeTitle, draftChallengeBody, imagePreviewURL } = this.state
 
     reference.push({
-      user: pick(user, 'displayName', 'email', 'uid'),
+      user: pick(user, 'displayName', 'email', 'uid', 'photoURL'),
       title: draftChallengeTitle,
       body: draftChallengeBody,
-      checked: false,
+      count: 0,
       image: imagePreviewURL,
       createdAt: moment().format('MMMM Do'),
       createdMonth: moment().format('MMMM YYYY'),
+      comments: null,
     })
 
     this.setState({
@@ -96,11 +96,11 @@ export default class App extends Component {
     })
   }
 
-  toggleCheck(key) {
+  addCount(key) {
     this.state.challengesList.filter((challenge) => {
       if(key === challenge.key) {
         firebase.database().ref(`challenges/${key}`).update({
-          checked: !challenge.checked,
+          count: challenge.count+=1,
         })
       }
     })
@@ -142,15 +142,11 @@ export default class App extends Component {
         {user ?
         <section>
 
-          <LogOut
-            user={user}
-          />
-
           <Header
             user={user}
           />
 
-        <ChallengeFormModal
+          <ChallengeFormModal
             onDraftedChallengeTitleChange={this.updateChallengeTitleState.bind(this)}
             onDraftedChallengeBodyChange={this.updateChallengeBodyState.bind(this)}
             handleImageChange={this.updateChallengeImageState.bind(this)}
@@ -165,7 +161,7 @@ export default class App extends Component {
             onEditBody={this.updateChallengeBodyState.bind(this)}
             handleImageChange={this.updateChallengeImageState.bind(this)}
             editChallenge={this.editChallenge.bind(this)}
-            toggleCheck={this.toggleCheck.bind(this)}
+            addCount={this.addCount.bind(this)}
             draftChallengeTitle={draftChallengeTitle}
             draftChallengeBody={draftChallengeBody}
             imagePreviewURL={imagePreviewURL}

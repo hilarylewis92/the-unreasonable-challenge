@@ -3,7 +3,7 @@ import Masonry from 'react-masonry-component'
 
 import ChallengeCardModal from './ChallengeCardModal'
 import EditFormModal from './EditFormModal'
-import CompleteChallenge from './CompleteChallenge'
+import ChallengeCount from './ChallengeCount'
 import CardDisplay from './CardDisplay'
 
 var masonryOptions = {
@@ -13,16 +13,15 @@ var masonryOptions = {
 export default class ChallengesList extends Component {
 
   render() {
-    const{ challengesList, onEditTitle, onEditBody, editChallenge, removeChallenge, toggleCheck, handleImageChange, draftChallengeTitle, draftChallengeBody, imagePreviewURL} = this.props
+    const{ challengesList, onEditTitle, onEditBody, editChallenge, removeChallenge, addCount, handleImageChange, draftChallengeTitle, draftChallengeBody, imagePreviewURL} = this.props
 
-    var completedChallenge = challengesList.map(challenge => {
+    var challenges = challengesList.map(challenge => {
 
       var bodyText = challenge.body.length > 100
         ? challenge.body.slice(0, 100) + ` ...`
         : challenge.body
 
       return (
-       challenge.checked ?
         <li
           className='challenge-elements is-complete'
           key={challenge.key}>
@@ -37,83 +36,28 @@ export default class ChallengesList extends Component {
             {bodyText}
           </div>
 
-          <ul>
-           <ChallengeCardModal
-             challenge={challenge}
-            />
-
-            <EditFormModal
-              challenge={challenge}
-              editChallenge={editChallenge}
-              removeChallenge={removeChallenge}
-              handleImageChange={handleImageChange}
-              onEditTitle={onEditTitle}
-              draftChallengeTitle={draftChallengeTitle}
-              onEditBody={onEditBody}
-              draftChallengeBody={draftChallengeBody}
-              imagePreviewURL={imagePreviewURL}
-            />
-
-            <CompleteChallenge
-              challenge={challenge}
-              toggleCheck={toggleCheck}
-            />
-
-          </ul>
-        </li>
-        :
-        null
-      )
-    })
-
-    var inCompleteChallenge = challengesList.map(challenge => {
-
-      var bodyText = challenge.body.length > 100
-        ? challenge.body.slice(0, 100) + ` ...`
-        : challenge.body
-
-      return (
-       !challenge.checked ?
-        <li
-          className='challenge-elements not-complete'
-          key={challenge.key}>
-
-          <CardDisplay
-            challenge={challenge}
+         <ChallengeCardModal
+           challenge={challenge}
           />
 
-          <div
-            className='single-challenge-body'
-            aria-label='challenge body'>
-            {bodyText}
-          </div>
+          <EditFormModal
+            challenge={challenge}
+            editChallenge={editChallenge}
+            removeChallenge={removeChallenge}
+            handleImageChange={handleImageChange}
+            onEditTitle={onEditTitle}
+            draftChallengeTitle={draftChallengeTitle}
+            onEditBody={onEditBody}
+            draftChallengeBody={draftChallengeBody}
+            imagePreviewURL={imagePreviewURL}
+          />
 
-          <ul>
-           <ChallengeCardModal
-             challenge={challenge}
-            />
+        <ChallengeCount
+            challenge={challenge}
+            addCount={addCount}
+          />
 
-            <EditFormModal
-              challenge={challenge}
-              editChallenge={editChallenge}
-              removeChallenge={removeChallenge}
-              handleImageChange={handleImageChange}
-              onEditTitle={onEditTitle}
-              draftChallengeTitle={draftChallengeTitle}
-              onEditBody={onEditBody}
-              draftChallengeBody={draftChallengeBody}
-              imagePreviewURL={imagePreviewURL}
-            />
-
-            <CompleteChallenge
-              challenge={challenge}
-              toggleCheck={toggleCheck}
-            />
-
-          </ul>
         </li>
-        :
-        null
       )
     })
 
@@ -128,22 +72,9 @@ export default class ChallengesList extends Component {
           disableImagesLoaded={false}
           updateOnEachImageLoad={false}
         >
-          {inCompleteChallenge}
+          {challenges}
         </Masonry>
 
-        <div
-          className='completed-below'>
-        </div>
-
-        <Masonry
-          className={'complete'}
-          elementType={'ul'}
-          options={masonryOptions}
-          disableImagesLoaded={false}
-          updateOnEachImageLoad={false}
-        >
-          {completedChallenge}
-        </Masonry>
       </div>
     )
   }

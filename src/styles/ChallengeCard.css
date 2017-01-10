@@ -144,3 +144,9 @@
   border: none;
   resize: none;
 }
+
+.user-photo-card {
+  height: 40px;
+  border-radius: 100%;
+  margin: 5px 0px 0px 0px;
+}
