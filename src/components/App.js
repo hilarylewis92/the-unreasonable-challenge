@@ -77,6 +77,7 @@ export default class App extends Component {
       image: imagePreviewURL,
       createdAt: moment().format('MMMM Do'),
       createdMonth: moment().format('MMMM YYYY'),
+      comments: null,
     })
 
     this.setState({

@@ -30,6 +30,7 @@ const CardDisplay = React.createClass({
           aria-label='challenge author and date'>
           {challenge.user.displayName}
         </div>
+
       </div>
     )
   }

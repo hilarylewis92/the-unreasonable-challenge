@@ -59,7 +59,6 @@ const ChallengeCardModal = React.createClass({
             <Comments
               challenge={challenge}
             />
-
           </li>
         </Modal>
       </div>

@@ -5,38 +5,40 @@ export default class Comments extends Component {
     super()
     this.state = {
       comments: [],
-      comment: ''
+      comment: '',
     }
   }
 
-  updateCommentsState(e) {
-    this.setState ({
+  onCommentChange(e) {
+    this.setState({
       comment: e.target.value
     })
   }
 
-  addComment(e) {
+  submitComment(e){
     e.preventDefault()
     const { comments, comment } = this.state
 
     comments.push(comment)
 
-    this.setState({
+    this.setState ({
+      comments: comments
+    })
+
+    this.setState ({
       comment: ''
     })
+    debugger
   }
 
-
-
   render() {
-    const{ challenge } = this.props
-    const{ comments } = this.state
+    const { comments } = this.state
 
-    var commentList = comments.map(comment => {
+    var commentsList = comments.filter((comment) => {
       return (
-        <div>
+        <li>
           {comment}
-        </div>
+        </li>
       )
     })
 
@@ -44,17 +46,17 @@ export default class Comments extends Component {
       <div
         className="Comments">
 
-        {commentList}
+        <ul>
+          {commentsList}
+        </ul>
 
         <input
           className='comment-on-card'
-          placeholder='comment'
-          onChange={(e) => this.updateCommentsState(e)}
+          onChange={(e) => this.onCommentChange(e)}
         />
 
         <button
-          className='submit-comment'
-          onClick={(e) => this.addComment(e)}>
+          onClick={(e) => this.submitComment(e)}>
           comment
         </button>
 
