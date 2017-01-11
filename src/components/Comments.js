@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import firebase, { reference, update } from '../firebase'
+import firebase, { update } from '../firebase'
 
 
 export default class Comments extends Component {
