@@ -21,14 +21,10 @@ export default class ChallengeCardModal extends Component {
     this.props.addCount(key)
   }
 
-  clickPrev() {
-    const { challenge } = this.state;
-
-  }
-
-  clickNext() {
-    const { challenge, i } = this.props;
-    console.log(i);
+  clickPrevFun (e) {
+    const { i, challenge } = this.props
+    e.preventDefault()
+    this.props.clickPrev(i, challenge)
   }
 
   render() {
@@ -36,13 +32,6 @@ export default class ChallengeCardModal extends Component {
 
     return (
       <div>
-
-        <button
-          className='show-single-card'
-          aria-label='show full challenge'
-          onClick={this.showModal.bind(this)}>
-          ...
-        </button>
 
         <Modal
           className='modal-card'
@@ -69,13 +58,12 @@ export default class ChallengeCardModal extends Component {
 
               <button
                 className='arrows'
-                onClick={() => this.clickPrev()}
+                onClick={(e) => this.clickPrevFun(e)}
               > {'<'}
               </button>
 
               <button
                 className='arrows'
-                onClick={() => this.clickNext()}
               > >
               </button>
 
