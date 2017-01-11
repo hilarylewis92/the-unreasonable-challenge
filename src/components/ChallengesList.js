@@ -20,8 +20,15 @@ export default class ChallengesList extends Component {
   }
 
   clickPrev(i, challenge) {
-    let newIndex = i - 1
-    const challengeList = this.props.challengesList[newIndex]
+    const { challengesList } = this.props
+    let newIndex
+
+    i > 0
+      ? newIndex = i - 1
+      : newIndex = 0
+
+    const challengeList = challengesList[newIndex]
+    console.log(newIndex);
 
     this.setState ({
       currentChallenge: challengeList,
@@ -30,8 +37,14 @@ export default class ChallengesList extends Component {
   }
 
   clickNext(i, challenge) {
-    let newIndex = i + 1
-    const challengeList = this.props.challengesList[newIndex]
+    const { challengesList } = this.props
+    let newIndex
+
+    i < challengesList.length - 1
+      ? newIndex = i + 1
+      : newIndex = i
+
+    const challengeList = challengesList[newIndex]
 
     this.setState ({
       currentChallenge: challengeList,
