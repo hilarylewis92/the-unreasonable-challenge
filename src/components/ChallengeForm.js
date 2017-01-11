@@ -7,6 +7,15 @@ export default class ChallengeForm extends Component {
     this.props.hideModal(e)
   }
 
+  toggleAddChallengeBtn() {
+    const { draftChallengeTitle, draftChallengeBody } = this.props
+
+    console.log();
+
+    var disabled = draftChallengeTitle && draftChallengeBody ? false : true
+    return disabled
+  }
+
   render() {
     const { onDraftedChallengeTitleChange, onDraftedChallengeBodyChange, handleImageChange, hideModal, imagePreviewURL } = this.props
 
@@ -67,6 +76,7 @@ export default class ChallengeForm extends Component {
         />
 
         <button
+          disabled={this.toggleAddChallengeBtn()}
           className='add-challenge-btn-form'
           aria-label='add challenge'
           onClick={(e) => this.onChallengeSubmit(e)}>

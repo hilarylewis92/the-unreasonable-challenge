@@ -152,6 +152,8 @@ export default class App extends Component {
             handleImageChange={this.updateChallengeImageState.bind(this)}
             addNewChallenge={() => this.addNewChallenge()}
             imagePreviewURL={imagePreviewURL}
+            draftChallengeTitle={draftChallengeTitle}
+            draftChallengeBody={draftChallengeBody}
           />
 
           <ChallengesList

@@ -17,6 +17,13 @@ export default class Comments extends Component {
     })
   }
 
+  toggleCommentBtn() {
+    const { comment } = this.state
+
+    var disabled = comment ? false : true
+    return disabled
+  }
+
   submitComment(e){
     e.preventDefault()
 
@@ -85,6 +92,7 @@ export default class Comments extends Component {
         />
 
         <button
+          disabled={this.toggleCommentBtn()}
           className='comment-btn'
           onClick={(e) => this.submitComment(e)}>
           submit

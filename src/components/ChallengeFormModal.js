@@ -14,7 +14,7 @@ export default class ChallengeFormModal extends Component {
   }
 
   render() {
-    const { onDraftedChallengeTitleChange, onDraftedChallengeBodyChange, handleImageChange, addNewChallenge, imagePreviewURL, toggleModal } = this.props
+    const { draftChallengeTitle, draftChallengeBody, onDraftedChallengeTitleChange, onDraftedChallengeBodyChange, handleImageChange, addNewChallenge, imagePreviewURL, toggleModal } = this.props
 
     return (
       <div>
@@ -37,6 +37,8 @@ export default class ChallengeFormModal extends Component {
             hideModal={(e) => this.hideModal(e)}
             addNewChallenge={addNewChallenge}
             imagePreviewURL={imagePreviewURL}
+            draftChallengeTitle={draftChallengeTitle}
+            draftChallengeBody={draftChallengeBody}
           />
 
         </Modal>
