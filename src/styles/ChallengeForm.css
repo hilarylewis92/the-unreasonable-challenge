@@ -22,7 +22,6 @@
 }
 
 .add-challenge-btn:active {
-  /*background-color: #379956;*/
   box-shadow: 0 4px #666;
   transform: translateY(4px);
 }

@@ -85,8 +85,9 @@ export default class Comments extends Component {
         />
 
         <button
+          className='comment-btn'
           onClick={(e) => this.submitComment(e)}>
-          comment
+          submit
         </button>
 
       </div>
