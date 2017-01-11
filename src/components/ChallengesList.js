@@ -21,11 +21,18 @@ export default class ChallengesList extends Component {
 
   clickPrev(i, challenge) {
     let newIndex = i - 1
-
     const challengeList = this.props.challengesList[newIndex]
 
-    console.log(newIndex);
-    console.log(challengeList);
+    this.setState ({
+      currentChallenge: challengeList,
+      currentIndex: newIndex,
+    })
+  }
+
+  clickNext(i, challenge) {
+    let newIndex = i + 1
+    const challengeList = this.props.challengesList[newIndex]
+
     this.setState ({
       currentChallenge: challengeList,
       currentIndex: newIndex,
@@ -110,6 +117,7 @@ export default class ChallengesList extends Component {
           ref='modal'
           challenge={this.state.currentChallenge}
           i={this.state.currentIndex}
+          clickNext={this.clickNext.bind(this)}
           clickPrev={this.clickPrev.bind(this)}
         />
 

@@ -27,6 +27,12 @@ export default class ChallengeCardModal extends Component {
     this.props.clickPrev(i, challenge)
   }
 
+  clickNextFun (e) {
+    const { i, challenge } = this.props
+    e.preventDefault()
+    this.props.clickNext(i, challenge)
+  }
+
   render() {
     const { challenge } = this.props
 
@@ -64,6 +70,7 @@ export default class ChallengeCardModal extends Component {
 
               <button
                 className='arrows'
+                onClick={(e) => this.clickNextFun(e)}
               > >
               </button>
 
