@@ -69,8 +69,8 @@
   font-size: 25px;
   border: 1px solid gray;
   border-radius: 100%;
-  color: white;
-  background: #379956;
+  color: gray;
+  background: white;
   top: 0;
   right: 0;
   margin: -15px;
@@ -79,13 +79,11 @@
 }
 
 .checked:hover {
-  color: white;
+  color: black;
   cursor: pointer;
-  background-color: #379956;
 }
 
 .checked:active {
-  background-color: #379956;
   box-shadow: 0 4px #666;
   transform: translateY(4px);
 }

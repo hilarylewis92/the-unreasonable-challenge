@@ -11,11 +11,46 @@ var masonryOptions = {
 }
 
 export default class ChallengesList extends Component {
+  constructor() {
+  super()
+    this.state = {
+      currentChallenge: {},
+      currentIndex: {},
+    }
+  }
+
+  clickPrev(i, challenge) {
+    let newIndex = i - 1
+    const challengeList = this.props.challengesList[newIndex]
+
+    this.setState ({
+      currentChallenge: challengeList,
+      currentIndex: newIndex,
+    })
+  }
+
+  clickNext(i, challenge) {
+    let newIndex = i + 1
+    const challengeList = this.props.challengesList[newIndex]
+
+    this.setState ({
+      currentChallenge: challengeList,
+      currentIndex: newIndex,
+    })
+  }
+
+  grabChallenge (challenge, i) {
+    this.setState ({
+      currentChallenge: challenge,
+      currentIndex: i
+    })
+    this.refs.modal.showModal()
+  }
 
   render() {
-    const{ challengesList, onEditTitle, onEditBody, editChallenge, removeChallenge, addCount, handleImageChange, draftChallengeTitle, draftChallengeBody, imagePreviewURL} = this.props
+    const{ challengesList, onEditTitle, onEditBody, editChallenge, removeChallenge, addCount, handleImageChange, draftChallengeTitle, draftChallengeBody, imagePreviewURL } = this.props
 
-    var challenges = challengesList.map(challenge => {
+    var challenges = challengesList.map((challenge, i) => {
 
       var bodyText = challenge.body.length > 100
         ? challenge.body.slice(0, 100) + ` ...`
@@ -36,10 +71,6 @@ export default class ChallengesList extends Component {
             {bodyText}
           </div>
 
-         <ChallengeCardModal
-           challenge={challenge}
-          />
-
           <EditFormModal
             challenge={challenge}
             editChallenge={editChallenge}
@@ -52,10 +83,17 @@ export default class ChallengesList extends Component {
             imagePreviewURL={imagePreviewURL}
           />
 
-        <ChallengeCount
+          <ChallengeCount
             challenge={challenge}
             addCount={addCount}
           />
+
+          <button
+            className='show-single-card'
+            aria-label='show full challenge'
+            onClick={() => this.grabChallenge(challenge, i)}>
+            ...
+          </button>
 
         </li>
       )
@@ -74,6 +112,14 @@ export default class ChallengesList extends Component {
         >
           {challenges}
         </Masonry>
+
+        <ChallengeCardModal
+          ref='modal'
+          challenge={this.state.currentChallenge}
+          i={this.state.currentIndex}
+          clickNext={this.clickNext.bind(this)}
+          clickPrev={this.clickPrev.bind(this)}
+        />
 
       </div>
     )
