@@ -36,7 +36,7 @@ export default class ChallengesList extends Component {
   }
 
   clickNext(i, challenge) {
-    const { challengesList } = this.props
+    const { challengesList, user } = this.props
     let newIndex
 
     i < challengesList.length - 1
@@ -60,7 +60,7 @@ export default class ChallengesList extends Component {
   }
 
   render() {
-    const{ challengesList, onEditTitle, onEditBody, editChallenge, removeChallenge, addCount, handleImageChange, draftChallengeTitle, draftChallengeBody, imagePreviewURL } = this.props
+    const{ user, challengesList, onEditTitle, onEditBody, editChallenge, removeChallenge, addCount, handleImageChange, draftChallengeTitle, draftChallengeBody, imagePreviewURL } = this.props
 
     var challenges = challengesList.map((challenge, i) => {
 
@@ -131,6 +131,7 @@ export default class ChallengesList extends Component {
           i={this.state.currentIndex}
           clickNext={this.clickNext.bind(this)}
           clickPrev={this.clickPrev.bind(this)}
+          user={user}
         />
 
       </div>

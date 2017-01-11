@@ -10,8 +10,6 @@ export default class ChallengeForm extends Component {
   toggleAddChallengeBtn() {
     const { draftChallengeTitle, draftChallengeBody } = this.props
 
-    console.log();
-
     var disabled = draftChallengeTitle && draftChallengeBody ? false : true
     return disabled
   }

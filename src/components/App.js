@@ -167,6 +167,7 @@ export default class App extends Component {
             draftChallengeTitle={draftChallengeTitle}
             draftChallengeBody={draftChallengeBody}
             imagePreviewURL={imagePreviewURL}
+            user={user}
           />
 
         </section>

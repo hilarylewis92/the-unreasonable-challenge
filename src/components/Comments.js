@@ -26,9 +26,9 @@ export default class Comments extends Component {
 
   submitComment(e){
     e.preventDefault()
-
+    const { user } = this.props
     const { comment } = this.state
-    const { comments, key, user } = this.props.challenge
+    const { comments, key } = this.props.challenge
 
     let commentArray = comments ? comments : []
 

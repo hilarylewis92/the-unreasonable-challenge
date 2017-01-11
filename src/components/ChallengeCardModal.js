@@ -34,7 +34,7 @@ export default class ChallengeCardModal extends Component {
   }
 
   render() {
-    const { challenge } = this.props
+    const { challenge, user } = this.props
 
     return (
       <div>
@@ -54,7 +54,7 @@ export default class ChallengeCardModal extends Component {
             <CardDisplay
               challenge={challenge}
             />
-          
+
             <div className='arrow-container'>
 
               <button
@@ -71,7 +71,6 @@ export default class ChallengeCardModal extends Component {
 
             </div>
 
-
             <div
               className='single-challenge-body full-challenge-body'
               aria-label='challenge body'>
@@ -80,6 +79,7 @@ export default class ChallengeCardModal extends Component {
 
             <Comments
               challenge={challenge}
+              user={user}
             />
           </div>
         </Modal>
