@@ -1,9 +1,9 @@
 .modal-card {
   padding-bottom: 30px;
+  text-align: center;
 }
 
 .challenge-card-item {
-
 }
 
 .completed-count-description {
@@ -23,5 +23,28 @@
 }
 
 .arrows {
+  position: absolute;
+  background: none;
+  z-index: 1000;
+  border: none;
+  font-size: 80px;
+  color: gray;
+  margin-top: -100px;
+}
 
+.arrows:hover {
+  color: black;
+  cursor: pointer;
+}
+
+.right-arrow {
+  position: absolute;
+  z-index: 1000;
+  right: 0;
+}
+
+.left-arrow {
+  position: absolute;
+  z-index: 1000;
+  left: 0;
 }

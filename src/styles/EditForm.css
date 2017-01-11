@@ -37,7 +37,6 @@
 
 .update-challenge-btn, .edit-remove-challenge {
   border: none;
-  border-radius: 5px;
   color: white;
   width: 90px;
   padding: 10px;
@@ -46,6 +45,7 @@
   display: inline-block;
   font-size: 13px;
   margin: 15px 10px;
+  border-radius: 100px;
 }
 
 .edit-remove-challenge {
@@ -58,7 +58,7 @@
 
 .update-challenge-btn:hover, .edit-remove-challenge:hover {
   cursor: pointer;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.9);
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
 }
 
 .card-nav {

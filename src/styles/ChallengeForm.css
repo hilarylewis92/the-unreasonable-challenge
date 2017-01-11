@@ -76,7 +76,7 @@
 
 .inputfile + label {
   border: none;
-  border-radius: 5px;
+  border-radius: 100px;
   background-color: #234C63;
   color: white;
   width: 90px;
@@ -90,7 +90,7 @@
 
 .inputfile:focus + label,
 .inputfile + label:hover {
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.9);
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
   cursor: pointer;
 }
 
@@ -117,7 +117,7 @@
 
 .add-challenge-btn-form{
   border: none;
-  border-radius: 5px;
+  border-radius: 100px;
   background-color: #379956;
   color: white;
   width: 90px;
@@ -130,6 +130,6 @@
 }
 
 .add-challenge-btn-form:hover{
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.9);
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
   cursor: pointer;
 }

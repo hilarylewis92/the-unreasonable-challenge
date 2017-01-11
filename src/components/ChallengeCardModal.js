@@ -46,34 +46,36 @@ export default class ChallengeCardModal extends Component {
           <div
             className='challenge-card-item'>
 
-            <div>
+            <div
+              className='challenge-count-discription'>
               This challenge has been completed {challenge.count} times.
             </div>
 
             <CardDisplay
               challenge={challenge}
             />
-
-            <div
-              className='single-challenge-body full-challenge-body'
-              aria-label='challenge body'>
-              {challenge.body}
-            </div>
-
+          
             <div className='arrow-container'>
 
               <button
-                className='arrows'
+                className='arrows left-arrow'
                 onClick={(e) => this.clickPrevFun(e)}
               > {'<'}
               </button>
 
               <button
-                className='arrows'
+                className='arrows right-arrow'
                 onClick={(e) => this.clickNextFun(e)}
               > >
               </button>
 
+            </div>
+
+
+            <div
+              className='single-challenge-body full-challenge-body'
+              aria-label='challenge body'>
+              {challenge.body}
             </div>
 
             <Comments

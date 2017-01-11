@@ -28,7 +28,6 @@ export default class ChallengesList extends Component {
       : newIndex = 0
 
     const challengeList = challengesList[newIndex]
-    console.log(newIndex);
 
     this.setState ({
       currentChallenge: challengeList,
@@ -105,7 +104,7 @@ export default class ChallengesList extends Component {
             className='show-single-card'
             aria-label='show full challenge'
             onClick={() => this.grabChallenge(challenge, i)}>
-            ...
+            &hellip;
           </button>
 
         </li>

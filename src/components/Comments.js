@@ -7,6 +7,7 @@ export default class Comments extends Component {
     super()
     this.state = {
       comment: '',
+      comments: null,
     }
   }
 
@@ -30,18 +31,23 @@ export default class Comments extends Component {
     })
 
     this.setState ({
-      comment: ''
+      comments: commentArray
     })
 
     firebase.database().ref(`challenges/${key}`).update({
       comments: commentArray
     })
+
+    this.setState ({
+      comment: ''
+    })
   }
 
   render() {
     const { comment } = this.state
+    const { comments } = this.props.challenge
 
-    let array = this.props.challenge.comments ? this.props.challenge.comments : []
+    let array = comments ? comments : []
 
     var commentsList = array.map((comment, i) => {
       return (
