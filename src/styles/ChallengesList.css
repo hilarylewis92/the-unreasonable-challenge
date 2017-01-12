@@ -23,8 +23,8 @@
 }
 
 .challenge-elements:hover {
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.9);
-  border-radius: 5px;
+  /*box-shadow: 0 0 10px rgba(0, 0, 0, 0.9);
+  border-radius: 5px;*/
 }
 
 .single-challenge-image {
@@ -34,12 +34,12 @@
 
 .single-challenge-title {
   font-size: 20px;
-  margin: 5px 0;
+  text-align: center;
 }
 
 .author-date {
   font-size: 12px;
-  margin: 3px;
+  text-align: center;
 }
 
 .single-challenge-body {
@@ -52,6 +52,7 @@
 
 .challenge-card-item {
   padding-bottom: 30px;
+  text-align: center;
 }
 
 .completed-below {
@@ -59,5 +60,4 @@
   height: 10px;
   width: 95vw;
   display: block;
-  /*border-bottom: 1px solid gray;*/
 }

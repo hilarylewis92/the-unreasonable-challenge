@@ -3,26 +3,32 @@ import ReactDOM from 'react-dom';
 import { shallow, mount, render } from 'enzyme';
 import { assert, expect } from 'chai';
 
-import LogOut from '../components/LogOut';
+import LogIn from '../components/LogIn';
 
-describe('LogOut | Unit Tests', () => {
+
+describe('LogIn | Unit Tests', () => {
   it('renders without crashing', () => {
-    shallow(<LogOut />)
+    shallow(<LogIn />)
   });
 
-  it('should have a button to log out', function(){
-    const wrapper = mount(<LogOut />)
-    assert.equal(wrapper.find('.log-out-btn').length, 1)
-  })
-
-  it('should have display the users name', function(){
-    const wrapper = mount(<LogOut />)
-    assert.equal(wrapper.find('.user-display').length, 1)
-  })
-
   it('renders as a <section>', () => {
-    const wrapper = shallow(<LogOut />)
+    const wrapper = shallow(<LogIn />)
     assert.equal(wrapper.type(), 'section')
+  })
+
+  it('should have a quote', () => {
+    const wrapper = render(<LogIn />)
+    assert.equal(wrapper.find('.quote').length, 1)
+  })
+
+  it('should have a author', () => {
+    const wrapper = render(<LogIn />)
+    assert.equal(wrapper.find('.quote-author').length, 1)
+  })
+
+  it('should have a sign in button', () => {
+    const wrapper = render(<LogIn />)
+    assert.equal(wrapper.find('.log-in-btn').length, 1)
   })
 
 })

@@ -1,6 +1,7 @@
-import React from 'react'
+import React, { Component } from 'react'
 
-const CardDisplay = React.createClass({
+
+export default class CardDisplay extends Component {
 
   render() {
     const { challenge  } = this.props
@@ -34,6 +35,4 @@ const CardDisplay = React.createClass({
       </div>
     )
   }
-})
-
-export default CardDisplay
+}

@@ -1,12 +1,12 @@
-import React from 'react'
+import React, { Component } from 'react'
 
-const ChallengeCount = React.createClass({
+export default class ChallengeCount extends Component {
 
   onCountClicked(e) {
     const { key } = this.props.challenge
     e.preventDefault()
     this.props.addCount(key)
-  },
+  }
 
   render() {
     const { challenge, addCount } = this.props
@@ -22,6 +22,4 @@ const ChallengeCount = React.createClass({
       </div>
     )
   }
-})
-
-export default ChallengeCount
+}

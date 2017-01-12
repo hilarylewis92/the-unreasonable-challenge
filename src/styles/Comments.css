@@ -12,3 +12,21 @@
 .comment-display {
   padding: 0 0 5px 5px;
 }
+
+.comment-btn {
+  border: none;
+  border-radius: 100px;
+  color: gray;
+  border: 1px solid gray;
+  background: none;
+  padding: 5px 10px;
+  text-align: center;
+  text-decoration: none;
+  font-size: 13px;
+}
+
+.comment-btn:hover {
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
+  cursor: pointer;
+  color: black;
+}

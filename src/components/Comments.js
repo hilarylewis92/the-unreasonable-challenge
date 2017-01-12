@@ -1,12 +1,12 @@
 import React, { Component } from 'react'
-import firebase, { reference, update } from '../firebase'
+import firebase from '../firebase';
 
 
 export default class Comments extends Component {
   constructor() {
     super()
     this.state = {
-      comment: '',
+      comment: ''
     }
   }
 
@@ -16,11 +16,17 @@ export default class Comments extends Component {
     })
   }
 
-  submitComment(e){
-    e.preventDefault()
-
+  toggleCommentBtn() {
     const { comment } = this.state
-    const { comments, key, user } = this.props.challenge
+
+    var disabled = comment ? false : true
+    return disabled
+  }
+
+  submitComment(){
+    const { user } = this.props
+    const { comment } = this.state
+    const { comments, key } = this.props.challenge
 
     let commentArray = comments ? comments : []
 
@@ -32,7 +38,6 @@ export default class Comments extends Component {
     this.setState ({
       comment: ''
     })
-
     firebase.database().ref(`challenges/${key}`).update({
       comments: commentArray
     })
@@ -79,8 +84,10 @@ export default class Comments extends Component {
         />
 
         <button
+          disabled={this.toggleCommentBtn()}
+          className='comment-btn'
           onClick={(e) => this.submitComment(e)}>
-          comment
+          submit
         </button>
 
       </div>

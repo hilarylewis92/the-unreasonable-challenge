@@ -1,12 +1,12 @@
-import React from 'react'
+import React, { Component } from 'react'
 
-const EditForm = React.createClass({
+export default class EditForm extends Component {
   onEditChallengeSubmit(e) {
     const { key } = this.props.challenge
     e.preventDefault()
     this.props.editChallenge(key)
     this.props.hideModal(e)
-  },
+  }
 
   onRemoveChallengeSubmit(e) {
     const { key } = this.props.challenge
@@ -16,7 +16,7 @@ const EditForm = React.createClass({
       this.props.removeChallenge(key)
       this.props.hideModal(e)
     }
-  },
+  }
 
   render() {
     const { challenge, onEditTitle, onEditBody, removeChallenge, handleImageChange, draftChallengeTitle, draftChallengeBody, imagePreviewURL } = this.props
@@ -92,6 +92,4 @@ const EditForm = React.createClass({
       </form>
     )
   }
-})
-
-export default EditForm
+}
