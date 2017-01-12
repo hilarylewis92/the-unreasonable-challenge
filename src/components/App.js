@@ -87,22 +87,18 @@ export default class App extends Component {
   }
 
   removeChallenge(key) {
-    this.state.challengesList.map(challenge => {
-      if(key === challenge.key) {
-        firebase.database().ref(`challenges/${key}`).remove()
-      } else {
-        return
-      }
+    let challenge = this.state.challengesList.find(challenge => {
+      return key === challenge.key
     })
+    firebase.database().ref(`challenges/${challenge.key}`).remove()
   }
 
   addCount(key) {
-    this.state.challengesList.filter((challenge) => {
-      if(key === challenge.key) {
-        firebase.database().ref(`challenges/${key}`).update({
-          count: challenge.count+=1,
-        })
-      }
+    let challenge = this.state.challengesList.find(challenge => {
+      return key === challenge.key
+    })
+    firebase.database().ref(`challenges/${challenge.key}`).update({
+      count: challenge.count+=1,
     })
   }
 

@@ -21,15 +21,13 @@ export default class ChallengeCardModal extends Component {
     this.props.addCount(key)
   }
 
-  clickPrevFun (e) {
+  clickPrevFun () {
     const { i, challenge } = this.props
-    e.preventDefault()
     this.props.clickPrev(i, challenge)
   }
 
-  clickNextFun (e) {
+  clickNextFun () {
     const { i, challenge } = this.props
-    e.preventDefault()
     this.props.clickNext(i, challenge)
   }
 
@@ -67,7 +65,7 @@ export default class ChallengeCardModal extends Component {
               <button
                 className='arrows right-arrow'
                 onClick={(e) => this.clickNextFun(e)}
-              > >
+              > {'>'}
               </button>
 
             </div>
