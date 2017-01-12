@@ -17,7 +17,7 @@ export default class EditForm extends Component {
       this.props.hideModal(e)
     }
   }
-  
+
   render() {
     const { challenge, onEditTitle, onEditBody, removeChallenge, handleImageChange, draftChallengeTitle, draftChallengeBody, imagePreviewURL } = this.props
 
