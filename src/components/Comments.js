@@ -1,13 +1,12 @@
 import React, { Component } from 'react'
-import firebase, { update } from '../firebase'
+import firebase from '../firebase';
 
 
 export default class Comments extends Component {
   constructor() {
     super()
     this.state = {
-      comment: '',
-      comments: null,
+      comment: ''
     }
   }
 
@@ -25,7 +24,7 @@ export default class Comments extends Component {
   }
 
   submitComment(e){
-    e.preventDefault()
+    // e.preventDefault()
     const { user } = this.props
     const { comment } = this.state
     const { comments, key } = this.props.challenge
@@ -38,23 +37,18 @@ export default class Comments extends Component {
     })
 
     this.setState ({
-      comments: commentArray
+      comment: ''
     })
 
     firebase.database().ref(`challenges/${key}`).update({
       comments: commentArray
     })
-
-    this.setState ({
-      comment: ''
-    })
   }
 
   render() {
     const { comment } = this.state
-    const { comments } = this.props.challenge
 
-    let array = comments ? comments : []
+    let array = this.props.challenge.comments ? this.props.challenge.comments : []
 
     var commentsList = array.map((comment, i) => {
       return (

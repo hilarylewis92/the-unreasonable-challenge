@@ -104,7 +104,7 @@ export default class ChallengesList extends Component {
             className='show-single-card'
             aria-label='show full challenge'
             onClick={() => this.grabChallenge(challenge, i)}>
-            &hellip;
+            &#9776;
           </button>
 
         </li>
