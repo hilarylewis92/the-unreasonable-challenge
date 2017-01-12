@@ -14,12 +14,11 @@ export default class ChallengesList extends Component {
   constructor() {
   super()
     this.state = {
-      currentChallenge: {},
-      currentIndex: {},
+      currentIndex: 0,
     }
   }
 
-  clickPrev(i, challenge) {
+  clickPrev(i) {
     const { challengesList } = this.props
     let newIndex
 
@@ -30,12 +29,11 @@ export default class ChallengesList extends Component {
     const challengeList = challengesList[newIndex]
 
     this.setState ({
-      currentChallenge: challengeList,
       currentIndex: newIndex,
     })
   }
 
-  clickNext(i, challenge) {
+  clickNext(i) {
     const { challengesList, user } = this.props
     let newIndex
 
@@ -46,14 +44,12 @@ export default class ChallengesList extends Component {
     const challengeList = challengesList[newIndex]
 
     this.setState ({
-      currentChallenge: challengeList,
       currentIndex: newIndex,
     })
   }
 
-  grabChallenge (challenge, i) {
+  grabChallenge (i) {
     this.setState ({
-      currentChallenge: challenge,
       currentIndex: i
     })
     this.refs.modal.showModal()
@@ -61,6 +57,8 @@ export default class ChallengesList extends Component {
 
   render() {
     const{ user, challengesList, onEditTitle, onEditBody, editChallenge, removeChallenge, addCount, handleImageChange, draftChallengeTitle, draftChallengeBody, imagePreviewURL } = this.props
+
+    var currentChallenge = challengesList[this.state.currentIndex]
 
     var challenges = challengesList.map((challenge, i) => {
 
@@ -103,7 +101,7 @@ export default class ChallengesList extends Component {
           <button
             className='show-single-card'
             aria-label='show full challenge'
-            onClick={() => this.grabChallenge(challenge, i)}>
+            onClick={() => this.grabChallenge(i)}>
             &#9776;
           </button>
 
@@ -127,7 +125,7 @@ export default class ChallengesList extends Component {
 
         <ChallengeCardModal
           ref='modal'
-          challenge={this.state.currentChallenge}
+          challenge={currentChallenge || {}}
           i={this.state.currentIndex}
           clickNext={this.clickNext.bind(this)}
           clickPrev={this.clickPrev.bind(this)}

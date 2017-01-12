@@ -23,8 +23,7 @@ export default class Comments extends Component {
     return disabled
   }
 
-  submitComment(e){
-    // e.preventDefault()
+  submitComment(){
     const { user } = this.props
     const { comment } = this.state
     const { comments, key } = this.props.challenge
@@ -39,7 +38,6 @@ export default class Comments extends Component {
     this.setState ({
       comment: ''
     })
-
     firebase.database().ref(`challenges/${key}`).update({
       comments: commentArray
     })

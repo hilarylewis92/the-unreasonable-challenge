@@ -35,6 +35,7 @@ export default class ChallengeCardModal extends Component {
 
   render() {
     const { challenge, user } = this.props
+    // console.log(challenge)
 
     return (
       <div>
