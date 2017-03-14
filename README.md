@@ -16,7 +16,7 @@ Users can log in, add images and challenges, and count the times each challenge 
 
 ## Project Screen Shot(s)
 
-
+![screen shot 2017-03-14 at 10 07 13 am](https://cloud.githubusercontent.com/assets/18403177/23910065/1ea27f58-089e-11e7-9bad-c578a34b1d1a.png)
 
 ## Installation and Setup Instructions
 
