@@ -12,7 +12,7 @@ MVP is complete.
 
 #### Functionality:
 
-Users can log in, add images and challenges, comment of eachother's challenges, and count the times each challenge is completed.
+Users can log in, add images and challenges, comment of each other's challenges, and count the times each challenge is completed.
 
 ## Project Screen Shot(s)
 
