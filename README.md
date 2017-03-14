@@ -4,7 +4,7 @@
 
 #### Description:
 
-An application used write about and complete challenges between users, built with React, JavaScript, Create-React-App, Firebase and CSS.
+An application used to write about and complete challenges between users, built with React, JavaScript, Create-React-App, Firebase and CSS.
 
 ## Project Status:
 
@@ -16,9 +16,7 @@ Users can log in, add images and challenges, and count the times each challenge 
 
 ## Project Screen Shot(s)
 
-[ PRETEND SCREEN SHOT IS HERE ]
 
-[ PRETEND OTHER SCREEN SHOT IS HERE ]
 
 ## Installation and Setup Instructions
 
